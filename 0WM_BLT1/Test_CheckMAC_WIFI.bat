@@ -11,28 +11,29 @@
 
 @rem Testing Procedure:
 @rem ==================
-@rem MTP tool reads MAC Address of I219-LM and then records on SF server
+@rem MTP tool reads WIFI MAC Address and then records on SF server
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./mac_read.sh i219
-@rem (cat /sys/class/net/eth1/address)
+@rem cd ml_utils
+@rem ./mac_read.sh wlan
+@rem (cat /sys/class/net/wlan0/address)
 @rem ===================
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_I219_MAC.cmd
-IF /I #%I219_MAC_ADDRESS%#==#00:00:00:00:00:00# goto fail
-IF /I #%I219_MAC_ADDRESS%#==#FF:FF:FF:FF:FF:FF# goto fail
+CALL .\log\%tmSN%\result\Write_WIFI_MAC.cmd
+IF /I #%WIFI_MAC_ADDRESS%#==#00:00:00:00:00:00# goto fail
+IF /I #%WIFI_MAC_ADDRESS%#==#FF:FF:FF:FF:FF:FF# goto fail
 goto pass
 
 :PASS
 color 2f
->.\log\Test_CheckMAC_I219_CheckLog.bat echo set CheckMAC_I219=%I219_MAC_ADDRESS%
->>.\log\Test_CheckMAC_I219_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_CheckMAC_WIFI_CheckLog.bat echo set CheckMAC_WIFI=%WIFI_MAC_ADDRESS%
+>>.\log\Test_CheckMAC_WIFI_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg CheckMAC_I219
+call sdtCheckLog.exe Model_MLBTEST.cfg CheckMAC_WIFI
 cd..
 GOTO END
 
@@ -40,10 +41,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Check MAC I219 FAIL! ...................*
+ECHO *................. Check MAC WIFI FAIL! ...................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Check MAC I219 FAIL!" 6 650 200 15
+MSG "Check MAC WIFI FAIL!" 6 650 200 15
 pause
 color 07
 goto end
