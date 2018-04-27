@@ -11,26 +11,33 @@
 
 @rem Testing Procedure:
 @rem ==================
-@rem The MAC is set by module, just copy to eeprom
+@rem 1. MTP tool writes MAC Address of FPGA.
+@rem 2. The MAC is set by manufacturer, only stored in eeprom
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./mac_write.sh i219
+@rem /ml_utils#./mac_write.sh fpga 11:22:33:44:55:66
 @rem ===================
+
+:Get_MAC_From_SF
+if exist .\log\MAC_Response.bat del .\log\MAC_Response.bat
+call sdtGetDataFromSF.exe Mac %tmSN% > .\log\MAC_Response.bat
+call .\log\MAC_Response.bat
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_I219_MAC.cmd
-IF /I #%Write_I219_MAC%#==#PASS# GOTO PASS
+python FPGA_MAC %FPGA_MAC%
+CALL .\log\%tmSN%\result\Write_FPGA_MAC.cmd
+IF /I #%Write_FPGA_MAC%#==#PASS# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_WriteMAC_I219_CheckLog.bat echo set WriteMAC_I219=PASS
->>.\log\Test_WriteMAC_I219_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_WriteMAC_FPGA_CheckLog.bat echo set WriteMAC_FPGA=PASS
+>>.\log\Test_WriteMAC_FPGA_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg WriteMAC_I219
+call sdtCheckLog.exe Model_MLBTEST.cfg WriteMAC_FPGA
 cd..
 GOTO END
 
@@ -38,10 +45,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Write MAC I219 FAIL! ...................*
+ECHO *................. Write MAC FPGA FAIL! ...................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Write MAC I219 FAIL!" 6 650 200 15
+MSG "Write MAC FPGA FAIL!" 6 650 200 15
 pause
 color 07
 goto end
