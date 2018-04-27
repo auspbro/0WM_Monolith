@@ -16,21 +16,21 @@
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./mac_write.sh i219
+@rem /ml_utils#./mac_write.sh bluetooth
 @rem ===================
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_I219_MAC.cmd
-IF /I #%Write_I219_MAC%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\Write_BT_MAC.cmd
+IF /I #%Write_BT_MAC%#==#PASS# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_WriteMAC_I219_CheckLog.bat echo set WriteMAC_I219=PASS
->>.\log\Test_WriteMAC_I219_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_WriteMAC_BT_CheckLog.bat echo set WriteMAC_BT=PASS
+>>.\log\Test_WriteMAC_BT_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg WriteMAC_I219
+call sdtCheckLog.exe Model_MLBTEST.cfg WriteMAC_BT
 cd..
 GOTO END
 
@@ -38,10 +38,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Write MAC I219 FAIL! ...................*
+ECHO *................. Write BT MAC FAIL! ...................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Write MAC I219 FAIL!" 6 650 200 15
+MSG "Write BT MAC FAIL!" 6 650 200 15
 pause
 color 07
 goto end
