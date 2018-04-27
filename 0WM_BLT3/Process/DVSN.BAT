@@ -1,0 +1,15 @@
+set Result=PASS
+set msg=PASS
+set Model=QF7
+set tmEMPNO=A5011504
+set tmComputerName=QF7-01
+set tmStationName=MLBTEST
+set tmLineName=I21
+set tmFixtureID=QF7-01
+set tmSN=Q7L072G000B
+set tmModelName=Model
+set tmMAC=
+set tmBTMAC=
+set tmWiFiMAC=
+set tmVWKey=
+set tmRouting=Pass

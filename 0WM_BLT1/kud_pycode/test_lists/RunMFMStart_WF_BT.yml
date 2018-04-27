@@ -1,0 +1,87 @@
+-
+    Name: CKWIFI2G
+    Instructions: >
+        Check WIFI 2.4G performance
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: RunMFMStart
+            Args: 
+                Run: CKWIFI2G
+                Para: wifi-XCSATEST2.4G
+                Retry: 3
+                Search: '.00'
+            Regex: '(\w+):[\s]+([-+]?\w+.\w+)'
+            Results:
+            -
+                name: CKWIFI2G
+                type: str
+                item: 0
+                index: 1
+                subtype: int
+-
+    Name: CKWIFI2GND
+    Instructions: >
+        Check WIFI 2.4G performance with GND path
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: RunMFMStart
+            Args: 
+                Run: CKWIFI2GND
+                Para: wifi-XCSATEST2.4G
+                Retry: 3
+                Search: '.00'
+            Regex: '(\w+.\w+.\w+):[\s]+([-+]?\w+.\w+)'
+            Results:
+            -
+                name: CKWIFI2GND
+                type: str
+                item: 0
+                index: 1
+                subtype: int
+-
+    Name: CKWIFI5G
+    Instructions: >
+        Check WIFI 5G performance
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: RunMFMStart
+            Args: 
+                Run: CKWIFI5G
+                Para: wifi-XCSATEST5G
+                Retry: 3
+                Search: '.00'
+            Regex: '(\w+.\w+.\w+):[\s]+([-+]?\w+.\w+)'
+            Results:
+            -
+                name: CKWIFI5G
+                type: str
+                item: 0
+                index: 1
+                subtype: int
+-
+    Name: CheckBTP
+    Instructions: >
+        Check BT performance
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Fun: RunMFMStart
+            Args: 
+                Run: CheckBTP
+                Para: 68:5D:43:F9:B1:0D
+                Retry: 3
+                Search: PASS
+            Regex: '(\w+):[\s]+([-+]?\w+.\w+)'
+            Results:
+            -
+                name: CheckBTP
+                type: str
+                item: 0
+                index: 1

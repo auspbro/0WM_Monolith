@@ -1,0 +1,19 @@
+- Command: echo '7 4 1 7' > /proc/sys/kernel/printk
+  Response: "[    2.181537] e100: Copyright(c) 1999-2006 Intel Corporation\r\n[  \
+    \  2.181592] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI\r\
+    \n[    2.181593] e1000: Copyright (c) 1999-2006 Intel Corporation.\r\n[    2.181635]\
+    \ e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k\r\n[    2.181636] e1000e:\
+    \ Copyright(c) 1999 - 2015 Intel Corporation.\r\n[    2.181733] usbcore: registered\
+    \ new interface driver kaweth\r\n[    2.181738] pegasus: v0.9.3 (2013/04/25),\
+    \ Pegasus/Pegasus II USB Ethernet driver\r\n[    2.181764] usbcore: registered\
+    \ new interface driver pegasus\r\n[    2.181771] fbcon: inteldrmfb (fb0) is primary\
+    \ device\r\n[    2.181789] usbcore: registered new interface driver rtl8150\r\n\
+    [    2.181819] usbcore: registered new interface driver asix\r\n[    2.181924]\
+    \ usbcore: registered new interface driver ax88179_178a\r\n[    2.181961] usbcore:\
+    \ registered new interface driver cdc_ether\r\n[    2.181990] usbcore: registered\
+    \ new interface driver dm9601\r\n[    2.182024] usbcore: registered new interface\
+    \ driver smsc75xx\r\n[    2.182055] usbcore: registered new interface driver smsc95xx\r\
+    \n[    2.182080] usbcore: registered new interface driver net1080\r\n[    2.182109]\
+    \ usbcore: registered new interface driver cdc_subset\r\n[    2.182133] usbcore:\
+    \ registered new interface driver zaurus\r\n[    2.182158] usbcore: registered\
+    \ new interface driver MOSCHIP usb-ethernet driver\r\n

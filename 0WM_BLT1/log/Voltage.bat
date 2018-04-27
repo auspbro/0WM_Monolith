@@ -1,0 +1,7 @@
+
+set Voltage=
+Set TP348_3V3=PASS
+Set CAM_THERMISTER_Low=PASS
+Set CAM_THERMISTER_High=PASS
+Set CAM_LED_Low=PASS
+Set CAM_LED_High=PASS

@@ -1,0 +1,19 @@
+-
+    Name: DeviceReady
+    Instructions: >
+        Machine into Kernel
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReady
+            Args: 
+                Display: True
+                Timeout: 60
+            Regex: '(\w+)'
+            Results:
+            -
+                name: DevReady
+                type: str
+                item: 0
+                index: 0

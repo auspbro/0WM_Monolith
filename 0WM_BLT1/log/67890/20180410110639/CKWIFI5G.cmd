@@ -1,0 +1,1 @@
+SET CKWIFI5G=-53

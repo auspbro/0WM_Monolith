@@ -1,0 +1,1 @@
+set LEDA_DMICL_TestResult=PASS

@@ -1,0 +1,26 @@
+-
+    Name: BiosUpdate
+    Instructions: >
+        BIOS Update
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: BiosUpdate
+            Args: 
+                Image: coreboot_spi_capsuleFW_CHT_N276_v2.39.2.fv
+                Folder: .
+                Retry: 3
+-
+    Name: MachineReboot
+    Instructions: >
+        Machine Reboot
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReboot
+            Args: 
+                Cmd: reboot
+                Display: True
+                Timeout: 60

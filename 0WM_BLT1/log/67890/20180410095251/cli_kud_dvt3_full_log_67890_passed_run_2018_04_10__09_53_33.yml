@@ -1,0 +1,82 @@
+- Command: echo '7 4 1 7' > /proc/sys/kernel/printk
+  Response: "    1.802766] Linux agpgart interface v0.103\r\n[    1.807502] [drm]\
+    \ Initialized drm 1.1.0 20060810\r\n[    1.815564] [drm] Memory usable by graphics\
+    \ device = 1024M\r\n[    1.821812] fb: switching to inteldrmfb from EFI VGA\r\n\
+    [    1.827489] Console: switching to colour dummy device 80x25\r\n[    1.833972]\
+    \ [drm] Replacing VGA console driver\r\n[    1.839365] [drm] Supports vblank timestamp\
+    \ caching Rev 2 (21.10.2013).\r\n[    1.846778] [drm] Driver supports precise\
+    \ vblank timestamp query.\r\n[    1.853620] i915 0000:00:02.0: Invalid ROM contents\r\
+    \n[    1.859093] [drm] failed to find VBIOS tables\r\n[    1.960871] vgaarb: device\
+    \ changed decodes: PCI:0000:00:02.0,olddecodes=io+mem,decodes=io+mem:owns=io+mem\r\
+    \n[    1.972394] [drm:drm_calc_timestamping_constants] *ERROR* crtc 26: Can't\
+    \ calculate constants, dotclock = 0!\r\n[    2.090664] [drm] Initialized i915\
+    \ 1.6.0 20160411 for 0000:00:02.0 on minor 0\r\n[    2.111477] brd: module loaded\r\
+    \n[    2.121860] loop: module loaded\r\n[    2.142608] Uniform Multi-Platform\
+    \ E-IDE driver\r\n[    2.147809] ide-gd driver 1.18\r\n[    2.151270] ide-cd driver\
+    \ 5.00\r\n[    2.154979] pcnet32: pcnet32.c:v1.35 21.Apr.2008 tsbogend@alpha.franken.de\r\
+    \n[    2.161656] i915 0000:00:02.0: No connectors reported connected with modes\r\
+    \n[    2.161666] [drm] Cannot find any crtc or sizes - going 1024x768\r\n[   \
+    \ 2.177248] e100: Intel(R) PRO/100 Network Driver, 3.5.24-k2-NAPI\r\n[    2.184090]\
+    \ e100: Copyright(c) 1999-2006 Intel Corporation\r\n[    2.184148] e1000: Intel(R)\
+    \ PRO/1000 Network Driver - version 7.3.21-k8-NAPI\r\n[    2.184149] e1000: Copyright\
+    \ (c) 1999-2006 Intel Corporation.\r\n[    2.184189] e1000e: Intel(R) PRO/1000\
+    \ Network Driver - 3.2.6-k\r\n[    2.184190] e1000e: Copyright(c) 1999 - 2015\
+    \ Intel Corporation.\r\n[    2.184309] usbcore: registered new interface driver\
+    \ kaweth\r\n[    2.184319] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB\
+    \ Ethernet driver\r\n[    2.184326] fbcon: inteldrmfb (fb0) is primary device\r\
+    \n[    2.184343] usbcore: registered new interface driver pegasus\r\n[    2.184367]\
+    \ usbcore: registered new interface driver rtl8150\r\n[    2.184452] usbcore:\
+    \ registered new interface driver asix\r\n[    2.184509] usbcore: registered new\
+    \ interface driver ax88179_178a\r\n[    2.184542] usbcore: registered new interface\
+    \ driver cdc_ether\r\n[    2.184567] usbcore: registered new interface driver\
+    \ dm9601\r\n[    2.184599] usbcore: registered new interface driver smsc75xx\r\
+    \n[    2.184631] usbcore: registered new interface driver smsc95xx\r\n[    2.184658]\
+    \ usbcore: registered new interface driver net1080\r\n[    2.184684] usbcore:\
+    \ registered new interface driver cdc_subset\r\n[    2.184708] usbcore: registered\
+    \ new interface driver zaurus\r\n[    2.184733] usbcore: registered new interface\
+    \ driver MOSCHIP usb-ethernet driver\r\n[    2.184772] usbcore: registered new\
+    \ interface driver int51x1\r\n[    2.184806] usbcore: registered new interface\
+    \ driver cdc_ncm\r\n[    2.185245] cht_otg_probe : usb none_compliance mode selected\r\
+    \n[    2.185800] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver\r\n\
+    [    2.185804] ehci-pci: EHCI PCI platform driver\r\n[    2.185836] ohci_hcd:\
+    \ USB 1.1 'Open' Host Controller (OHCI) Driver\r\n[    2.185845] ohci-pci: OHCI\
+    \ PCI platform driver\r\n[    2.185874] uhci_hcd: USB Universal Host Controller\
+    \ Interface driver\r\n[    2.186199] xhci_hcd 0000:00:14.0: xHCI Host Controller\r\
+    \n[    2.186243] xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number\
+    \ 1\r\n[    2.186271] no xhci or phy_mux_regs\r\n[    2.187404] xhci_hcd 0000:00:14.0:\
+    \ hcc params 0x200077c1 hci version 0x100 quirks 0x0160d810\r\n[    2.267977]\
+    \ Console: switching to colour frame buffer device 128x48\r\n[    2.546522] tsc:\
+    \ Refined TSC clocksource calibration: 1439.953 MHz\r\n[    2.546527] clocksource:\
+    \ tsc: mask: 0xffffffffffffffff max_cycles: 0x14c18e756e4, max_idle_ns: 440795259570\
+    \ ns\r\n[    2.573961] i915 0000:00:02.0: fb0: inteldrmfb frame buffer device\r\
+    \n[    2.696530] hub 1-0:1.0: USB hub found\r\n[    2.703184] hub 1-0:1.0: 7 ports\
+    \ detected\r\n[    2.711317] xhci_hcd 0000:00:14.0: xHCI Host Controller\r\n[\
+    \    2.719534] xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number\
+    \ 2\r\n[    2.731125] hub 2-0:1.0: USB hub found\r\n[    2.737753] hub 2-0:1.0:\
+    \ 6 ports detected\r\n[    2.746023] usbcore: registered new interface driver\
+    \ usb-storage\r\n[    2.755279] usbcore: registered new interface driver usbserial\r\
+    \n[    2.764232] usbcore: registered new interface driver usbserial_generic\r\n\
+    [    2.773905] usbserial: USB Serial support registered for generic\r\n[    2.782993]\
+    \ usbcore: registered new interface driver ftdi_sio\r\n[    2.791781] usbserial:\
+    \ USB Serial support registered for FTDI USB Serial Device\r\n[    2.802389] usbcore:\
+    \ registered new interface driver pl2303\r\n[    2.811140] usbserial: USB Serial\
+    \ support registered for pl2303\r\n[    2.820225] using random self ethernet address\r\
+    \n[    2.827529] using random host ethernet address\r\n[    2.835135] usb0: HOST\
+    \ MAC 82:30:7b:7d:c8:17\r\n[    2.842237] usb0: MAC 3e:91:98:7e:cd:ad\r\n[   \
+    \ 2.849009] using random self ethernet address\r\n[    2.856206] using random\
+    \ host ethernet address\r\n[    2.863386] g_ether gadget: Ethernet Gadget, version:\
+    \ Memorial Day 2008\r\n[    2.873048] g_ether gadget: g_ether ready\r\n[    2.886436]\
+    \ i8042: PNP: No PS/2 controller found. Probing ports directly.\r\n[    3.016609]\
+    \ usb 1-3: new high-speed USB device number 2 using xhci_hcd\r\n[    3.353507]\
+    \ usb 1-4: new high-speed USB device number 3 using xhci_hcd\r\n[    3.424564]\
+    \ i8042: Can't read CTR while initializing i8042\r\n[    3.433168] i8042: probe\
+    \ of i8042 failed with error -5\r\n[    3.442485] mousedev: PS/2 mouse device\
+    \ common for all mice\r\n[    3.453840] rtc_cmos 00:03: rtc core: registered rtc_cmos\
+    \ as rtc0\r\n[    3.463300] rtc_cmos 00:03: alarms up to one month, 242 bytes\
+    \ nvram, hpet irqs\r\n[    3.474026] i2c /dev entries driver\r\n[    3.486213]\
+    \ bq24192 i2c-TBQ24296:00: I2C SMbus Read error:-121\r\n[    3.495419] bq24192\
+    \ i2c-TBQ24296:00: i2c read err:-121\r\n[    3.503830] bq24192 i2c-TBQ24296:00:\
+    \ i2c read err:-5\r\n[    3.516124] bq24192: probe of i2c-TBQ24296:00 failed with\
+    \ error -5\r\n[    3.525807] iTCO_wdt: Intel TCO WatchDog Timer Driver v1.11\r\
+    \n[    3.535193] iTCO_wdt: Found a Braswell SoC TCO device (Version=3, TCOBASE=0x0460)\r\
+    \n[    3.539538] usb-storage 1-4:1.0: USB Mass Storage device detected\r\n[  \

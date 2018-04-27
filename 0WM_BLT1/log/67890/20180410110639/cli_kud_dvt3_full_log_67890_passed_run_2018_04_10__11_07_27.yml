@@ -1,0 +1,99 @@
+- Command: echo '7 4 1 7' > /proc/sys/kernel/printk
+  Response: "R_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\
+    \nR_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\
+    \nR_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\
+    \nR_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\nR_SEC_FW_STS0:0x1F000055\r\
+    \nR_SEC_FW_STS0:0x1F000255\r\n\r\nTime taken to reach payload jump is 10089 ms\
+    \ \r\nJumping to payload at 008011a0\r\nBoot Mode:0\r\nUsbSelectConfig: failed\
+    \ to connect driver Not Found, ignored\r\nDuration:900 Status:0 Key.ScanCode:0x0\r\
+    \nBoot Failed. EFI USB Device\n\rMeasureBootPolicyVariable - Success\r\nTXE Firmware\
+    \ Version = 2.1.5.3118\r\nAFU:Found valid IFWI Binary\r\n\r\nBoot time is 11645\
+    \ ms\r\nab_slot identified\r\n\rSlotData Active slot[A] \r\r\n\rImage start with\
+    \ AB slot\r\n\rStart AB slot logic\r\nSlotData Active slot[A] \r\r\n\rupdate engine\
+    \ status [0] \r\nSlotData Active slot[A] \r\r\n\rSlotData Active slot[A] \r\r\n\
+    \rRead value A \r\nactive slot: [A]\r\nSlotData Active slot[A] \r\r\n\rSlotData\
+    \ Active slot[A] \r\r\n\rslot:[A] is boot_successful\r\nSlotData Active slot[A]\
+    \ \r\r\n\rslot:[A] is chosen for ab slot logic\r\nBoot target slot[A] boot_config[1]\
+    \ \r\n\rsuccess  LocateHandleBuffer\r\n\rMeasureSecureAuthorityVariable - IsDataMeasured\r\
+    \nWaitForSECReadyEx:0x00000000\r\nWaitForSECReadyEx:0x00000000\r\nWaitForSECReadyEx:0x00000001\r\
+    \n[    0.000000] Initializing cgroup subsys cpuset\r\n[    0.000000] Initializing\
+    \ cgroup subsys cpu\r\n[    0.000000] Initializing cgroup subsys cpuacct\r\n[\
+    \    0.000000] Linux version 4.4.67-yocto-standard-custom (jharley@ukmrdd-41578)\
+    \ (gcc version 5.3.0 (GCC) ) #1 SMP PREEMPT Wed Feb 7 16:24:46 GMT 2018\r\n[ \
+    \   0.000000] Command line: root=PARTUUID=496eedd8-03b7-45a2-9b0f-c7359c37881e\
+    \ rw rootwait rootwait console=tty0 console=ttyS0,115200 memmap=4M$1M\r\n[   \
+    \ 0.000000] x86/fpu: Legacy x87 FPU detected.\r\n[    0.000000] x86/fpu: Using\
+    \ 'lazy' FPU context switches.\r\n[    0.000000] e820: BIOS-provided physical\
+    \ RAM map:\r\n[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff]\
+    \ usable\r\n[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000007c1adfff]\
+    \ usable\r\n[    0.000000] BIOS-e820: [mem 0x000000007c1ae000-0x000000007c42dfff]\
+    \ reserved\r\n[    0.000000] BIOS-e820: [mem 0x000000007c42e000-0x000000007c4dcfff]\
+    \ usable\r\n[    0.000000] BIOS-e820: [mem 0x00000000e0000000-0x00000000e7ffffff]\
+    \ reserved\r\n[    0.000000] BIOS-e820: [mem 0x00000000fed01000-0x00000000fed01fff]\
+    \ reserved\r\n[    0.000000] BIOS-e820: [mem 0x00000000ff800000-0x00000000ffffffff]\
+    \ reserved\r\n[    0.000000] NX (Execute Disable) protection: active\r\n[    0.000000]\
+    \ e820: user-defined physical RAM map:\r\n[    0.000000] user: [mem 0x0000000000000000-0x000000000009ffff]\
+    \ usable\r\n[    0.000000] user: [mem 0x0000000000100000-0x00000000004fffff] reserved\r\
+    \n[    0.000000] user: [mem 0x0000000000500000-0x000000007c1adfff] usable\r\n\
+    [    0.000000] user: [mem 0x000000007c1ae000-0x000000007c42dfff] reserved\r\n\
+    [    0.000000] user: [mem 0x000000007c42e000-0x000000007c4dcfff] usable\r\n[ \
+    \   0.000000] user: [mem 0x00000000e0000000-0x00000000e7ffffff] reserved\r\n[\
+    \    0.000000] user: [mem 0x00000000fed01000-0x00000000fed01fff] reserved\r\n\
+    [    0.000000] user: [mem 0x00000000ff800000-0x00000000ffffffff] reserved\r\n\
+    [    0.000000] efi: EFI v2.40 by EDK II\r\n[    0.000000] efi:  ACPI 2.0=0x7c5e7000\
+    \  SMBIOS=0x7c5e5000 \r\n[    0.000000] SMBIOS 2.7 present.\r\n[    0.000000]\
+    \ e820: last_pfn = 0x7c4dd max_arch_pfn = 0x400000000\r\n[    0.000000] x86/PAT:\
+    \ Configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- WT  \r\n[    0.000000] Scanning\
+    \ 1 areas for low memory corruption\r\n[    0.000000] ACPI: Early table checksum\
+    \ verification disabled\r\n[    0.000000] ACPI: RSDP 0x000000007C5E7000 000024\
+    \ (v02 CORE  )\r\n[    0.000000] ACPI: XSDT 0x000000007C5E70E0 000064 (v01 CORE\
+    \   COREBOOT 00000000 CORE 00000000)\r\n[    0.000000] ACPI: FACP 0x000000007C5EEE70\
+    \ 0000F4 (v05 CORE   COREBOOT 00000000 CORE 00000001)\r\n[    0.000000] ACPI BIOS\
+    \ Warning (bug): 32/64X length mismatch in FADT/Gpe0Block: 128/64 (20150930/tbfadt-623)\r\
+    \n[    0.000000] ACPI: DSDT 0x000000007C5E7250 007C16 (v02 COREv4 COREBOOT 20110725\
+    \ INTL 20140214)\r\n[    0.000000] ACPI: FACS 0x000000007C5E7210 000040\r\n[ \
+    \   0.000000] ACPI: FACS 0x000000007C5E7210 000040\r\n[    0.000000] ACPI: HPET\
+    \ 0x000000007C5EEF70 000038 (v01 CORE   COREBOOT 00000000 CORE 00000000)\r\n[\
+    \    0.000000] ACPI: APIC 0x000000007C5EEFB0 00006C (v01 CORE   COREBOOT 00000000\
+    \ CORE 00000000)\r\n[    0.000000] ACPI: CSRT 0x000000007C5EF020 00014C (v00 CORE\
+    \   COREBOOT 00000000 CORE 00000000)\r\n[    0.000000] ACPI: MCFG 0x000000007C5EF170\
+    \ 00003C (v01 CORE   COREBOOT 00000000 CORE 00000000)\r\n[    0.000000] ACPI:\
+    \ OEM1 0x000000007C5F11B0 000040 (v01 CORE   COREBOOT 00000000 CORE 00000000)\r\
+    \n[    0.000000] ACPI: PRAM 0x000000007C5F11F0 000030 (v01 CORE   COREBOOT 00000000\
+    \ CORE 00000000)\r\n[    0.000000] ACPI: SSDT 0x000000007C5F1450 00110C (v02 CORE\
+    \   COREBOOT 0000002A CORE 0000002A)\r\n[    0.000000] Zone ranges:\r\n[    0.000000]\
+    \   DMA      [mem 0x0000000000001000-0x0000000000ffffff]\r\n[    0.000000]   DMA32\
+    \    [mem 0x0000000001000000-0x000000007c4dcfff]\r\n[    0.000000]   Normal  \
+    \ empty\r\n[    0.000000] Movable zone start for each node\r\n[    0.000000] Early\
+    \ memory node ranges\r\n[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009ffff]\r\
+    \n[    0.000000]   node   0: [mem 0x0000000000500000-0x000000007c1adfff]\r\n[\
+    \    0.000000]   node   0: [mem 0x000000007c42e000-0x000000007c4dcfff]\r\n[  \
+    \  0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000007c4dcfff]\r\
+    \n[    0.000000] Reserving Intel graphics stolen memory at 0x7cf00000-0x7eefffff\r\
+    \n[    0.000000] ACPI: PM-Timer IO Port: 0x408\r\n[    0.000000] IOAPIC[0]: apic_id\
+    \ 2, version 32, address 0xfec00000, GSI 0-114\r\n[    0.000000] ACPI: INT_SRC_OVR\
+    \ (bus 0 bus_irq 0 global_irq 2 dfl dfl)\r\n[    0.000000] ACPI: INT_SRC_OVR (bus\
+    \ 0 bus_irq 9 global_irq 9 high level)\r\n[    0.000000] Using ACPI (MADT) for\
+    \ SMP configuration information\r\n[    0.000000] ACPI: HPET id: 0x8086a201 base:\
+    \ 0xfed00000\r\n[    0.000000] smpboot: Allowing 4 CPUs, 0 hotplug CPUs\r\n[ \
+    \   0.000000] e820: [mem 0x7ef00000-0xdfffffff] available for PCI devices\r\n\
+    [    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff,\
+    \ max_idle_ns: 1910969940391419 ns\r\n[    0.000000] setup_percpu: NR_CPUS:64\
+    \ nr_cpumask_bits:64 nr_cpu_ids:4 nr_node_ids:1\r\n[    0.000000] PERCPU: Embedded\
+    \ 32 pages/cpu @ffff880079e00000 s91112 r8192 d31768 u524288\r\n[    0.000000]\
+    \ Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 498403\r\
+    \n[    0.000000] Kernel command line: root=PARTUUID=496eedd8-03b7-45a2-9b0f-c7359c37881e\
+    \ rw rootwait rootwait console=tty0 console=ttyS0,115200 memmap=4M$1M\r\n[   \
+    \ 0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)\r\n[    0.000000]\
+    \ Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes)\r\n[    0.000000]\
+    \ Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes)\r\n[    0.000000]\
+    \ Memory: 1938040K/2029552K available (10236K kernel code, 1245K rwdata, 3420K\
+    \ rodata, 1320K init, 628K bss, 91512K reserved, 0K cma-reserved)\r\n[    0.000000]\
+    \ SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1\r\n[    0.000000]\
+    \ Preemptible hierarchical RCU implementation.\r\n[    0.000000] \tBuild-time\
+    \ adjustment of leaf fanout to 64.\r\n[    0.000000] \tRCU restricting CPUs from\
+    \ NR_CPUS=64 to nr_cpu_ids=4.\r\n[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64,\
+    \ nr_cpu_ids=4\r\n[    0.000000] NR_IRQS:4352 nr_irqs:1024 16\r\n[    0.000000]\
+    \ Console: colour dummy device 80x25\r\n[    0.000000] console [tty0] enabled\r\
+    \n[    0.000000] console [ttyS0] enabled\r\n[    0.000000] clocksource: hpet:\
+    \ mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 133484882848 ns\r\n

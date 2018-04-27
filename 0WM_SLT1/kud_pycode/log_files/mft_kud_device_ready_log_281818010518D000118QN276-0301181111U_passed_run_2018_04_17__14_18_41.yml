@@ -1,0 +1,25 @@
+- Name: DeviceReady
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-17 14:18:41.688000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-17 14:18:37.581000'
+  Results:
+  - Proc: Commander
+    Result:
+      DevReady: PASS
+    Time: '2018-04-17 14:18:37.582000'
+  Time: '2018-04-17 14:18:37.581000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-04-17 14:18:41.893000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-17 14:18:41.788000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-04-17 14:18:41.789000'
+  Time: '2018-04-17 14:18:41.788000'

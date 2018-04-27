@@ -1,0 +1,1 @@
+set CARRIER_USB_EXT_TestResult=PASS

@@ -1,0 +1,1 @@
+SET VeriUSB2=PASS

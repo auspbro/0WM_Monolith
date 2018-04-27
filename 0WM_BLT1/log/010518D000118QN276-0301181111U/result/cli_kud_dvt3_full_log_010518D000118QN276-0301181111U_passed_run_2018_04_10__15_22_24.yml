@@ -1,0 +1,328 @@
+- Command: echo '7 4 1 7' > /proc/sys/kernel/printk
+  Response: "[    2.179222] e1000: Copyright (c) 1999-2006 Intel Corporation.\r\n\
+    [    2.179272] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k\r\n[    2.179273]\
+    \ e1000e: Copyright(c) 1999 - 2015 Intel Corporation.\r\n[    2.179295] fbcon:\
+    \ inteldrmfb (fb0) is primary device\r\n[    2.179430] usbcore: registered new\
+    \ interface driver kaweth\r\n[    2.179435] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus\
+    \ II USB Ethernet driver\r\n[    2.179458] usbcore: registered new interface driver\
+    \ pegasus\r\n[    2.179484] usbcore: registered new interface driver rtl8150\r\
+    \n[    2.179520] usbcore: registered new interface driver asix\r\n[    2.179544]\
+    \ usbcore: registered new interface driver ax88179_178a\r\n[    2.179569] usbcore:\
+    \ registered new interface driver cdc_ether\r\n[    2.179592] usbcore: registered\
+    \ new interface driver dm9601\r\n[    2.179627] usbcore: registered new interface\
+    \ driver smsc75xx\r\n[    2.179659] usbcore: registered new interface driver smsc95xx\r\
+    \n[    2.179683] usbcore: registered new interface driver net1080\r\n[    2.179707]\
+    \ usbcore: registered new interface driver cdc_subset\r\n[    2.179732] usbcore:\
+    \ registered new interface driver zaurus\r\n[    2.179761] usbcore: registered\
+    \ new interface driver MOSCHIP usb-ethernet driver\r\n[    2.179803] usbcore:\
+    \ registered new interface driver int51x1\r\n[    2.179840] usbcore: registered\
+    \ new interface driver cdc_ncm\r\n[    2.180283] cht_otg_probe : usb none_compliance\
+    \ mode selected\r\n[    2.180829] ehci_hcd: USB 2.0 'Enhanced' Host Controller\
+    \ (EHCI) Driver\r\n[    2.180835] ehci-pci: EHCI PCI platform driver\r\n[    2.180870]\
+    \ ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver\r\n[    2.180881] ohci-pci:\
+    \ OHCI PCI platform driver\r\n[    2.180911] uhci_hcd: USB Universal Host Controller\
+    \ Interface driver\r\n[    2.181263] xhci_hcd 0000:00:14.0: xHCI Host Controller\r\
+    \n[    2.181283] xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number\
+    \ 1\r\n[    2.181311] no xhci or phy_mux_regs\r\n[    2.182442] xhci_hcd 0000:00:14.0:\
+    \ hcc params 0x200077c1 hci version 0x100 quirks 0x0160d810\r\n[    2.317756]\
+    \ Console: switching to colour frame buffer device 128x48\r\n[    2.548234] tsc:\
+    \ Refined TSC clocksource calibration: 1439.953 MHz\r\n[    2.548239] clocksource:\
+    \ tsc: mask: 0xffffffffffffffff max_cycles: 0x14c18e756e4, max_idle_ns: 440795259570\
+    \ ns\r\n[    2.571291] i915 0000:00:02.0: fb0: inteldrmfb frame buffer device\r\
+    \n[    2.690977] hub 1-0:1.0: USB hub found\r\n[    2.697645] hub 1-0:1.0: 7 ports\
+    \ detected\r\n[    2.705770] xhci_hcd 0000:00:14.0: xHCI Host Controller\r\n[\
+    \    2.714004] xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number\
+    \ 2\r\n[    2.725400] hub 2-0:1.0: USB hub found\r\n[    2.732036] hub 2-0:1.0:\
+    \ 6 ports detected\r\n[    2.740344] usbcore: registered new interface driver\
+    \ usb-storage\r\n[    2.749599] usbcore: registered new interface driver usbserial\r\
+    \n[    2.758564] usbcore: registered new interface driver usbserial_generic\r\n\
+    [    2.768249] usbserial: USB Serial support registered for generic\r\n[    2.777355]\
+    \ usbcore: registered new interface driver ftdi_sio\r\n[    2.786156] usbserial:\
+    \ USB Serial support registered for FTDI USB Serial Device\r\n[    2.796768] usbcore:\
+    \ registered new interface driver pl2303\r\n[    2.805507] usbserial: USB Serial\
+    \ support registered for pl2303\r\n[    2.814577] using random self ethernet address\r\
+    \n[    2.821886] using random host ethernet address\r\n[    2.829514] usb0: HOST\
+    \ MAC 02:c5:54:5f:7d:34\r\n[    2.836604] usb0: MAC 4e:62:ff:5c:63:ce\r\n[   \
+    \ 2.843388] using random self ethernet address\r\n[    2.850598] using random\
+    \ host ethernet address\r\n[    2.857776] g_ether gadget: Ethernet Gadget, version:\
+    \ Memorial Day 2008\r\n[    2.867433] g_ether gadget: g_ether ready\r\n[    2.880545]\
+    \ i8042: PNP: No PS/2 controller found. Probing ports directly.\r\n[    3.418600]\
+    \ i8042: Can't read CTR while initializing i8042\r\n[    3.427356] i8042: probe\
+    \ of i8042 failed with error -5\r\n[    3.435975] mousedev: PS/2 mouse device\
+    \ common for all mice\r\n[    3.447440] rtc_cmos 00:03: rtc core: registered rtc_cmos\
+    \ as rtc0\r\n[    3.456882] rtc_cmos 00:03: alarms up to one month, 242 bytes\
+    \ nvram, hpet irqs\r\n[    3.467562] i2c /dev entries driver\r\n[    3.486960]\
+    \ bq24192 i2c-TBQ24296:00: I2C SMbus Read error:-121\r\n[    3.496165] bq24192\
+    \ i2c-TBQ24296:00: i2c read err:-121\r\n[    3.504542] bq24192 i2c-TBQ24296:00:\
+    \ i2c read err:-5\r\n[    3.517200] bq24192: probe of i2c-TBQ24296:00 failed with\
+    \ error -5\r\n[    3.526860] iTCO_wdt: Intel TCO WatchDog Timer Driver v1.11\r\
+    \n[    3.535903] iTCO_wdt: Found a Braswell SoC TCO device (Version=3, TCOBASE=0x0460)\r\
+    \n[    3.548276] iTCO_wdt: initialized. heartbeat=30 sec (nowayout=0)\r\n[   \
+    \ 3.557771] md: linear personality registered for level -1\r\n[    3.566636] clocksource:\
+    \ Switched to clocksource tsc\r\n[    3.566639] md: raid0 personality registered\
+    \ for level 0\r\n[    3.566647] md: raid1 personality registered for level 1\r\
+    \n[    3.566651] md: raid10 personality registered for level 10\r\n[    3.566656]\
+    \ md: multipath personality registered for level -4\r\n[    3.566661] md: faulty\
+    \ personality registered for level -5\r\n[    3.567400] device-mapper: ioctl:\
+    \ 4.34.0-ioctl (2015-10-28) initialised: dm-devel@redhat.com\r\n[    3.567670]\
+    \ Intel P-state driver initializing.\r\n[    3.575625] sdhci: Secure Digital Host\
+    \ Controller Interface driver\r\n[    3.575630] sdhci: Copyright(c) Pierre Ossman\r\
+    \n[    3.577370] sdhci-acpi 80860F14:00: No vmmc regulator found\r\n[    3.577379]\
+    \ sdhci-acpi 80860F14:00: No vqmmc regulator found\r\n[    3.580638] usb 1-3:\
+    \ new high-speed USB device number 2 using xhci_hcd\r\n[    3.581186] mmc0: SDHCI\
+    \ controller on ACPI [80860F14:00] using ADMA\r\n[    3.582348] sdhci-acpi INT33BB:00:\
+    \ No vmmc regulator found\r\n[    3.582350] sdhci-acpi INT33BB:00: No vqmmc regulator\
+    \ found\r\n[    3.586865] mmc1: SDHCI controller on ACPI [INT33BB:00] using ADMA\r\
+    \n[    3.593645] mmc2: SDHCI controller on ACPI [INT33BB:01] using ADMA\r\n[ \
+    \   3.593749] sdhci-pltfm: SDHCI platform and OF driver helper\r\n[    3.593842]\
+    \ ledtrig-cpu: registered to indicate activity on CPUs\r\n[    3.593852] EFI Variables\
+    \ Facility v0.08 2004-May-17\r\n[    3.595302] usbcore: registered new interface\
+    \ driver usbhid\r\n[    3.595303] usbhid: USB HID core driver\r\n[    3.595310]\
+    \ intel_telemetry_core Init\r\n[    3.595313] intel_telemetry: version 1.0.0 loaded\r\
+    \n[    3.596418] dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc: Last wake caused\
+    \ by a battery insertion\r\n[    3.597911] dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc:\
+    \ extcon registration success!!\r\n[    3.602237] dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc:\
+    \ VBUS attach\r\n[    3.603699] dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc: Err\
+    \ in charger VBUS enable -19\r\n[    3.603703] dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc:\
+    \ Err in switch charger USB MUX -19\r\n[    3.614785] u32 classifier\r\n[    3.614786]\
+    \     Actions configured\r\n[    3.615398] NET: Registered protocol family 10\r\
+    \n[    3.619270] sit: IPv6 over IPv4 tunneling driver\r\n[    3.619649] NET: Registered\
+    \ protocol family 17\r\n[    3.619802] NET: Registered protocol family 36\r\n\
+    [    3.619833] Key type dns_resolver registered\r\n[    3.620602] microcode: CPU0\
+    \ sig=0x406c4, pf=0x1, revision=0x40b\r\n[    3.620655] microcode: CPU1 sig=0x406c4,\
+    \ pf=0x1, revision=0x40b\r\n[    3.622362] microcode: CPU2 sig=0x406c4, pf=0x1,\
+    \ revision=0x40b\r\n[    3.622455] microcode: CPU3 sig=0x406c4, pf=0x1, revision=0x40b\r\
+    \n[    3.622609] microcode: Microcode Update Driver: v2.01 <tigran@aivazian.fsnet.co.uk>,\
+    \ Peter Oruba\r\n[    3.622655] SSE version of gcm_enc/dec engaged.\r\n[    3.625681]\
+    \ Btrfs loaded\r\n[    3.702025] mmc0: new HS200 MMC card at address 0001\r\n\
+    [    3.702460] mmcblk0: mmc0:0001 8GTF4R 7.28 GiB \r\n[    3.702626] mmcblk0boot0:\
+    \ mmc0:0001 8GTF4R partition 1 4.00 MiB\r\n[    3.702784] mmcblk0boot1: mmc0:0001\
+    \ 8GTF4R partition 2 4.00 MiB\r\n[    3.702938] mmcblk0rpmb: mmc0:0001 8GTF4R\
+    \ partition 3 512 KiB\r\n[    3.704990]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10\
+    \ p11 p12 p13\r\n[    3.905207] usb 1-4: new high-speed USB device number 3 using\
+    \ xhci_hcd\r\n[    4.019211] console [netcon0] enabled\r\n[    4.025997] netconsole:\
+    \ network logging started\r\n[    4.033783] rtc_cmos 00:03: setting system clock\
+    \ to 2018-02-12 01:00:11 UTC (1518397211)\r\n[    4.047137] LDO8: disabling\r\n\
+    [    4.055881] LDO9: disabling\r\n[    4.067520] LDO14: disabling\r\n[    4.074791]\
+    \ ALSA device list:\r\n[    4.080329]   No soundcards found.\r\n[    4.086642]\
+    \ md: Waiting for all devices to be available before autodetect\r\n[    4.096529]\
+    \ md: If you don't use raid, use raid=noautodetect\r\n[    4.108152] md: Autodetecting\
+    \ RAID arrays.\r\n[    4.112472] usb-storage 1-4:1.0: USB Mass Storage device\
+    \ detected\r\n[    4.113933] scsi host0: usb-storage 1-4:1.0\r\n[    4.132789]\
+    \ md: Scanned 0 and added 0 devices.\r\n[    4.139575] md: autorun ...\r\n[  \
+    \  4.144374] md: ... autorun DONE.\r\n[    4.156040] EXT4-fs (mmcblk0p8): couldn't\
+    \ mount as ext3 due to feature incompatibilities\r\n[    4.167448] EXT4-fs (mmcblk0p8):\
+    \ couldn't mount as ext2 due to feature incompatibilities\r\n[    4.183794] EXT4-fs\
+    \ (mmcblk0p8): mounted filesystem with ordered data mode. Opts: (null)\r\n[  \
+    \  4.194815] VFS: Mounted root (ext4 filesystem) on device 179:8.\r\n[    4.209344]\
+    \ devtmpfs: mounted\r\n[    4.216927] Freeing unused kernel memory: 1320K (ffffffff81e92000\
+    \ - ffffffff81fdc000)\r\n\rINIT: version 2.88 booting\r\r\n[    4.412695] EXT4-fs\
+    \ (mmcblk0p1): recovery complete\r\n[    4.418073] EXT4-fs (mmcblk0p1): mounted\
+    \ filesystem with ordered data mode. Opts: (null)\r\n[    4.434442] EXT4-fs (mmcblk0p2):\
+    \ mounted filesystem with ordered data mode. Opts: (null)\r\n[    4.450436] EXT4-fs\
+    \ (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)\r\n[  \
+    \  4.484210] EXT4-fs (mmcblk0p10): mounted filesystem with ordered data mode.\
+    \ Opts: (null)\r\n[    4.508929] EXT4-fs (mmcblk0p13): recovery complete\r\n[\
+    \    4.515581] EXT4-fs (mmcblk0p13): mounted filesystem with ordered data mode.\
+    \ Opts: (null)\r\nStarting udev\r\n[    4.584629] udevd[178]: starting version\
+    \ 3.1.5\r\n[    4.600765] random: udevd: uninitialized urandom read (16 bytes\
+    \ read, 20 bits of entropy available)\r\n[    4.611898] random: udevd: uninitialized\
+    \ urandom read (16 bytes read, 20 bits of entropy available)\r\n[    4.622059]\
+    \ random: udevd: uninitialized urandom read (16 bytes read, 20 bits of entropy\
+    \ available)\r\n[    4.633192] random: udevd: uninitialized urandom read (16 bytes\
+    \ read, 20 bits of entropy available)\r\n[    4.643388] random: udevd: uninitialized\
+    \ urandom read (16 bytes read, 20 bits of entropy available)\r\n[    4.702075]\
+    \ random: udevd: uninitialized urandom read (16 bytes read, 21 bits of entropy\
+    \ available)\r\n[    4.713703] random: udevd: uninitialized urandom read (16 bytes\
+    \ read, 21 bits of entropy available)\r\n[    4.731947] lsm6ds3: Driver: init\
+    \ (packet size is 328)\r\n[    4.733685] mt9v034_driver: module is from the staging\
+    \ directory, the quality is unknown, you have been warned.\r\n[    4.733982] init_mt9v034\r\
+    \n[    4.733983] mt9v043 patchlevel DYS-0001-context-B\r\n[    4.734229] mt9v034\
+    \ i2c-INT34F8:00: gmin: initializing atomisp module subdev data.PMIC ID 1\r\n\
+    [    4.734464] i2c-INT34F8:00 supply V1P8SX not found, using dummy regulator\r\
+    \n[    4.734507] i2c-INT34F8:00 supply V1P8SX2 not found, using dummy regulator\r\
+    \n[    4.734527] i2c-INT34F8:00 supply V2P8SX not found, using dummy regulator\r\
+    \n[    4.734543] i2c-INT34F8:00 supply V1P2A not found, using dummy regulator\r\
+    \n[    4.734557] i2c-INT34F8:00 supply VPROG4B not found, using dummy regulator\r\
+    \n[    4.734571] dkgcgp gmin: initializing atomisp module subdev\tdata.PMIC ID\
+    \ 1, CamClk 4, ClkSrc 0, CsiPort 1, \tCsiLanes 1, subdev Name = mt9v034 2-0058\r\
+    \n[    4.734579] mt9v034 i2c-INT34F8:00: camera pdata: port: 1 lanes: 1 order:\
+    \ 00000000\r\n[    4.734586] mt9v034 i2c-INT34F8:00: mt9v034:gpio_ctrl, enable:\
+    \ 1\r\n[    4.735875] dw_dmac INTL9C60:00: DesignWare DMA Controller, 8 channels\r\
+    \n[    4.736555] dw_dmac INTL9C60:01: DesignWare DMA Controller, 8 channels\r\n\
+    [    4.775118] atomisp_css2401a0_v21: module is from the staging directory, the\
+    \ quality is unknown, you have been warned.\r\n[    4.778687] atomisp_init enter\
+    \ \r\n[    4.780180] mt9v034_driver: module is from the staging directory, the\
+    \ quality is unknown, you have been warned.\r\n[    4.810981] mwifiex: rx work\
+    \ enabled, cpus 4\r\n[    4.834761] intel_rapl: Found RAPL domain package\r\n\
+    [    4.834763] intel_rapl: Found RAPL domain core\r\n[    4.841728] mt9v034 i2c-INT34F8:00:\
+    \ detect mt9v034 success\r\n[    4.842131] mt9v034 i2c-INT34F8:00: register atomisp\
+    \ i2c module type 1\r\n[    4.889319] atomisp-css2401a0_v21 0000:00:03.0: start:\
+    \ 0xd1000000\r\n[    4.914837] lsm6ds3 i2c-DYS0001:00: LSM6DS3 PROBE START \r\n\
+    [    4.925802] lsm6ds3 i2c-DYS0001:00: WHO_AM_I probe OK!\r\n[    4.931709] lsm6ds3\
+    \ i2c-DYS0001:00: Entering lsm6ds3_hw_init\r\n[    4.943551] lsm6ds3 i2c-DYS0001:00:\
+    \ hw init done (kfifo size = 8 packets)\r\n[    4.951411] lsm6ds3 i2c-DYS0001:00:\
+    \ lsm6ds3_probe: character device registered OK\r\n[    4.959990] lsm6ds3 i2c-DYS0001:00:\
+    \ lsm6ds3_probe using GPIO: 460\r\n[    4.967997] lsm6ds3 i2c-DYS0001:00: lsm6ds3_probe\
+    \ has set irq1 to irq: 122\r\n[    4.976391] lsm6ds3 i2c-DYS0001:00: LSM6DS3 PROBE\
+    \ OKAY (RT prio=92)\r\n[    4.983635] lsm6ds3: I2C device registered\r\n[    5.121188]\
+    \ scsi 0:0:0:0: Direct-Access     Verbatim STORE N GO       8.07 PQ: 0 ANSI: 4\r\
+    \n[    5.136260] sd 0:0:0:0: [sda] 15564800 512-byte logical blocks: (7.97 GB/7.42\
+    \ GiB)\r\n[    5.137511] sd 0:0:0:0: Attached scsi generic sg0 type 0\r\n[   \
+    \ 5.165924] sd 0:0:0:0: [sda] Write Protect is off\r\n[    5.178533] sd 0:0:0:0:\
+    \ [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA\r\
+    \n[    5.212794]  sda: sda1\r\n[    5.221565] sd 0:0:0:0: [sda] Attached SCSI\
+    \ removable disk\r\n[    5.289991] input: gpio-keys as /devices/platform/gpio-keys.2.auto/input/input2\r\
+    \n[    5.305736] cfg80211: World regulatory domain updated:\r\n[    5.311632]\
+    \ cfg80211:  DFS Master region: unset\r\n[    5.316516] cfg80211:   (start_freq\
+    \ - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)\r\n[ \
+    \   5.327440] cfg80211:   (2402000 KHz - 2472000 KHz @ 40000 KHz), (N/A, 2000\
+    \ mBm), (N/A)\r\n[    5.336402] cfg80211:   (2457000 KHz - 2482000 KHz @ 40000\
+    \ KHz), (N/A, 2000 mBm), (N/A)\r\n[    5.345383] cfg80211:   (2474000 KHz - 2494000\
+    \ KHz @ 20000 KHz), (N/A, 2000 mBm), (N/A)\r\n[    5.354399] cfg80211:   (5170000\
+    \ KHz - 5250000 KHz @ 80000 KHz, 160000 KHz AUTO), (N/A, 2000 mBm), (N/A)\r\n\
+    [    5.365021] cfg80211:   (5250000 KHz - 5330000 KHz @ 80000 KHz, 160000 KHz\
+    \ AUTO), (N/A, 2000 mBm), (0 s)\r\n[    5.375634] cfg80211:   (5490000 KHz - 5730000\
+    \ KHz @ 160000 KHz), (N/A, 2000 mBm), (0 s)\r\n[    5.384695] cfg80211:   (5735000\
+    \ KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)\r\n[    5.390097] atomisp-css2401a0_v21\
+    \ 0000:00:03.0: start delayed 0.5 seconds: 0xd1000000\r\n[    5.390235] atomisp-css2401a0_v21\
+    \ 0000:00:03.0: ISP HPLL frequency base = 1600 MHz\r\n[    5.410909] cfg80211:\
+    \   (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)\r\n[    5.472343]\
+    \ atomisp-css2401a0_v21 0000:00:03.0: Subdev INT34F8:00 successfully register\r\
+    \n[    5.560688] mt9v034 i2c-INT34F8:00: mt9v034_ioctl:WARN - unknown ioctl\r\n\
+    [    5.561372] atomisp-css2401a0_v21 0000:00:03.0: Refused to change power state,\
+    \ currently in D3\r\n[    5.582184] isys dma store at addr(0xcd408) val(0)\r\n\
+    [    5.589557] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\
+    \n[    5.597688] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\
+    \n[    5.605814] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\
+    \n[    5.613920] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\
+    \n[    5.622169] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\
+    \n[    5.630276] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\
+    \n[    5.638524] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\
+    \n[    5.645668] random: nonblocking pool is initialized\r\n[    5.652120] mt9v034\
+    \ i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.660312]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.668423]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.676568]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.684755]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.692901]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.701030]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.709154]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.717270]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported control\r\n[    5.725419]\
+    \ mt9v034 i2c-INT34F8:00: mt9v034:gpio_ctrl, enable: 0\r\n[    5.811123] FAT-fs\
+    \ (sda1): Volume was not properly unmounted. Some data may be corrupt. Please\
+    \ run fsck.\r\n[    6.033206] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported\
+    \ control\r\n[    6.041364] mt9v034 i2c-INT34F8:00: mt9v034_g_ctrl: WARN - unsupported\
+    \ control\r\n[    6.049531] mt9v034 i2c-INT34F8:00: mt9v034:gpio_ctrl, enable:\
+    \ 0\r\n[    6.302899] mwifiex_pcie 0000:01:00.0: info: FW download over, size\
+    \ 820212 bytes\r\n[    6.352767] usb 1-3: USB disconnect, device number 2\r\n\
+    [    6.387279] Adding 102396k swap on /dev/mmcblk0p12.  Priority:-1 extents:1\
+    \ across:102396k SS\r\n[    6.420182] EXT4-fs (mmcblk0p8): re-mounted. Opts: (null)\r\
+    \nbootlogd: cannot allocate pseudo tty: No such file or directory\r\n[    6.790135]\
+    \ usb 1-3: new high-speed USB device number 4 using xhci_hcd\r\n[    6.975863]\
+    \ usbcore: registered new interface driver btusb\r\n[    7.019061] mwifiex_pcie\
+    \ 0000:01:00.0: WLAN FW is active\r\n[    7.158817] mwifiex_pcie 0000:01:00.0:\
+    \ info: MWIFIEX VERSION: mwifiex 1.0 (15.68.7.p77) \r\n[    7.167906] mwifiex_pcie\
+    \ 0000:01:00.0: driver_version = mwifiex 1.0 (15.68.7.p77) \r\nTue Feb 13 07:57:12\
+    \ UTC 2018\r\n\rINIT: Entering runlevel: 5\r\r\nConfiguring network interfaces...\
+    \ ifup: interface lo already configured\r\nifconfig: SIOCGIFFLAGS: No such device\r\
+    \nStarting Xserver\r\nStarting system message bus: dbus.\r\nStarting OpenBSD Secure\
+    \ Shell server: sshd\r\n  generating ssh RSA key...\r\n  generating ssh ECDSA\
+    \ key...\r\n  generating ssh DSA key...\r\n  generating ssh ED25519 key...\r\n\
+    done.\r\nStarting watchdog: \e[1;34m[\e[1;32m  OK  \e[1;34m]\e[0;39m\r\nStarting\
+    \ Advanced Configuration and Power Interface daemon: acpid.\r\nacpid: starting\
+    \ up with netlink and the input layer\r\r\nacpid: 0 rules loaded\r\r\nacpid: waiting\
+    \ for events: event logging is off\r\r\nStarting bluetooth: bluetoothd.\r\nStarting\
+    \ DHCP server: [    8.827736] Bluetooth: BNEP (Ethernet Emulation) ver 1.3\r\n\
+    [    8.833745] Bluetooth: BNEP filters: protocol multicast\r\n[    8.839916] Bluetooth:\
+    \ BNEP socket layer initialized\r\n.\r\nLoading fuse module[    8.871650] fuse\
+    \ init (API version 7.23)\r\n.\r\nMounting fuse control filesystem.\r\nStarting\
+    \ syslogd/klogd: done\r\nStarting jhid...\r\nStarting OTA boot success notifier\
+    \ ...\r\n\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:49.860000'
+- Command: history -c
+  Response: "history -c\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:50.001000'
+- Command: cat /sys/class/dmi/id/bios_version
+  Response: "elf.__args, **self.__kwargs)\r\n  File \"/usr/bin/llpserial.py\", line\
+    \ 66, in serial_comm\r\n    self.bcc_state(data)\r\n  File \"/usr/bin/llpserial.py\"\
+    , line 113, in bcc_state\r\n    self._cb(self._data, self._ts)\r\n  File \"/usr/bin/llp-keepalive.py\"\
+    , line 23, in receive_data\r\n    if data.payload[1] == 0x01:\r\nIndexError: list\
+    \ index out of range\r\n\r\ncat /sys/class/dmi/id/bios_version\r\nCHT N276 v.2.39.3\r\
+    \nsh-3.2# "
+  Time: '2018-04-10 15:21:50.047000'
+- Command: cat /sys/class/dmi/id/bios_date
+  Response: "cat /sys/class/dmi/id/bios_date\r\n02/12/2018\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:50.063000'
+- Command: cat /sys/class/dmi/id/bios_vendor
+  Response: "cat /sys/class/dmi/id/bios_vendor\r\ncoreboot\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:50.219000'
+- Command: rm /tmp/ReImgVer*
+  Response: "rm /tmp/ReImgVer*\r\nrm: can't remove '/tmp/ReImgVer*': No such file\
+    \ or directory\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:50.235000'
+- Command: echo "echo -e ReImgVer" > /tmp/ReImgVer.sh
+  Response: "echo \"echo -e ReImgVer\" > /tmp/ReImgVer.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:50.359000'
+- Command: echo "echo -e exit" >> /tmp/ReImgVer.sh
+  Response: "echo \"echo -e exit\" >> /tmp/ReImgVer.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:50.469000'
+- Command: sh /tmp/ReImgVer.sh | MFMStart > /tmp/ReImgVer.log ; cat /tmp/ReImgVer.log
+  Response: "sh /tmp/ReImgVer.sh | MFMStart > /tmp/ReImgVer.log ; cat /tmp/ReImgVer.l\
+    \ \rog\r\nManufacturing mode: On\r\nImage Ver: manuf-image_v1.0.1\r\n\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.093000'
+- Command: rm /tmp/WrPCBASN*
+  Response: "rm /tmp/WrPCBASN*\r\nrm: can't remove '/tmp/WrPCBASN*': No such file\
+    \ or directory\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.108000'
+- Command: echo "echo -e WrPCBASN 010518D000118QN276-0301181111U" > /tmp/WrPCBASN.sh
+  Response: "echo \"echo -e WrPCBASN 010518D000118QN276-0301181111U\" > /tmp/WrPCBASN.s\
+    \ \rh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.233000'
+- Command: echo "echo -e exit" >> /tmp/WrPCBASN.sh
+  Response: "echo \"echo -e exit\" >> /tmp/WrPCBASN.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.342000'
+- Command: sh /tmp/WrPCBASN.sh | MFMStart > /tmp/WrPCBASN.log ; cat /tmp/WrPCBASN.log
+  Response: "sh /tmp/WrPCBASN.sh | MFMStart > /tmp/WrPCBASN.log ; cat /tmp/WrPCBASN.l\
+    \ \rog\r\nManufacturing mode: On\r\nWrite PCBA_SN: PASS\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.639000'
+- Command: rm /tmp/RePCBASN*
+  Response: "rm /tmp/RePCBASN*\r\nrm: can't remove '/tmp/RePCBASN*': No such file\
+    \ or directory\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.654000'
+- Command: echo "echo -e RePCBASN" > /tmp/RePCBASN.sh
+  Response: "echo \"echo -e RePCBASN\" > /tmp/RePCBASN.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.763000'
+- Command: echo "echo -e exit" >> /tmp/RePCBASN.sh
+  Response: "echo \"echo -e exit\" >> /tmp/RePCBASN.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:51.873000'
+- Command: sh /tmp/RePCBASN.sh | MFMStart > /tmp/RePCBASN.log ; cat /tmp/RePCBASN.log
+  Response: "sh /tmp/RePCBASN.sh | MFMStart > /tmp/RePCBASN.log ; cat /tmp/RePCBASN.l\
+    \ \rog\r\nManufacturing mode: On\r\nPCBA_SN: FAIL\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:52.185000'
+- Command: rm /tmp/ReStoInf*
+  Response: "rm /tmp/ReStoInf*\r\nrm: can't remove '/tmp/ReStoInf*': No such file\
+    \ or directory\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:52.200000'
+- Command: echo "echo -e ReStoInf" > /tmp/ReStoInf.sh
+  Response: "echo \"echo -e ReStoInf\" > /tmp/ReStoInf.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:52.325000'
+- Command: echo "echo -e exit" >> /tmp/ReStoInf.sh
+  Response: "echo \"echo -e exit\" >> /tmp/ReStoInf.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:52.434000'
+- Command: sh /tmp/ReStoInf.sh | MFMStart > /tmp/ReStoInf.log ; cat /tmp/ReStoInf.log
+  Response: "sh /tmp/ReStoInf.sh | MFMStart > /tmp/ReStoInf.log ; cat /tmp/ReStoInf.l\
+    \ \rog\r\nManufacturing mode: On\r\nEMMC size: 7456 MB\r\nMemory size: 1931 MB\r\
+    \nsh-3.2# "
+  Time: '2018-04-10 15:21:52.731000'
+- Command: rm /tmp/ReWBTMAC*
+  Response: "rm /tmp/ReWBTMAC*\r\nrm: can't remove '/tmp/ReWBTMAC*': No such file\
+    \ or directory\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:52.746000'
+- Command: echo "echo -e ReWBTMAC" > /tmp/ReWBTMAC.sh
+  Response: "echo \"echo -e ReWBTMAC\" > /tmp/ReWBTMAC.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:52.871000'
+- Command: echo "echo -e exit" >> /tmp/ReWBTMAC.sh
+  Response: "echo \"echo -e exit\" >> /tmp/ReWBTMAC.sh\r\nsh-3.2# "
+  Time: '2018-04-10 15:21:52.980000'
+- 

@@ -1,0 +1,12 @@
+set tmEMPNO=A5011504
+set tmComputerName=QF7-01
+set tmStationName=MLBTEST
+set tmLineName=J11
+set tmFixtureID=QF7-01
+set tmSN=A1234567890
+set tmModelName=Debug
+set tmMAC=
+set tmBTMAC=
+set tmWiFiMAC=
+set tmVWKey=
+set tmRouting=Pass

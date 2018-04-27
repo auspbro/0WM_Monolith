@@ -1,0 +1,1 @@
+set LEDA_BLE_TestResult=PASS

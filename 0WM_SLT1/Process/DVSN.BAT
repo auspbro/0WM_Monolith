@@ -1,0 +1,12 @@
+set tmEMPNO=07061031
+set tmComputerName=T21_SLT1_01
+set tmStationName=SLT1
+set tmLineName=T21
+set tmFixtureID=T21_SLT1_01
+set tmSN=A1234567890
+set tmModelName=Debug
+set tmMAC=
+set tmBTMAC=
+set tmWiFiMAC=
+set tmVWKey=
+set tmRouting=Pass

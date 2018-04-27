@@ -1,0 +1,90 @@
+- Command: echo '7 4 1 7' > /proc/sys/kernel/printk
+  Response: "[    2.145916] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI\r\
+    \n[    2.145918] e1000: Copyright (c) 1999-2006 Intel Corporation.\r\n[    2.145956]\
+    \ e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k\r\n[    2.145957] e1000e:\
+    \ Copyright(c) 1999 - 2015 Intel Corporation.\r\n[    2.146056] usbcore: registered\
+    \ new interface driver kaweth\r\n[    2.146060] pegasus: v0.9.3 (2013/04/25),\
+    \ Pegasus/Pegasus II USB Ethernet driver\r\n[    2.146084] usbcore: registered\
+    \ new interface driver pegasus\r\n[    2.146111] fbcon: inteldrmfb (fb0) is primary\
+    \ device\r\n[    2.146113] usbcore: registered new interface driver rtl8150\r\n\
+    [    2.146143] usbcore: registered new interface driver asix\r\n[    2.146182]\
+    \ usbcore: registered new interface driver ax88179_178a\r\n[    2.146225] usbcore:\
+    \ registered new interface driver cdc_ether\r\n[    2.146259] usbcore: registered\
+    \ new interface driver dm9601\r\n[    2.146292] usbcore: registered new interface\
+    \ driver smsc75xx\r\n[    2.146344] usbcore: registered new interface driver smsc95xx\r\
+    \n[    2.146373] usbcore: registered new interface driver net1080\r\n[    2.146398]\
+    \ usbcore: registered new interface driver cdc_subset\r\n[    2.146421] usbcore:\
+    \ registered new interface driver zaurus\r\n[    2.146446] usbcore: registered\
+    \ new interface driver MOSCHIP usb-ethernet driver\r\n[    2.146486] usbcore:\
+    \ registered new interface driver int51x1\r\n[    2.146522] usbcore: registered\
+    \ new interface driver cdc_ncm\r\n[    2.146929] cht_otg_probe : usb none_compliance\
+    \ mode selected\r\n[    2.147521] ehci_hcd: USB 2.0 'Enhanced' Host Controller\
+    \ (EHCI) Driver\r\n[    2.147527] ehci-pci: EHCI PCI platform driver\r\n[    2.147562]\
+    \ ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver\r\n[    2.147573] ohci-pci:\
+    \ OHCI PCI platform driver\r\n[    2.147608] uhci_hcd: USB Universal Host Controller\
+    \ Interface driver\r\n[    2.147926] xhci_hcd 0000:00:14.0: xHCI Host Controller\r\
+    \n[    2.147946] xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number\
+    \ 1\r\n[    2.147974] no xhci or phy_mux_regs\r\n[    2.149106] xhci_hcd 0000:00:14.0:\
+    \ hcc params 0x200077c1 hci version 0x100 quirks 0x0160d810\r\n[    2.283757]\
+    \ Console: switching to colour frame buffer device 128x48\r\n[    2.524980] i915\
+    \ 0000:00:02.0: fb0: inteldrmfb frame buffer device\r\n[    2.549828] tsc: Refined\
+    \ TSC clocksource calibration: 1439.953 MHz\r\n[    2.559236] clocksource: tsc:\
+    \ mask: 0xffffffffffffffff max_cycles: 0x14c18e756e4, max_idle_ns: 440795259570\
+    \ ns\r\n[    2.658376] hub 1-0:1.0: USB hub found\r\n[    2.665085] hub 1-0:1.0:\
+    \ 7 ports detected\r\n[    2.673257] xhci_hcd 0000:00:14.0: xHCI Host Controller\r\
+    \n[    2.681536] xhci_hcd 0000:00:14.0: new USB bus registered, assigned bus number\
+    \ 2\r\n[    2.693017] hub 2-0:1.0: USB hub found\r\n[    2.699687] hub 2-0:1.0:\
+    \ 6 ports detected\r\n[    2.708021] usbcore: registered new interface driver\
+    \ usb-storage\r\n[    2.717352] usbcore: registered new interface driver usbserial\r\
+    \n[    2.726356] usbcore: registered new interface driver usbserial_generic\r\n\
+    [    2.736082] usbserial: USB Serial support registered for generic\r\n[    2.745221]\
+    \ usbcore: registered new interface driver ftdi_sio\r\n[    2.754048] usbserial:\
+    \ USB Serial support registered for FTDI USB Serial Device\r\n[    2.764692] usbcore:\
+    \ registered new interface driver pl2303\r\n[    2.773470] usbserial: USB Serial\
+    \ support registered for pl2303\r\n[    2.782577] using random self ethernet address\r\
+    \n[    2.789926] using random host ethernet address\r\n[    2.797585] usb0: HOST\
+    \ MAC 5e:b9:7f:ec:3a:d0\r\n[    2.804701] usb0: MAC ae:61:3e:ca:1a:8a\r\n[   \
+    \ 2.811527] using random self ethernet address\r\n[    2.818755] using random\
+    \ host ethernet address\r\n[    2.825972] g_ether gadget: Ethernet Gadget, version:\
+    \ Memorial Day 2008\r\n[    2.835632] g_ether gadget: g_ether ready\r\n[    2.848494]\
+    \ i8042: PNP: No PS/2 controller found. Probing ports directly.\r\n[    2.979559]\
+    \ usb 1-3: new high-speed USB device number 2 using xhci_hcd\r\n[    3.316545]\
+    \ usb 1-4: new high-speed USB device number 3 using xhci_hcd\r\n[    3.386518]\
+    \ i8042: Can't read CTR while initializing i8042\r\n[    3.395127] i8042: probe\
+    \ of i8042 failed with error -5\r\n[    3.404558] mousedev: PS/2 mouse device\
+    \ common for all mice\r\n[    3.416120] rtc_cmos 00:03: rtc core: registered rtc_cmos\
+    \ as rtc0\r\n[    3.425576] rtc_cmos 00:03: alarms up to one month, 242 bytes\
+    \ nvram, hpet irqs\r\n[    3.436304] i2c /dev entries driver\r\n[    3.448948]\
+    \ bq24192 i2c-TBQ24296:00: I2C SMbus Read error:-121\r\n[    3.458173] bq24192\
+    \ i2c-TBQ24296:00: i2c read err:-121\r\n[    3.466594] bq24192 i2c-TBQ24296:00:\
+    \ i2c read err:-5\r\n[    3.479324] bq24192: probe of i2c-TBQ24296:00 failed with\
+    \ error -5\r\n[    3.489009] iTCO_wdt: Intel TCO WatchDog Timer Driver v1.11\r\
+    \n[    3.498337] iTCO_wdt: Found a Braswell SoC TCO device (Version=3, TCOBASE=0x0460)\r\
+    \n[    3.501368] usb-storage 1-4:1.0: USB Mass Storage device detected\r\n[  \
+    \  3.502110] scsi host0: usb-storage 1-4:1.0\r\n[    3.526804] iTCO_wdt: initialized.\
+    \ heartbeat=30 sec (nowayout=0)\r\n[    3.536252] md: linear personality registered\
+    \ for level -1\r\n[    3.545085] md: raid0 personality registered for level 0\r\
+    \n[    3.553694] md: raid1 personality registered for level 1\r\n[    3.562226]\
+    \ md: raid10 personality registered for level 10\r\n[    3.570913] md: multipath\
+    \ personality registered for level -4\r\n[    3.579927] clocksource: Switched\
+    \ to clocksource tsc\r\n[    3.579930] md: faulty personality registered for level\
+    \ -5\r\n[    3.580358] device-mapper: ioctl: 4.34.0-ioctl (2015-10-28) initialised:\
+    \ dm-devel@redhat.com\r\n[    3.580755] Intel P-state driver initializing.\r\n\
+    [    3.588755] sdhci: Secure Digital Host Controller Interface driver\r\n[   \
+    \ 3.588757] sdhci: Copyright(c) Pierre Ossman\r\n[    3.590497] sdhci-acpi 80860F14:00:\
+    \ No vmmc regulator found\r\n[    3.590506] sdhci-acpi 80860F14:00: No vqmmc regulator\
+    \ found\r\n[    3.595423] mmc0: SDHCI controller on ACPI [80860F14:00] using ADMA\r\
+    \n[    3.596819] sdhci-acpi INT33BB:00: No vmmc regulator found\r\n[    3.596829]\
+    \ sdhci-acpi INT33BB:00: No vqmmc regulator found\r\n[    3.601429] mmc1: SDHCI\
+    \ controller on ACPI [INT33BB:00] using ADMA\r\n[    3.610438] mmc2: SDHCI controller\
+    \ on ACPI [INT33BB:01] using ADMA\r\n[    3.610542] sdhci-pltfm: SDHCI platform\
+    \ and OF driver helper\r\n[    3.610639] ledtrig-cpu: registered to indicate activity\
+    \ on CPUs\r\n[    3.610652] EFI Variables Facility v0.08 2004-May-17\r\n[    3.612111]\
+    \ usbcore: registered new interface driver usbhid\r\n[    3.612113] usbhid: USB\
+    \ HID core driver\r\n[    3.612118] intel_telemetry_core Init\r\n[    3.612121]\
+    \ intel_telemetry: version 1.0.0 loaded\r\n[    3.612748] dollar_cove_ti_pwrsrc\
+    \ dollar_cove_ti_pwrsrc: Last wake caused by a battery insertion\r\n[    3.613322]\
+    \ dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc: extcon registration success!!\r\
+    \n[    3.616186] dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc: VBUS attach\r\n\
+    [    3.617640] dollar_cove_ti_pwrsrc dollar_cove_ti_pwrsrc: Err in charger VBUS\
+    \ enable -19\r\n

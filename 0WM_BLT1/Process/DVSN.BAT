@@ -1,0 +1,12 @@
+set tmEMPNO=A5011274
+set tmComputerName=KUD-try1
+set tmStationName=BLT1
+set tmLineName=K21
+set tmFixtureID=KUD-001
+set tmSN=281818010518D000076QN276-0301181111U
+set tmModelName=
+set tmMAC=
+set tmBTMAC=
+set tmWiFiMAC=
+set tmVWKey=
+set tmRouting=Fail

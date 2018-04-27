@@ -1,0 +1,1 @@
+SET VeriUBI2C=PASS

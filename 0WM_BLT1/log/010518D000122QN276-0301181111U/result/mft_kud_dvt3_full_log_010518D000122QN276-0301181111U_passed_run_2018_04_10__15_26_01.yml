@@ -1,0 +1,311 @@
+- Name: History_Clear
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:26.313000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:20.198000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-04-10 15:25:20.198000'
+  Time: '2018-04-10 15:25:20.198000'
+- Name: ReBiosVer
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:26.531000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:26.422000'
+  Results:
+  - Proc: Commander
+    Result:
+      BIOS_DATE: 02/12/2018
+      BIOS_VEN: coreboot
+      BIOS_VER: 2.39.3
+    Time: '2018-04-10 15:25:26.422000'
+  Time: '2018-04-10 15:25:26.422000'
+- Name: ReImgVer
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:27.077000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:26.641000'
+  Results:
+  - Proc: Commander
+    Result:
+      IMG_VER: 1.0.1
+    Time: '2018-04-10 15:25:26.641000'
+    Values: "sh /tmp/ReImgVer.sh | MFMStart > /tmp/ReImgVer.log ; cat /tmp/ReImgVer.l\
+      \ \rog\r\nManufacturing mode: On\r\nImage Ver: manuf-image_v1.0.1"
+  Time: '2018-04-10 15:25:26.641000'
+- Name: WrPCBASN
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:27.623000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:27.187000'
+  Results:
+  - Proc: Commander
+    Result:
+      WrPCBASN: PASS
+    Time: '2018-04-10 15:25:27.187000'
+    Values: "sh /tmp/WrPCBASN.sh | MFMStart > /tmp/WrPCBASN.log ; cat /tmp/WrPCBASN.l\
+      \ \rog\r\nManufacturing mode: On\r\nWrite PCBA_SN: PASS"
+  Time: '2018-04-10 15:25:27.187000'
+- Name: RePCBASN
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:28.169000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:27.733000'
+  Results:
+  - Proc: Commander
+    Result:
+      RePCBASN: FAIL
+    Time: '2018-04-10 15:25:27.733000'
+    Values: "sh /tmp/RePCBASN.sh | MFMStart > /tmp/RePCBASN.log ; cat /tmp/RePCBASN.l\
+      \ \rog\r\nManufacturing mode: On\r\nPCBA_SN: FAIL"
+  Time: '2018-04-10 15:25:27.733000'
+- Name: ReStoInf
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:28.715000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:28.279000'
+  Results:
+  - Proc: Commander
+    Result:
+      EMMC_SIZE: '7456'
+      MEM_SIZE: '1931'
+    Time: '2018-04-10 15:25:28.279000'
+    Values: "sh /tmp/ReStoInf.sh | MFMStart > /tmp/ReStoInf.log ; cat /tmp/ReStoInf.l\
+      \ \rog\r\nManufacturing mode: On\r\nEMMC size: 7456 MB\r\nMemory size: 1931\
+      \ MB"
+  Time: '2018-04-10 15:25:28.279000'
+- Name: ReWBTMAC
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:29.698000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:28.825000'
+  Results:
+  - Proc: Commander
+    Result:
+      BT: 80:D2:1D:98:17:4E
+      WIFI: 80:D2:1D:98:17:4F
+    Time: '2018-04-10 15:25:28.825000'
+    Values: "sh /tmp/ReWBTMAC.sh | MFMStart > /tmp/ReWBTMAC.log ; cat /tmp/ReWBTMAC.l\
+      \ \rog\r\nManufacturing mode: On\r\nWIFI: 80:D2:1D:98:17:4F\r\nBT: 80:D2:1D:98:17:4E"
+  Time: '2018-04-10 15:25:28.825000'
+- Name: VeriIMU
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:39.963000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:29.807000'
+  Results:
+  - Proc: Commander
+    Result:
+      VeriIMU: PASS
+    Time: '2018-04-10 15:25:29.807000'
+    Values: "Manufacturing mode: On\r\nIMU Status: PASS"
+  Time: '2018-04-10 15:25:29.807000'
+- Name: VeriIMUINTs
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:43.567000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:40.072000'
+  Results:
+  - Proc: Commander
+    Result:
+      IMU_INT1: PASS
+      IMU_INT2: PASS
+    Time: '2018-04-10 15:25:40.072000'
+    Values: "sh /tmp/VeriIMUINTs.sh | MFMStart > /tmp/VeriIMUINTs.log ; cat /tmp/Veri\
+      \ \rIMUINTs.log\r\nManufacturing mode: On\r\nIMU_INT1: PASS\r\nIMU_INT2: PASS"
+  Time: '2018-04-10 15:25:40.072000'
+- Name: CKWIFI2G
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:44.222000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:43.676000'
+  Results:
+  - Proc: Commander
+    Result:
+      CKWIFI2G: -24
+    Time: '2018-04-10 15:25:43.676000'
+    Values: "sh /tmp/CKWIFI2G.sh | MFMStart > /tmp/CKWIFI2G.log ; cat /tmp/CKWIFI2G.l\
+      \ \rog\r\nManufacturing mode: On\r\n2.4G-RSSI: -24.00"
+  Time: '2018-04-10 15:25:43.676000'
+- Name: CKWIFI2GND
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:44.877000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:44.331000'
+  Results:
+  - Proc: Commander
+    Result:
+      CKWIFI2GND: -51
+    Time: '2018-04-10 15:25:44.331000'
+    Values: "sh /tmp/CKWIFI2GND.sh | MFMStart > /tmp/CKWIFI2GND.log ; cat /tmp/CKWIFI\
+      \ \r2GND.log\r\nManufacturing mode: On\r\n2.4G-RSSI-GND: -51.00"
+  Time: '2018-04-10 15:25:44.331000'
+- Name: CKWIFI5G
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:45.641000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:44.986000'
+  Results:
+  - Proc: Commander
+    Result:
+      CKWIFI5G: -54
+    Time: '2018-04-10 15:25:44.986000'
+    Values: "sh /tmp/CKWIFI5G.sh | MFMStart > /tmp/CKWIFI5G.log ; cat /tmp/CKWIFI5G.l\
+      \ \rog\r\nManufacturing mode: On\r\n5G-RSSI: -54.00"
+  Time: '2018-04-10 15:25:44.986000'
+- Name: CheckBTP
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:56.452000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:45.751000'
+  Results:
+  - Proc: Commander
+    Result:
+      CheckBTP: PASS
+    Time: '2018-04-10 15:25:45.751000'
+    Values: "sh /tmp/CheckBTP.sh | MFMStart > /tmp/CheckBTP.log ; cat /tmp/CheckBTP.l\
+      \ \rog\r\nManufacturing mode: On\r\nBT: PASS"
+  Time: '2018-04-10 15:25:45.751000'
+- Name: CkMBINT
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:56.998000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:56.561000'
+  Results:
+  - Proc: Commander
+    Result:
+      CkMBINT: '0'
+    Time: '2018-04-10 15:25:56.561000'
+    Values: "Manufacturing mode: On\r\nINTERRUPT_TO_HLP: 0"
+  Time: '2018-04-10 15:25:56.561000'
+- Name: VeriCBIOP
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:58.309000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:57.107000'
+  Results:
+  - Proc: Commander
+    Result:
+      VeriCBIOP: PASS
+    Time: '2018-04-10 15:25:57.107000'
+    Values: "sh /tmp/VeriCBIOP.sh | MFMStart > /tmp/VeriCBIOP.log ; cat /tmp/VeriCBIO\
+      \ \rP.log\r\nManufacturing mode: On\r\nCAPTURE: PASS"
+  Time: '2018-04-10 15:25:57.107000'
+- Name: VeriUSB2
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:58.855000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:58.418000'
+  Results:
+  - Proc: Commander
+    Result:
+      VeriUSB2: PASS
+    Time: '2018-04-10 15:25:58.418000'
+    Values: "sh /tmp/VeriUSB2.sh | MFMStart > /tmp/VeriUSB2.log ; cat /tmp/VeriUSB2.l\
+      \ \rog\r\nManufacturing mode: On\r\nUSB2: PASS"
+  Time: '2018-04-10 15:25:58.418000'
+- Name: VeriUBI2C
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:59.401000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:58.964000'
+  Results:
+  - Proc: Commander
+    Result:
+      VeriUBI2C: PASS
+    Time: '2018-04-10 15:25:58.964000'
+    Values: "sh /tmp/VeriUBI2C.sh | MFMStart > /tmp/VeriUBI2C.log ; cat /tmp/VeriUBI2\
+      \ \rC.log\r\nManufacturing mode: On\r\nI2C1: PASS"
+  Time: '2018-04-10 15:25:58.964000'
+- Name: VeriLB1I2C
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:59.947000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:25:59.510000'
+  Results:
+  - Proc: Commander
+    Result:
+      VeriLB1I2C: PASS
+    Time: '2018-04-10 15:25:59.510000'
+    Values: "sh /tmp/VeriLB1I2C.sh | MFMStart > /tmp/VeriLB1I2C.log ; cat /tmp/VeriLB\
+      \ \r1I2C.log\r\nManufacturing mode: On\r\nLB1I2C: PASS"
+  Time: '2018-04-10 15:25:59.510000'
+- Name: VeriLB2I2C
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:26:00.493000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:26:00.056000'
+  Results:
+  - Proc: Commander
+    Result:
+      VeriLB2I2C: PASS
+    Time: '2018-04-10 15:26:00.056000'
+    Values: "sh /tmp/VeriLB2I2C.sh | MFMStart > /tmp/VeriLB2I2C.log ; cat /tmp/VeriLB\
+      \ \r2I2C.log\r\nManufacturing mode: On\r\nLB2I2C: PASS"
+  Time: '2018-04-10 15:26:00.056000'
+- Name: VeriUART
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:26:01.039000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:26:00.602000'
+  Results:
+  - Proc: Commander
+    Result:
+      VeriUART: PASS
+    Time: '2018-04-10 15:26:00.602000'
+    Values: "sh /tmp/VeriUART.sh | MFMStart > /tmp/VeriUART.log ; cat /tmp/VeriUART.l\
+      \ \rog\r\nManufacturing mode: On\r\nUART: PASS"
+  Time: '2018-04-10 15:26:00.602000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-04-10 15:26:01.148000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-04-10 15:26:01.148000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-04-10 15:26:01.148000'
+  Time: '2018-04-10 15:26:01.148000'
