@@ -11,27 +11,31 @@
 
 @rem Testing Procedure:
 @rem ==================
-@rem MTP tool executes the script in Linux shell promptand then gets the test result.
+@rem Using ethernet cable to connects between 0WM and QF7 and then MTP tool checks whether POE is working or not.
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./firmware.sh bios
-@rem (DVT BIOS version is on firmware.sh)
+@rem ?
+@rem ===================
+
+@rem Fixture Request:
+@rem ===================
+@rem Gizmo(QF7)
 @rem ===================
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\BIOS_Version.cmd
-IF /I #%BIOS_Version%#==#1.23# goto fail
+CALL .\log\%tmSN%\result\Gizmo_Port.cmd
+IF /I #%Gizmo_Port%#==#FAIL# goto fail
 goto pass
 
 :PASS
 color 2f
->.\log\Test_CheckBIOSVer_CheckLog.bat echo set CheckBIOSVer=%BT_MAC_ADDRESS%
->>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_Gizmo_Port_CheckLog.bat echo set Gizmo_Port=%BT_MAC_ADDRESS%
+>>.\log\Test_Gizmo_Port_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg CheckBIOSVer
+call sdtCheckLog.exe Model_MLBTEST.cfg Gizmo_Port
 cd..
 GOTO END
 
@@ -39,10 +43,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Check BIOS Version FAIL! ...................*
+ECHO *................. Check Gizmo_Port FAIL! ...................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Check BIOS Version FAIL!" 6 650 200 15
+MSG "Check Gizmo_Port FAIL!" 6 650 200 15
 pause
 color 07
 goto end

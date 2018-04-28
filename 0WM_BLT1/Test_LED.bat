@@ -6,32 +6,48 @@
 @rem 1. First release for 0WM DVT build. 
 @rem =========================================
 @rem Rev.: 3B   Ryan Xue    04/28/2018
-@rem 1. Add testing procedure & Linux command for easy maintain or debug later. 
+@rem 1. For DVT build test fixture not ready, modify script for operator Manual Visual Inspection.
 @rem =========================================
 
 @rem Testing Procedure:
 @rem ==================
-@rem MTP tool executes the script in Linux shell promptand then gets the test result.
+@rem MTP tool sends a command in Linux shell prompt to turn on LED1~6 and then testing fixture reads LEDs status to check whether LEDs are working or not.
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./firmware.sh bios
-@rem (DVT BIOS version is on firmware.sh)
+@rem ?
+@rem ===================
+
+@rem Fixture Request:
+@rem ===================
+@rem Fixture(Photoresistor)
 @rem ===================
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\BIOS_Version.cmd
-IF /I #%BIOS_Version%#==#1.23# goto fail
-goto pass
+
+:LED_Chk
+timeout 3
+msg.exe "检查LED是否都有亮！" 3 700 200 12
+echo **************************************
+echo ****  Y(1).LED Pass    ****
+echo ****  N(0).LED Fail    ****
+echo ****  R(8).Retest LED  ****
+echo **************************************
+choice /c:Y1N0R8 /N
+if errorlevel 6 goto LED_Chk
+if errorlevel 5 goto LED_Chk
+if errorlevel 4 goto fail
+if errorlevel 3 goto fail
+goto Pass
 
 :PASS
 color 2f
->.\log\Test_CheckBIOSVer_CheckLog.bat echo set CheckBIOSVer=%BT_MAC_ADDRESS%
->>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_LED_CheckLog.bat echo set LED=%BT_MAC_ADDRESS%
+>>.\log\Test_LED_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg CheckBIOSVer
+call sdtCheckLog.exe Model_MLBTEST.cfg LED
 cd..
 GOTO END
 
@@ -39,10 +55,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Check BIOS Version FAIL! ...................*
+ECHO *.................... Check LED FAIL! .....................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Check BIOS Version FAIL!" 6 650 200 15
+MSG "Check LED FAIL!" 6 650 200 15
 pause
 color 07
 goto end
