@@ -2,36 +2,48 @@
 
 @rem Change History:
 @rem =========================================
-@rem Rev.: 3A   Ryan Xue    04/27/2018
+@rem Rev.: 3A   Ryan Xue    04/28/2018
 @rem 1. First release for 0WM DVT build. 
 @rem =========================================
-@rem Rev.: 3B   Ryan Xue    04/28/2018
-@rem 1. Add testing procedure & Linux command for easy maintain or debug later. 
+@rem 
+@rem 
 @rem =========================================
 
 @rem Testing Procedure:
 @rem ==================
-@rem MTP tool executes the script in Linux shell promptand then gets the test result.
+@rem Operator puts DisplayPort plug into DP_Port_1 and then check whether DisplayPort is working or not
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./firmware.sh bios
-@rem (DVT BIOS version is on firmware.sh)
+@rem no
 @rem ===================
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\BIOS_Version.cmd
-IF /I #%BIOS_Version%#==#1.23# goto fail
-goto pass
+
+:DP_Port_2_Chk
+msg.exe "请插入治具到待测技巧DP Port 2接口！" 3 700 200 12
+timeout 3
+msg.exe "检查DP Port2显示器是否显示正常！" 3 700 200 12
+echo *********************************
+echo ****  Y(1).DP_Port_2 Pass    ****
+echo ****  N(0).DP_Port_2 Fail    ****
+echo ****  R(8).Retest DP_Port_2  ****
+echo *********************************
+choice /c:Y1N0R8 /N
+if errorlevel 6 goto DP_Port_2_Chk
+if errorlevel 5 goto DP_Port_2_Chk
+if errorlevel 4 goto fail
+if errorlevel 3 goto fail
+goto Pass
 
 :PASS
 color 2f
->.\log\Test_CheckBIOSVer_CheckLog.bat echo set CheckBIOSVer=%BT_MAC_ADDRESS%
->>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_DP_Port_2_CheckLog.bat echo set DP_Port_2=%BT_MAC_ADDRESS%
+>>.\log\Test_DP_Port_2_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg CheckBIOSVer
+call sdtCheckLog.exe Model_MLBTEST.cfg DP_Port_2
 cd..
 GOTO END
 
