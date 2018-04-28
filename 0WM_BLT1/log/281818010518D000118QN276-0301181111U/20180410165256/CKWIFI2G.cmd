@@ -1,1 +1,0 @@
-SET CKWIFI2G=-21
