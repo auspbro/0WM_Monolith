@@ -24,7 +24,7 @@ CALL .\Process\DVSN.BAT
 
 
 :DP_Port_1_Chk
-msg.exe "请插入治具到待测技巧DP Port 1接口！" 3 700 200 12
+msg.exe "请插入治具到待测机器DP Port 1接口！" 3 700 200 12
 timeout 3
 msg.exe "检查DP Port1显示器是否显示正常！" 3 700 200 12
 echo *********************************
