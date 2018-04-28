@@ -11,13 +11,16 @@
 
 @rem Testing Procedure:
 @rem ==================
-@rem Operator puts DisplayPort plug into DP_Port_1 and then check whether DisplayPort is working or not
+@rem Operator puts USB Type-C plug into USB_TypeC_1 and then checks whether Notebook screen can be showed on monitor or not.
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem no
+@rem /ml_stress#./fpga_video_select.sh DP1
+@rem ...wait for reboot...
+@rem /ml_stress#./stress_test.sh DP1 1khz
 @rem ===================
+
 
 :START
 CALL .\Process\DVSN.BAT

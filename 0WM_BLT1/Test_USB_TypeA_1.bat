@@ -11,27 +11,28 @@
 
 @rem Testing Procedure:
 @rem ==================
-@rem MTP tool executes the script in Linux shell promptand then gets the test result.
+@rem Operator puts USB3.0 Storage into USB_TypeA_1 and then MTP tool checks whether USB3.0 storage can be supported or not
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./firmware.sh bios
-@rem (DVT BIOS version is on firmware.sh)
+@rem lsusb -t
 @rem ===================
 
+
 :START
-CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\BIOS_Version.cmd
-IF /I #%BIOS_Version%#==#1.23# goto fail
+call .\Process\DVSN.BAT
+call .\log\%tmSN%\result\USB_TypeA_1.cmd
+IF /I #%USB_TypeA_1%#==#FAIL# GOTO FAIL
 goto pass
+
 
 :PASS
 color 2f
->.\log\Test_CheckBIOSVer_CheckLog.bat echo set CheckBIOSVer=%BT_MAC_ADDRESS%
->>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_USB_TypeA_1_CheckLog.bat echo set USB_TypeA_1=PASS
+>>.\log\Test_USB_TypeA_1_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg CheckBIOSVer
+call sdtCheckLog.exe Model_MLBTEST.cfg USB_TypeA_1
 cd..
 GOTO END
 
@@ -39,10 +40,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Check BIOS Version FAIL! ...................*
+ECHO *................. Check USB_TypeA_1 FAIL! ................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Check BIOS Version FAIL!" 6 650 200 15
+MSG "Check USB_TypeA_1 FAIL!" 6 650 200 15
 pause
 color 07
 goto end

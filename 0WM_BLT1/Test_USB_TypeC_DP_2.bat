@@ -11,27 +11,46 @@
 
 @rem Testing Procedure:
 @rem ==================
-@rem MTP tool executes the script in Linux shell promptand then gets the test result.
+@rem Operator puts USB Type-C plug into USB_TypeC_2 and then checks whether Notebook screen can be showed on monitor or not.
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem /ml_utils#./firmware.sh bios
-@rem (DVT BIOS version is on firmware.sh)
+@rem /ml_stress#./fpga_video_select.sh DP2
+@rem ...wait for reboot...
+@rem /ml_stress#./stress_test.sh DP2 1khz
+@rem ===================
+
+@rem Fixture Request:
+@rem ===================
+@rem Notebook supports USB type-C with DisplayPort output
 @rem ===================
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\BIOS_Version.cmd
-IF /I #%BIOS_Version%#==#1.23# goto fail
-goto pass
+
+:USB_TypeC_DP_2_Chk
+msg.exe "请插入治具到待测机器DP Port 2接口！" 3 700 200 12
+timeout 3
+msg.exe "检查DP Port2显示器是否显示正常！" 3 700 200 12
+echo **************************************
+echo ****  Y(1).USB_TypeC_DP_2 Pass    ****
+echo ****  N(0).USB_TypeC_DP_2 Fail    ****
+echo ****  R(8).Retest USB_TypeC_DP_2  ****
+echo **************************************
+choice /c:Y1N0R8 /N
+if errorlevel 6 goto USB_TypeC_DP_2_Chk
+if errorlevel 5 goto USB_TypeC_DP_2_Chk
+if errorlevel 4 goto fail
+if errorlevel 3 goto fail
+goto Pass
 
 :PASS
 color 2f
->.\log\Test_CheckBIOSVer_CheckLog.bat echo set CheckBIOSVer=%BT_MAC_ADDRESS%
->>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_USB_TypeC_DP_2_CheckLog.bat echo set USB_TypeC_DP_2=%BT_MAC_ADDRESS%
+>>.\log\Test_USB_TypeC_DP_2_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg CheckBIOSVer
+call sdtCheckLog.exe Model_MLBTEST.cfg USB_TypeC_DP_2
 cd..
 GOTO END
 
@@ -39,10 +58,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Check BIOS Version FAIL! ...................*
+ECHO *................. Check USB_TypeC_DP_2 FAIL! .............*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Check BIOS Version FAIL!" 6 650 200 15
+MSG "Check USB_TypeC_DP_2 FAIL!" 6 650 200 15
 pause
 color 07
 goto end
