@@ -1,1 +1,0 @@
-set LEDA_BTMACW_TestResult=PASS

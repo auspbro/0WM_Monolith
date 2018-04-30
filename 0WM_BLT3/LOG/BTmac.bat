@@ -1,4 +1,0 @@
-::Connect DB OK
-SET BTMAC=A81E84658C9A
-
-::CloseDB

@@ -1,1 +1,0 @@
-set BT_LOW_RSSI_VALUE=-53 
