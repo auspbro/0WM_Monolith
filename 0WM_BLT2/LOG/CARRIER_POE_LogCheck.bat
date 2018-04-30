@@ -1,1 +1,0 @@
-set CARRIER_POE_TestResult=PASS
