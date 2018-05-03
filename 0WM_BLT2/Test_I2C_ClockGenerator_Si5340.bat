@@ -22,13 +22,13 @@
 
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\i2cdetect.cmd
-IF /I #%Si5340%#==#FAIL# GOTO FAIL
-goto pass
+call .\log\%tmSN%\result\ChkSi5340.cmd
+IF /I #%ChkSi5340%#==#77# GOTO PASS
+goto FAIL
 
 :PASS
 color 2f
->.\log\Test_I2C_ClockGenerator_si5340_CheckLog.bat echo set I2C_ClockGenerator_si5340=PASS
+>.\log\Test_I2C_ClockGenerator_si5340_CheckLog.bat echo set I2C_ClockGenerator_si5340=%ChkSi5340%
 >>.\log\Test_I2C_ClockGenerator_si5340_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg I2C_ClockGenerator_si5340

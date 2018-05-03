@@ -23,13 +23,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\CLOCK_SYNTH_Version.cmd
-IF /I #%CLOCK_SYNTH_Version%#==#%1.23%# goto pass
+CALL .\log\%tmSN%\result\ChkClock.cmd
+IF /I #%ChkClock%#==#%PASS%# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_Test_Check_ClockSynth_Ver_CheckLog.bat echo set Test_Check_ClockSynth_Ver=%CLOCK_SYNTH_Version%
+>.\log\Test_Test_Check_ClockSynth_Ver_CheckLog.bat echo set Test_Check_ClockSynth_Ver=PASS
 >>.\log\Test_Test_Check_ClockSynth_Ver_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Test_Check_ClockSynth_Ver

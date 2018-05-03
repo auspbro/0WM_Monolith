@@ -23,13 +23,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\FPGA.cmd
-IF /I #%FPGA%#==#%PASS%# goto pass
+CALL .\log\%tmSN%\result\ChkFPGA.cmd
+IF /I #%ChkFPGA%#==#1aa3:0011# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_Check_FPGA_CheckLog.bat echo set Check_FPGA=PASS
+>.\log\Test_Check_FPGA_CheckLog.bat echo set Check_FPGA=%ChkFPGA%
 >>.\log\Test_Check_FPGA_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Check_FPGA

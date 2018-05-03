@@ -20,16 +20,23 @@
 @rem Slave address: 0x4a, 0x4b
 @rem ===================
 
+:StartPythonGUI
+CALL .\Process\DVSN.BAT
+cd .\BU1_0WM
+python gui_runner_VB.py %tmSN%
+cd ..
+goto START
+
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\i2cdetect.cmd
-IF /I #%VB_TMP108_1%#==#FAIL# GOTO FAIL
-IF /I #%VB_TMP108_2%#==#FAIL# GOTO FAIL
+call .\log\%tmSN%\result\ChkVBTMP108.cmd
+IF /I not #%ChkVBTMP108_1%#==#4a# GOTO FAIL
+IF /I not #%ChkVBTMP108_2%#==#4b# GOTO FAIL
 goto pass
 
 :PASS
 color 2f
->.\log\Test_I2C_TempSensor_TMP108_CheckLog.bat echo set I2C_TempSensor_TMP108=PASS
+>.\log\Test_I2C_TempSensor_TMP108_CheckLog.bat echo set I2C_TempSensor_TMP108=%ChkVBTMP108_1%_%ChkVBTMP108_2%
 >>.\log\Test_I2C_TempSensor_TMP108_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg I2C_TempSensor_TMP108
