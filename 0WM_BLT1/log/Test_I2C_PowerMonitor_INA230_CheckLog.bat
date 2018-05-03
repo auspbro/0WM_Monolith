@@ -1,2 +1,2 @@
-set I2C_PowerMonitor_INA230=PASS
+set I2C_PowerMonitor_INA230=40_41_42_43_44
 set TestResult=PASS

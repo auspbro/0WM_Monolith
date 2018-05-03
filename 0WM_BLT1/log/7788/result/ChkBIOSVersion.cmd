@@ -1,1 +1,1 @@
-SET ChkBIOSVersion=FAIL
+SET ChkBIOSVersion=PASS

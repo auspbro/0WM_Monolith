@@ -34,17 +34,17 @@
 
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\ChkSM303DAC.cmd
+call .\log\%tmSN%\result\ChkISM303DAC.cmd
 IF /I not #%ECOMPASS%#==#12# GOTO FAIL
 IF /I not #%ACCELEROMETER%#==#10# GOTO FAIL
 goto pass
 
 :PASS
 color 2f
->.\log\Test_I2C_AccelerometerSensor_ISM303DAC_CheckLog.bat echo set I2C_AccelerometerSensor_ISM303DAC=%ACCELEROMETER%_%ECOMPASS%
->>.\log\Test_I2C_AccelerometerSensor_ISM303DAC_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_I2C_AccelSensor_ISM303DAC_CheckLog.bat echo set I2C_AccelSensor_ISM303DAC=%ACCELEROMETER%_%ECOMPASS%
+>>.\log\Test_I2C_AccelSensor_ISM303DAC_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg I2C_AccelerometerSensor_ISM303DAC
+call sdtCheckLog.exe Model_MLBTEST.cfg I2C_AccelSensor_ISM303DAC
 cd..
 goto end
 

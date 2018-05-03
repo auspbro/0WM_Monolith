@@ -23,9 +23,9 @@
 CALL .\Process\DVSN.BAT
 
 :DP_HDMI_Port_2_Chk
-msg.exe "请插入治具到待测机器DP to HDMI Port 1接口！" 3 700 200 12
+msg.exe "请插入治具到待测机器DP to HDMI Port 2接口！" 3 700 200 12
 timeout 3
-msg.exe "检查DP to HDMI Port1显示器是否显示正常！" 3 700 200 12
+msg.exe "检查DP to HDMI Port2显示器是否显示正常！" 3 700 200 12
 echo ***************************************
 echo ****   Y(1).DP_HDMI_Port_2 Pass    ****
 echo ****   N(0).DP_HDMI_Port_2 Fail    ****
@@ -41,10 +41,10 @@ goto Pass
 
 :PASS
 color 2f
->.\log\Test_DP_HDMI_Port_2_CheckLog.bat echo set DP_HDMI_Port_2=PASS
->>.\log\Test_DP_HDMI_Port_2_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_DP_HDMI_Port2_CheckLog.bat echo set DP_HDMI_Port2=PASS
+>>.\log\Test_DP_HDMI_Port2_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg DP_HDMI_Port_2
+call sdtCheckLog.exe Model_MLBTEST.cfg DP_HDMI_Port2
 cd..
 GOTO END
 

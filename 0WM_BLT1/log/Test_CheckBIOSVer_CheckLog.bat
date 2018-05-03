@@ -1,0 +1,1 @@
+set CheckBIOSVer=PASS

@@ -1,4 +1,4 @@
-@echo off
+@echo on
 
 @rem Change History:
 @rem =========================================
@@ -23,13 +23,13 @@
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\ReadI219LM-Mac.cmd
-IF /I #%ReadI219-Mac%#==#00:00:00:00:00:00# goto fail
-IF /I #%ReadI219-Mac%#==#FF:FF:FF:FF:FF:FF# goto fail
+IF /I #%ReadI219LM-Mac%#==#00:00:00:00:00:00# goto fail
+IF /I #%ReadI219LM-Mac%#==#FF:FF:FF:FF:FF:FF# goto fail
 goto pass
 
 :PASS
 color 2f
->.\log\Test_CheckMAC_I219_CheckLog.bat echo set CheckMAC_I219=%ReadI219-Mac%
+>.\log\Test_CheckMAC_I219_CheckLog.bat echo set CheckMAC_I219=%ReadI219LM-Mac%
 >>.\log\Test_CheckMAC_I219_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckMAC_I219

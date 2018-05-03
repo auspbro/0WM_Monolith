@@ -1,0 +1,1 @@
+set CheckCPLDVer=PASS

@@ -1,0 +1,2 @@
+set CheckMAC_FPGA=ABCDEFGHIJKL
+set TestResult=PASS

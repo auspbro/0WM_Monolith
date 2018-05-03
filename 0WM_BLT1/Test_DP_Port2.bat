@@ -43,10 +43,10 @@ goto Pass
 
 :PASS
 color 2f
->.\log\Test_DP_Port_2_CheckLog.bat echo set DP_Port_2=%BT_MAC_ADDRESS%
->>.\log\Test_DP_Port_2_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_DP_Port2_CheckLog.bat echo set DP_Port2=PASS
+>>.\log\Test_DP_Port2_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg DP_Port_2
+call sdtCheckLog.exe Model_MLBTEST.cfg DP_Port2
 cd..
 GOTO END
 

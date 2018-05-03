@@ -19,6 +19,12 @@
 @rem /ml_utils#./mac_read.sh fpga 
 @rem ===================
 
+:DebugMode
+CALL .\Process\DVSN.BAT
+if not %tmSN%==A1234567890 goto Get_MAC_From_SF
+set ReadFPGA-Mac=ABCDEFGHIJKL
+GOTO PASS
+
 :Get_MAC_From_SF
 if exist .\log\MAC_Response.bat del .\log\MAC_Response.bat
 call sdtGetDataFromSF.exe Mac %tmSN% > .\log\MAC_Response.bat

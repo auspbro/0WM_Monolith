@@ -25,14 +25,13 @@
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\ChkUSBTypeCVersion1.cmd
 CALL .\log\%tmSN%\result\ChkUSBTypeCVersion2.cmd
-IF /I #%ChkUSBTypeCVersion1%#==#FAIL# goto fail
-IF /I #%ChkUSBTypeCVersion2%#==#FAIL# goto fail
-goto pass
+IF /I #%ChkUSBTypeCVersion1%#==#PASS# IF /I #%ChkUSBTypeCVersion2%#==#PASS# goto PASS
+goto FAIL
 
 :PASS
 color 2f
->.\log\Test_CheckUSBTypeCFWVer_CheckLog.bat echo set CheckUSBTypeC1FWVer=PASS
->>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_CheckUSBTypeCFWVer_CheckLog.bat echo set CheckUSBTypeCFWVer=PASS
+>>.\log\Test_CheckUSBTypeCFWVer_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckUSBTypeCFWVer
 cd..

@@ -25,6 +25,13 @@ REM if exist .\log\MAC_Response.bat del .\log\MAC_Response.bat
 REM call sdtGetDataFromSF.exe Mac %tmSN% > .\log\MAC_Response.bat
 REM call .\log\MAC_Response.bat
 
+:DebugMode
+CALL .\Process\DVSN.BAT
+if not %tmSN%==A1234567890 goto START
+set WriteMAC_WGI210=ABCDEFGHIJKL
+GOTO PASS
+
+
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\WriteMacWGI210.cmd

@@ -23,7 +23,7 @@
 :START
 call .\Process\DVSN.BAT
 call .\log\%tmSN%\result\ChkUSB_TypeA_1.cmd
-IF /I #%ChkUSB_TypeA_1%#==#5000M# GOTO PASS
+IF /I #%ChkUSB_TypeA_1%#==#480M# GOTO PASS
 goto FAIL
 
 

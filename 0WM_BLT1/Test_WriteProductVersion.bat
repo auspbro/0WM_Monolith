@@ -28,10 +28,10 @@ GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_Test_WriteProductVersion_CheckLog.bat echo set Test_WriteProductVersion=%WritePVersion%
->>.\log\Test_Test_WriteProductVersion_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_WriteProductVersion_CheckLog.bat echo set WriteProductVersion=%WritePVersion%
+>>.\log\Test_WriteProductVersion_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg Test_WriteProductVersion
+call sdtCheckLog.exe Model_MLBTEST.cfg WriteProductVersion
 cd..
 GOTO END
 

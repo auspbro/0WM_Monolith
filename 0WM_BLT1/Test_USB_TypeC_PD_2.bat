@@ -28,9 +28,9 @@
 CALL .\Process\DVSN.BAT
 
 :USB_TypeC_PD_2_Chk
-msg.exe "è¯·æ’å…¥æ²»å…·åˆ°å¾…æµ‹æœºå™¨DP Port 2æŽ¥å£ï¼" 3 700 200 12
+msg.exe "Çë²åÈëÖÎ¾ßµ½´ý²â»úÆ÷DP Port 2½Ó¿Ú£¡" 3 700 200 12
 timeout 3
-msg.exe "æ£€æŸ¥DP Port2æ˜¾ç¤ºå™¨æ˜¯å¦æ˜¾ç¤ºæ­£å¸¸ï¼" 3 700 200 12
+msg.exe "¼ì²éDP Port2ÏÔÊ¾Æ÷ÊÇ·ñÏÔÊ¾Õý³££¡" 3 700 200 12
 echo **************************************
 echo ****  Y(1).USB_TypeC_PD_2 Pass    ****
 echo ****  N(0).USB_TypeC_PD_2 Fail    ****
@@ -45,7 +45,7 @@ goto Pass
 
 :PASS
 color 2f
->.\log\Test_USB_TypeC_PD_2_CheckLog.bat echo set USB_TypeC_PD_2=%BT_MAC_ADDRESS%
+>.\log\Test_USB_TypeC_PD_2_CheckLog.bat echo set USB_TypeC_PD_2=PASS
 >>.\log\Test_USB_TypeC_PD_2_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg USB_TypeC_PD_2
