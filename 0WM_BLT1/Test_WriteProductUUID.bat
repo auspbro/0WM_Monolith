@@ -21,13 +21,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_Product_UUID.cmd
-IF /I #%Write_Product_UUID%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\WriteUUID.cmd
+IF /I #%WriteUUID%#==#159# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_WriteProductUUID_CheckLog.bat echo set WriteProductUUID=PASS
+>.\log\Test_WriteProductUUID_CheckLog.bat echo set WriteProductUUID=%WriteUUID%
 >>.\log\Test_WriteProductUUID_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg WriteProductUUID

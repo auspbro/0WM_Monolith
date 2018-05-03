@@ -22,13 +22,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\OROM_Version.cmd
-IF /I #%OROM_Version%#==#1.23# goto fail
-goto pass
+CALL .\log\%tmSN%\result\ChkOROMVersion.cmd
+IF /I #%ChkOROMVersion%#==#PASS# goto pass
+goto fail
 
 :PASS
 color 2f
->.\log\Test_CheckOROMVer_CheckLog.bat echo set CheckOROMVer=%BT_MAC_ADDRESS%
+>.\log\Test_CheckOROMVer_CheckLog.bat echo set CheckOROMVer=PASS
 >>.\log\Test_CheckOROMVer_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckOROMVer

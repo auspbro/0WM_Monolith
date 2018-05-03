@@ -1,34 +1,37 @@
-:Test_start
-c:
-cd c:\TestProgram\0WM\0WM_BLT1
-RS232.exe poweroff 1000 A3
-timeout 1
-RS232.exe poweron 1000 A0
-timeout 2
+@echo off
 
-:Start
-set testcycle=0
+@rem Change History:
+@rem =========================================
+@rem Rev.: 3A   Ryan Xue    05/03/2018
+@rem 1. First release for 0WM DVT build. 
+@rem =========================================
+@rem Rev.: 3B   Ryan Xue    04/28/2018
+@rem 1. 
+@rem =========================================
 
-:VoltageTest
-if exist c:\TestProgram\0WM\0WM_BLT1\log\Voltage.bat del c:\TestProgram\0WM\0WM_BLT1\log\Voltage.bat
-RS232.exe Voltage 1000 A1 >c:\TestProgram\0WM\0WM_BLT1\log\Voltage.bat
-ping 1.1.1.1 -n 1 -w 500 >nul
-if not exist c:\TestProgram\0WM\0WM_BLT1\log\Voltage.bat goto end
-call c:\TestProgram\0WM\0WM_BLT1\log\Voltage.bat
-if %TP348_3V3%==0.00 goto again
-if #%TP348_3V3%#==## goto again
-if #%TP348_3V3%#==# # goto again
-if #%TP348_3V3%#==#  # goto again
-if #%TP348_3V3%#==#   # goto again
-if #%TP348_3V3%#==#    # goto again
+@rem Testing Procedure:
+@rem ==================
+@rem call python script start test
+@rem ==================
+
+@rem Linux Command(tool):
+@rem ===================
+@rem No
+@rem ===================
+
+:Get_MAC_From_SF
+if exist .\log\MAC_Response.bat del .\log\MAC_Response.bat
+call sdtGetDataFromSF.exe Mac %tmSN% > .\log\MAC_Response.bat
+call .\log\MAC_Response.bat
+
+:StartPythonGUI
+CALL .\Process\DVSN.BAT
+cd .\BU1_0WM
+python gui_runner_MB.py %tmSN% %MAC_WGI210% %MAC_FPGA%
 goto pass
 
-:again
-set /a testcycle=%testcycle%+1
-if "%testcycle%"=="5" goto fail
-goto VoltageTest
-
 :pass
+cd ..
 cd c:\TestProgram\0WM\0WM_BLT1\Process
 >..\log\Test_start_log.bat echo set Test_start=PASS
 >>..\log\Test_start_log.bat echo set TestResult=PASS
@@ -36,12 +39,16 @@ copy ..\log\Test_start_log.bat ..\logtmp /y
 call sdtCheckLog.exe Model_MLBTEST.cfg Test_start
 goto end
 
-:fail
-c:
-cd c:\TestProgram\0WM\0WM_BLT1
-RS232.exe poweroff 1000 A3
-ECHO .****** TEST Voltage FAIL! *******
-MSG "TEST Voltage FAIL!" 10 500 200 15
-GOTO END
+:FAIL
+color 4f
+ECHO ************************************************************
+ECHO *..........................................................*
+ECHO *...................... Test FAIL! ........................*
+ECHO *..........................................................*
+ECHO ************************************************************
+MSG "Test FAIL!" 6 650 200 15
+pause
+color 07
+goto end
 
 :end

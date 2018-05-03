@@ -23,13 +23,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Check_Product_Name.cmd
-IF /I #%Check_Product_Name%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\ReadPN.cmd
+IF /I #%ReadPN%#==#MONOLITH# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_CheckProductName_CheckLog.bat echo set CheckProductName=PASS
+>.\log\Test_CheckProductName_CheckLog.bat echo set CheckProductName=%ReadPN%
 >>.\log\Test_CheckProductName_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckProductName

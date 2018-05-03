@@ -22,9 +22,9 @@
 
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\USB_TypeA_1.cmd
-IF /I #%USB_TypeA_1%#==#FAIL# GOTO FAIL
-goto pass
+call .\log\%tmSN%\result\ChkUSB_TypeA_1.cmd
+IF /I #%ChkUSB_TypeA_1%#==#5000M# GOTO PASS
+goto FAIL
 
 
 :PASS

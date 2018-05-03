@@ -22,13 +22,13 @@
 
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\i2cdetect.cmd
-IF /I #%EEPROM%#==#FAIL# GOTO FAIL
+call .\log\%tmSN%\result\ChkEEPROM.cmd
+IF /I not #%ChkEEPROM%#==#51# GOTO FAIL
 goto pass
 
 :PASS
 color 2f
->.\log\Test_I2C_EEPROM_CheckLog.bat echo set I2C_EEPROM=PASS
+>.\log\Test_I2C_EEPROM_CheckLog.bat echo set I2C_EEPROM=%ChkEEPROM%
 >>.\log\Test_I2C_EEPROM_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg I2C_EEPROM

@@ -24,16 +24,16 @@
 
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\i2cdetect.cmd
-IF /I #%MB_TMP108_1%#==#FAIL# GOTO FAIL
-IF /I #%MB_TMP108_2%#==#FAIL# GOTO FAIL
-IF /I #%MB_TMP108_3%#==#FAIL# GOTO FAIL
-IF /I #%MB_TMP108_4%#==#FAIL# GOTO FAIL
+call .\log\%tmSN%\result\ChkMBTMP108.cmd
+IF /I not #%ChkMBTMP108_1%#==#48# GOTO FAIL
+IF /I not #%ChkMBTMP108_2%#==#49# GOTO FAIL
+IF /I not #%ChkMBTMP108_3%#==#4a# GOTO FAIL
+IF /I not #%ChkMBTMP108_4%#==#4b# GOTO FAIL
 goto pass
 
 :PASS
 color 2f
->.\log\Test_I2C_TempSensor_TMP108_CheckLog.bat echo set I2C_TempSensor_TMP108=PASS
+>.\log\Test_I2C_TempSensor_TMP108_CheckLog.bat echo set I2C_TempSensor_TMP108=%ChkMBTMP108_1%_%ChkMBTMP108_2%_%ChkMBTMP108_3%_%ChkMBTMP108_4%
 >>.\log\Test_I2C_TempSensor_TMP108_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg I2C_TempSensor_TMP108

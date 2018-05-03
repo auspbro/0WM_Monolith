@@ -24,17 +24,17 @@
 
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\i2cdetect.cmd
-IF /I #%INA230_1%#==#FAIL# GOTO FAIL
-IF /I #%INA230_2%#==#FAIL# GOTO FAIL
-IF /I #%INA230_3%#==#FAIL# GOTO FAIL
-IF /I #%INA230_4%#==#FAIL# GOTO FAIL
-IF /I #%INA230_5%#==#FAIL# GOTO FAIL
+call .\log\%tmSN%\result\ChkINA230.cmd
+IF not #%ChkINA230_1%#==#40# GOTO FAIL
+IF not #%ChkINA230_2%#==#41# GOTO FAIL
+IF not #%ChkINA230_3%#==#42# GOTO FAIL
+IF not #%ChkINA230_4%#==#43# GOTO FAIL
+IF not #%ChkINA230_5%#==#44# GOTO FAIL
 goto pass
 
 :PASS
 color 2f
->.\log\Test_I2C_PowerMonitor_INA230_CheckLog.bat echo set I2C_PowerMonitor_INA230=PASS
+>.\log\Test_I2C_PowerMonitor_INA230_CheckLog.bat echo set I2C_PowerMonitor_INA230=%ChkINA230_1%_%ChkINA230_2%_%ChkINA230_3%_%ChkINA230_4%_%ChkINA230_5%
 >>.\log\Test_I2C_PowerMonitor_INA230_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg I2C_PowerMonitor_INA230

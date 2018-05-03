@@ -22,14 +22,14 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_BT_MAC.cmd
-IF /I #%BT_MAC_ADDRESS%#==#00:00:00:00:00:00# goto fail
-IF /I #%BT_MAC_ADDRESS%#==#FF:FF:FF:FF:FF:FF# goto fail
+CALL .\log\%tmSN%\result\ReadBT-Mac.cmd
+IF /I #%ReadBT-Mac%#==#00:00:00:00:00:00# goto fail
+IF /I #%ReadBT-Mac%#==#FF:FF:FF:FF:FF:FF# goto fail
 goto pass
 
 :PASS
 color 2f
->.\log\Test_CheckMAC_BT_CheckLog.bat echo set CheckMAC_BT=%BT_MAC_ADDRESS%
+>.\log\Test_CheckMAC_BT_CheckLog.bat echo set CheckMAC_BT=%ReadBT-Mac%
 >>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckMAC_BT

@@ -21,13 +21,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_WLAN_MAC.cmd
-IF /I #%Write_WLAN_MAC%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\WriteMacWIFI.cmd
+IF /I #%WriteMacWIFI%#==#[['63']]# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_WriteMAC_WIFI_CheckLog.bat echo set WriteMAC_WIFI=%Write_WLAN_MAC%
+>.\log\Test_WriteMAC_WIFI_CheckLog.bat echo set WriteMAC_WIFI=%WriteMacWIFI%
 >>.\log\Test_WriteMAC_WIFI_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg WriteMAC_WIFI

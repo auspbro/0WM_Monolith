@@ -22,13 +22,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\cpld_Version.cmd
-IF /I #%cpld_Version%#==#1.23# goto fail
-goto pass
+CALL .\log\%tmSN%\result\ChkCPLDVersion.cmd
+IF /I #%ChkCPLDVersion%#==#PASS# goto pass
+goto fail
 
 :PASS
 color 2f
->.\log\Test_CheckCPLDVer_CheckLog.bat echo set CheckCPLDVer=%BT_MAC_ADDRESS%
+>.\log\Test_CheckCPLDVer_CheckLog.bat echo set CheckCPLDVer=PASS
 >>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckCPLDVer

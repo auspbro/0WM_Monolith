@@ -23,13 +23,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Check_Product_Version.cmd
-IF /I #%Check_Product_Version%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\ReadPVersion.cmd
+IF /I #%ReadPVersion%#==#0.2X# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_CheckProductVersion_CheckLog.bat echo set CheckProductVersion=PASS
+>.\log\Test_CheckProductVersion_CheckLog.bat echo set CheckProductVersion=%ReadPVersion%
 >>.\log\Test_CheckProductVersion_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckProductVersion

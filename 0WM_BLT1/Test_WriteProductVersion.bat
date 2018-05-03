@@ -22,13 +22,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_Product_Version.cmd
-IF /I #%Write_Product_Version%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\WritePVersion.cmd
+IF /I #%WritePVersion%#==#79# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_Test_WriteProductVersion_CheckLog.bat echo set Test_WriteProductVersion=PASS
+>.\log\Test_Test_WriteProductVersion_CheckLog.bat echo set Test_WriteProductVersion=%WritePVersion%
 >>.\log\Test_Test_WriteProductVersion_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Test_WriteProductVersion

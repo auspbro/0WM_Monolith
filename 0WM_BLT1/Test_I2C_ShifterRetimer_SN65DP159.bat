@@ -22,14 +22,14 @@
 
 :START
 call .\Process\DVSN.BAT
-call .\log\%tmSN%\result\i2cdetect.cmd
-IF /I #%SN65DP159_1%#==#FAIL# GOTO FAIL
-IF /I #%SN65DP159_2%#==#FAIL# GOTO FAIL
+call .\log\%tmSN%\result\ChkSN65DP159.cmd
+IF /I not #%ChkSN65DP159_1%#==#2c# GOTO FAIL
+IF /I not #%ChkSN65DP159_2%#==#2e# GOTO FAIL
 goto pass
 
 :PASS
 color 2f
->.\log\Test_I2C_ShifterRetimer_SN65DP159_CheckLog.bat echo set I2C_ShifterRetimer_SN65DP159=PASS
+>.\log\Test_I2C_ShifterRetimer_SN65DP159_CheckLog.bat echo set I2C_ShifterRetimer_SN65DP159=%ChkSN65DP159_1%_%ChkSN65DP159_2%
 >>.\log\Test_I2C_ShifterRetimer_SN65DP159_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg I2C_ShifterRetimer_SN65DP159

@@ -21,13 +21,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_I219_MAC.cmd
-IF /I #%Write_I219_MAC%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\WriteMacI219.cmd
+IF /I #%WriteMacI219%#==#[['47']]# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_WriteMAC_I219_CheckLog.bat echo set WriteMAC_I219=PASS
+>.\log\Test_WriteMAC_I219_CheckLog.bat echo set WriteMAC_I219=%WriteMacI219%
 >>.\log\Test_WriteMAC_I219_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg WriteMAC_I219

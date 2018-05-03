@@ -23,14 +23,14 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_WIFI_MAC.cmd
-IF /I #%WIFI_MAC_ADDRESS%#==#00:00:00:00:00:00# goto fail
-IF /I #%WIFI_MAC_ADDRESS%#==#FF:FF:FF:FF:FF:FF# goto fail
+CALL .\log\%tmSN%\result\ReadWIFI-Mac.cmd
+IF /I #%ReadWIFI-Mac%#==#00:00:00:00:00:00# goto fail
+IF /I #%ReadWIFI-Mac%#==#FF:FF:FF:FF:FF:FF# goto fail
 goto pass
 
 :PASS
 color 2f
->.\log\Test_CheckMAC_WIFI_CheckLog.bat echo set CheckMAC_WIFI=%WIFI_MAC_ADDRESS%
+>.\log\Test_CheckMAC_WIFI_CheckLog.bat echo set CheckMAC_WIFI=%ReadWIFI-Mac%
 >>.\log\Test_CheckMAC_WIFI_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckMAC_WIFI

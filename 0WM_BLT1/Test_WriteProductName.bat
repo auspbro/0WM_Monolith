@@ -22,13 +22,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\WRITE_Product_Name.cmd
-IF /I #%WRITE_Product_Name%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\WritePN.cmd
+IF /I #%WritePN%#==#39# GOTO PASS
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_WriteProductName_CheckLog.bat echo set WriteProductName=PASS
+>.\log\Test_WriteProductName_CheckLog.bat echo set WriteProductName=%WritePN%
 >>.\log\Test_WriteProductName_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg WriteProductName

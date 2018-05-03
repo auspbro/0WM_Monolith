@@ -26,13 +26,13 @@ call .\log\MAC_Response.bat
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_WGI210_MAC.cmd
-IF /I #%I210_MAC_ADDRESS%#==#%I210_MAC_FROM_SF%# goto pass
+CALL .\log\%tmSN%\result\Readi210-Mac.cmd
+IF /I #%Readi210-Mac%#==#%I210_MAC_FROM_SF%# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_CheckMAC_WGI210_CheckLog.bat echo set CheckMAC_WGI210=%WGI210_MAC_ADDRESS%
+>.\log\Test_CheckMAC_WGI210_CheckLog.bat echo set CheckMAC_WGI210=%Readi210-Mac%
 >>.\log\Test_CheckMAC_WGI210_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckMAC_WGI210

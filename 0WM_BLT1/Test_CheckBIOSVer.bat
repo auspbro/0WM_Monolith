@@ -22,13 +22,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\BIOS_Version.cmd
-IF /I #%BIOS_Version%#==#1.23# goto fail
-goto pass
+CALL .\log\%tmSN%\result\ChkBIOSVersion.cmd
+IF /I #%ChkBIOSVersion%#==#PASS# goto pass
+goto fail
 
 :PASS
 color 2f
->.\log\Test_CheckBIOSVer_CheckLog.bat echo set CheckBIOSVer=%BT_MAC_ADDRESS%
+>.\log\Test_CheckBIOSVer_CheckLog.bat echo set CheckBIOSVer=PASS
 >>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckBIOSVer

@@ -26,13 +26,13 @@ call .\log\MAC_Response.bat
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_FPGA_MAC.cmd
-IF /I #%FPGA_MAC_ADDRESS%#==#%FPGA_MAC_FROM_SF%# goto pass
+CALL .\log\%tmSN%\result\ReadFPGA-Mac.cmd
+IF /I #%ReadFPGA-Mac%#==#%FPGA_MAC_FROM_SF%# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_CheckMAC_FPGA_CheckLog.bat echo set CheckMAC_FPGA=%FPGA_MAC_ADDRESS%
+>.\log\Test_CheckMAC_FPGA_CheckLog.bat echo set CheckMAC_FPGA=%ReadFPGA-Mac%
 >>.\log\Test_CheckMAC_FPGA_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckMAC_FPGA

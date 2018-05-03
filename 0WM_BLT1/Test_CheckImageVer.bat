@@ -27,7 +27,7 @@ goto pass
 
 :PASS
 color 2f
->.\log\Test_CheckImageVer_CheckLog.bat echo set CheckImageVer=%BT_MAC_ADDRESS%
+>.\log\Test_CheckImageVer_CheckLog.bat echo set CheckImageVer=%Image_Version%
 >>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckImageVer

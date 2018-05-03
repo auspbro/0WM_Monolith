@@ -20,16 +20,15 @@
 @rem /ml_utils#./mac_write.sh i210 00:a0:c9:00:00:00
 @rem ===================
 
-:Get_MAC_From_SF
-if exist .\log\MAC_Response.bat del .\log\MAC_Response.bat
-call sdtGetDataFromSF.exe Mac %tmSN% > .\log\MAC_Response.bat
-call .\log\MAC_Response.bat
+REM :Get_MAC_From_SF
+REM if exist .\log\MAC_Response.bat del .\log\MAC_Response.bat
+REM call sdtGetDataFromSF.exe Mac %tmSN% > .\log\MAC_Response.bat
+REM call .\log\MAC_Response.bat
 
 :START
 CALL .\Process\DVSN.BAT
-python I210_MAC %I210_MAC%
-CALL .\log\%tmSN%\result\Write_WGI210_MAC.cmd
-IF /I #%Write_WGI210_MAC%#==#PASS# GOTO PASS
+CALL .\log\%tmSN%\result\WriteMacWGI210.cmd
+IF /I #%WriteMacWGI210%#==#PASS# GOTO PASS
 GOTO FAIL
 
 :PASS

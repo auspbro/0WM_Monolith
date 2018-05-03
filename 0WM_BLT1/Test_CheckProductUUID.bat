@@ -22,14 +22,14 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Check_Product_UUD.cmd
-IF /I #%Check_Product_UUD%#==#FAIL# GOTO FAIL
-IF /I #%Product_UUD%#==#%%# GOTO FAIL
+CALL .\log\%tmSN%\result\ReadUUID.cmd
+IF /I #%ReadUUID%#==#FAIL# GOTO FAIL
+IF /I #%ReadUUID%#==## GOTO FAIL
 GOTO FAIL
 
 :PASS
 color 2f
->.\log\Test_Test_CheckProductUUID_CheckLog.bat echo set Test_CheckProductUUID=PASS
+>.\log\Test_Test_CheckProductUUID_CheckLog.bat echo set Test_CheckProductUUID=%ReadUUID%
 >>.\log\Test_Test_CheckProductUUID_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Test_CheckProductUUID
