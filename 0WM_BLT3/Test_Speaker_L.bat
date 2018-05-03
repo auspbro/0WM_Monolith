@@ -28,13 +28,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_FPGA_MAC.cmd
-IF /I #%FPGA_MAC_ADDRESS%#==#%FPGA_MAC_FROM_SF%# goto pass
+CALL .\log\%tmSN%\result\Speaker.cmd
+IF /I #%Speaker%#==#PASS# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_Speaker_L_CheckLog.bat echo set Speaker_L=%FPGA_MAC_ADDRESS%
+>.\log\Test_Speaker_L_CheckLog.bat echo set Speaker_L=PASS
 >>.\log\Test_Speaker_L_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Speaker_L

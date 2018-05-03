@@ -29,13 +29,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_FPGA_MAC.cmd
-IF /I #%FPGA_MAC_ADDRESS%#==#%FPGA_MAC_FROM_SF%# goto pass
+CALL .\log\%tmSN%\result\Audio_Out_L_AIN_3.cmd
+IF /I #%Audio_Out_L_AIN_3%#==#PASS# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_Audio_Out_L_AIN_3_CheckLog.bat echo set Audio_Out_L_AIN_3=%FPGA_MAC_ADDRESS%
+>.\log\Test_Audio_Out_L_AIN_3_CheckLog.bat echo set Audio_Out_L_AIN_3=PASS
 >>.\log\Test_Audio_Out_L_AIN_3_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Audio_Out_L_AIN_3
