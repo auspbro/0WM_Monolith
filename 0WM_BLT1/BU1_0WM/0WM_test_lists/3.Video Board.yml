@@ -1,0 +1,67 @@
+#------------------------------------------------------------
+-
+    Name: TMP108
+    Instructions: >
+       Temperature Sensor
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'modprobe -r tmp108'
+        - Cmd: "i2cdetect -y 8 | grep 40:"
+        -
+            Cmd: "i2cdetect -y 8 | grep 40:"
+            Regex: '^(40:) (\D+) (\w+) (\w+)'
+            Results:
+            -
+                name: MB_TMP108_1
+                type: str
+                item: 0
+                index: 2
+            -
+                name: MB_TMP108_2
+                type: str
+                item: 0
+                index: 3
+-
+    Name: TMP108-resume
+    Instructions: >
+       Temperature Sensor resume
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Cmd: 'modprobe tmp108'
+#------------------------------------------------------------
+-
+    Name: Si5340
+    Instructions: >
+       Clock Generator(Si5340)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "i2cdetect -y 7 | grep 70:"
+            Regex: '^(70:) (\W+)(\w+)(\W+)(\d+)'
+            Results:
+            -
+                name: Si5340
+                type: str
+                item: 0
+                index: 4
+#------------------------------------------------------------
+-
+    Name: FPGA
+    Instructions: >
+       FPGA test
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "lspci"
+            Regex: '(\w+)'
+            Results:
+            -
+                name: FPGA
+                type: str
+                item: 0
+                index: 0
