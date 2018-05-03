@@ -11,26 +11,27 @@
 
 @rem Testing Procedure:
 @rem ==================
-@rem MTP tool(Python) sends "lsusb" command in linux shell prompt to check whether XMOS is present or not 
+@rem MTP tool executes the script in Linux shell promptand then gets the test result.
 @rem ==================
 
 @rem Linux Command(tool):
 @rem ===================
-@rem lsusb
+@rem ml_check_fw.sh DVT xmos
+@rem (DVT xmos version is on ml_check_fw.sh)
 @rem ===================
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Check_XMOS.cmd
-IF /I #%XMOS%#==#PASS# goto pass
+CALL .\log\%tmSN%\result\ChkXMOSVersion.cmd
+IF /I #%ChkXMOSVersion%#==#PASS# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_Check_XMOS_CheckLog.bat echo set Check_XMOS=PASS
->>.\log\Test_Check_XMOS_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_Check_XMOS_Ver_CheckLog.bat echo set Check_XMOS_Ver=PASS
+>>.\log\Test_Check_XMOS_Ver_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg Check_XMOS
+call sdtCheckLog.exe Model_MLBTEST.cfg Check_XMOS_Ver
 cd..
 GOTO END
 
@@ -38,10 +39,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Check Check_XMOS FAIL! .................*
+ECHO *............ Check Check_XMOS Version FAIL! ..............*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Check Check_XMOS FAIL!" 6 650 200 15
+MSG "Check Check_XMOS Version FAIL!" 6 650 200 15
 pause
 color 07
 goto end
