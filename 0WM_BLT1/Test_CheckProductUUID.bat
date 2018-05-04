@@ -5,8 +5,8 @@
 @rem Rev.: 3A   Ryan Xue    04/27/2018
 @rem 1. First release for 0WM DVT build. 
 @rem =========================================
-@rem Rev.: 3B   Ryan Xue    04/28/2018
-@rem 1. Add testing procedure & Linux command for easy maintain or debug later. 
+@rem Rev.: 3B   Ryan Xue    05/04/2018
+@rem 1. Add script to check if UUID is 32 bit lenth.
 @rem =========================================
 
 @rem Testing Procedure:
@@ -21,10 +21,14 @@
 @rem ===================
 
 :START
+setlocal EnableDelayedExpansion 
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\ReadUUID.cmd
-IF /I #%ReadUUID%#==#FAIL# GOTO FAIL
-IF /I #%ReadUUID%#==## GOTO FAIL
+for /l %%i in (0,1,50) do if "!ReadUUID:~%%i,1!"=="" set strlen=%%i&& goto ChkUUIDStrlen
+
+
+:ChkUUIDStrlen
+IF /I #%strlen%#==#32# GOTO PASS
 GOTO FAIL
 
 :PASS
@@ -40,10 +44,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *................. Write BT MAC FAIL! ...................*
+ECHO *................. Check UUID FAIL! .......................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Write BT MAC FAIL!" 6 650 200 15
+MSG "Check UUID FAIL!" 6 650 200 15
 pause
 color 07
 goto end
