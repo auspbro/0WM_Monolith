@@ -1,0 +1,22 @@
+#------------------------------------------------------------
+-
+    Name: BootToKernel
+    Instructions: >
+        wait device boot
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReady
+            Args: 
+                Display: True
+                Timeout: 120
+            Regex: '(\w+)'
+            Results:
+            -
+                name: BootToKernel
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+
