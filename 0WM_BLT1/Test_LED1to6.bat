@@ -26,6 +26,14 @@
 
 :START
 CALL .\Process\DVSN.BAT
+CALL .\log\%tmSN%\result\LED_red.cmd
+CALL .\log\%tmSN%\result\LED_green.cmd
+CALL .\log\%tmSN%\result\LED_both.cmd
+IF /I #%LED_red%#==#FAIL# goto fail
+IF /I #%LED_green%#==#FAIL# goto fail
+IF /I #%LED_both%#==#FAIL# goto fail
+goto pass
+
 
 :LED1to6_Chk
 timeout 3
@@ -44,7 +52,7 @@ goto Pass
 
 :PASS
 color 2f
->.\log\Test_LED1to6_CheckLog.bat echo set LED1to6=%BT_MAC_ADDRESS%
+>.\log\Test_LED1to6_CheckLog.bat echo set LED1to6=PASS
 >>.\log\Test_LED1to6_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg LED1to6
@@ -55,7 +63,7 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *.................... Check LED1to6 FAIL! .....................*
+ECHO *.................... Check LED1to6 FAIL! .................*
 ECHO *..........................................................*
 ECHO ************************************************************
 MSG "Check LED1to6 FAIL!" 6 650 200 15

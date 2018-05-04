@@ -17,7 +17,7 @@
 @rem Linux Command(tool):
 @rem ===================
 @rem /ml_test#./test_audio_spk.sh
-@rem If "PASS, spk channel r working, power 15 W" is present on outputs, the test result is pass
+@rem If "PASS, spk channel l working, power 15 W" is present on outputs, the test result is pass
 @rem ===================
 
 @rem Fixture Request:
@@ -34,10 +34,10 @@ goto fail
 
 :PASS
 color 2f
->.\log\Test_Speaker_R_CheckLog.bat echo set Speaker_R=PASS
->>.\log\Test_Speaker_R_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_Speaker_CheckLog.bat echo set Speaker=PASS
+>>.\log\Test_Speaker_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg Speaker_R
+call sdtCheckLog.exe Model_MLBTEST.cfg Speaker
 cd..
 GOTO END
 
@@ -45,10 +45,10 @@ GOTO END
 color 4f
 ECHO ************************************************************
 ECHO *..........................................................*
-ECHO *............. Check Speaker_R FAIL! ..............*
+ECHO *................... Check Speaker FAIL! ..................*
 ECHO *..........................................................*
 ECHO ************************************************************
-MSG "Check Speaker_R FAIL!" 6 650 200 15
+MSG "Check Speaker FAIL!" 6 650 200 15
 pause
 color 07
 goto end

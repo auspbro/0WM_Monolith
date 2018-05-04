@@ -22,14 +22,14 @@
 :StartPythonGUI
 CALL .\Process\DVSN.BAT
 cd .\BU1_0WM
-python gui_runner_AB.py %tmSN%
+python gui_runner_audio.py %tmSN%
 cd ..
 goto START
 
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\ChkXMOS.cmd
-IF /I #%ChkXMOS%#==#XMOS Ltd# goto pass
+IF /I #%ChkXMOS%#==#PASS# goto pass
 goto fail
 
 :PASS

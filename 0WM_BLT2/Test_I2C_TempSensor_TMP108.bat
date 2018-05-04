@@ -23,7 +23,7 @@
 :StartPythonGUI
 CALL .\Process\DVSN.BAT
 cd .\BU1_0WM
-python gui_runner_VB.py %tmSN%
+python gui_runner_video.py %tmSN%
 cd ..
 goto START
 

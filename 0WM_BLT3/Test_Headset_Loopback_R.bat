@@ -28,13 +28,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Write_FPGA_MAC.cmd
-IF /I #%FPGA_MAC_ADDRESS%#==#%FPGA_MAC_FROM_SF%# goto pass
+CALL .\log\%tmSN%\result\Headset_Loopback_R.cmd
+IF /I #%Headset_Loopback_R%#==#PASS# goto pass
 goto fail
 
 :PASS
 color 2f
->.\log\Test_Headset_Loopback_R_CheckLog.bat echo set Headset_Loopback_R=%FPGA_MAC_ADDRESS%
+>.\log\Test_Headset_Loopback_R_CheckLog.bat echo set Headset_Loopback_R=PASS
 >>.\log\Test_Headset_Loopback_R_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Headset_Loopback_R

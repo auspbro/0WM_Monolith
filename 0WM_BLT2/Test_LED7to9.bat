@@ -5,8 +5,9 @@
 @rem Rev.: 3A   Ryan Xue    04/27/2018
 @rem 1. First release for 0WM DVT build. 
 @rem =========================================
-@rem Rev.: 3B   Ryan Xue    04/28/2018
-@rem 1. For DVT build test fixture not ready, modify script for operator Manual Visual Inspection.
+@rem Rev.: 3B   Ryan Xue    05/04/2018
+@rem 1. Skip this test item for DVT build.
+@rem 2. FB customer program Not ready.
 @rem =========================================
 
 @rem Testing Procedure:
@@ -23,6 +24,9 @@
 @rem ===================
 @rem Fixture(Photoresistor)
 @rem ===================
+
+:skip_for_dvt
+goto pass
 
 :START
 CALL .\Process\DVSN.BAT
@@ -44,7 +48,7 @@ goto Pass
 
 :PASS
 color 2f
->.\log\Test_LED7to9_CheckLog.bat echo set LED7to9=%BT_MAC_ADDRESS%
+>.\log\Test_LED7to9_CheckLog.bat echo set LED7to9=PASS
 >>.\log\Test_LED7to9_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg LED7to9

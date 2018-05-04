@@ -26,13 +26,13 @@
 
 :START
 CALL .\Process\DVSN.BAT
-CALL .\log\%tmSN%\result\Gizmo_Port.cmd
-IF /I #%Gizmo_Port%#==#FAIL# goto fail
+CALL .\log\%tmSN%\result\ChkGizmoPort.cmd
+IF /I #%ChkGizmoPort%#==#FAIL# goto fail
 goto pass
 
 :PASS
 color 2f
->.\log\Test_Gizmo_Port_CheckLog.bat echo set Gizmo_Port=%BT_MAC_ADDRESS%
+>.\log\Test_Gizmo_Port_CheckLog.bat echo set Gizmo_Port=PASS
 >>.\log\Test_Gizmo_Port_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg Gizmo_Port

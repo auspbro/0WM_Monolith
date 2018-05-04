@@ -1,12 +1,13 @@
-@echo off
+@echo oN
 
 @rem Change History:
 @rem =========================================
 @rem Rev.: 3A   Ryan Xue    04/27/2018
 @rem 1. First release for 0WM DVT build. 
 @rem =========================================
-@rem Rev.: 3B   Ryan Xue    04/28/2018
-@rem 1. Add testing procedure & Linux command for easy maintain or debug later. 
+@rem Rev.: 3B   Ryan Xue    05/04/2018
+@rem 1. Skip this test item for DVT build.
+@rem 2. FB customer program Not ready.
 @rem =========================================
 
 @rem Testing Procedure:
@@ -19,16 +20,20 @@
 @rem ?
 @rem ===================
 
+:skip_for_dvt
+set Image_Version=SKIP
+goto pass
+
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\Image_Version.cmd
-IF /I #%Image_Version%#==#1.23# goto fail
+IF /I #%Image_Version%#==#XXX# goto fail
 goto pass
 
 :PASS
 color 2f
 >.\log\Test_CheckImageVer_CheckLog.bat echo set CheckImageVer=%Image_Version%
->>.\log\Test_CheckMAC_BT_CheckLog.bat echo set TestResult=PASS
+>>.\log\Test_CheckImageVer_CheckLog.bat echo set TestResult=PASS
 cd .\Process
 call sdtCheckLog.exe Model_MLBTEST.cfg CheckImageVer
 cd..
