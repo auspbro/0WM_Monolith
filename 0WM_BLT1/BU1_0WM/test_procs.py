@@ -259,6 +259,14 @@ def ShowPassFailGui(test, args):
 
     result = api.DisplayTest(test_item)
 
+def ShowPassFailLED(test, args):
+    test_item = 'default'
+    if args.has_key("item"):
+        test_item = args['item']
+        Logger.record({'item': test_item})
+
+    result = api.LEDTest(test_item)
+
 def WriteMacAddress(test, args):
     chip = 'default'
     if args.has_key("chip"):

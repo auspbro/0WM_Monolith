@@ -92,7 +92,6 @@ def main():
     
     if len(sys.argv) > 1:
         SN = str( SetDUTinfo(sys.argv[1], sys.argv[2], sys.argv[3]))
-        test_file = sys.argv[4]
     elif do_Genconfig:
         proc_command = 'python gui_genconfig.py'
         result = env.subprocess_execute(proc_command, 120).split('\n')
@@ -176,7 +175,7 @@ def main():
         env.system_execute(proc_command)
         
     if do_Full:
-        test_item = test_file#'0WM_test_lists\\2.Main Board.yml'
+        test_item = '0WM_test_lists\\2.MainBoard.yml'
         proc_command = 'python simple_tester.py {} False'.format(test_item)
         
         '''

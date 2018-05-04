@@ -60,15 +60,187 @@
                 index: 0
 #------------------------------------------------------------
 -
+    Name: InitTest
+    Instructions: >
+        device test initial
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'cd ml_test'
+        - Cmd: "./init.sh"
+        -
+            Cmd: "cd ~"
+#------------------------------------------------------------
+-
+    Name: ChkINA230
+    Instructions: >
+       Current/Power Monitor
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'modprobe -r ina2xx'
+        -
+            Cmd: "i2cdetect -y 10 | grep 40:"
+            Regex: '^(40:) (\w+) (\w+) (\w+) (\w+) (\w+)'
+            Results:
+            -
+                name: ChkINA230_1
+                type: str
+                item: 0
+                index: 1
+            -
+                name: ChkINA230_2
+                type: str
+                item: 0
+                index: 2
+            -
+                name: ChkINA230_3
+                type: str
+                item: 0
+                index: 3
+            -
+                name: ChkINA230_4
+                type: str
+                item: 0
+                index: 4
+            -
+                name: ChkINA230_5
+                type: str
+                item: 0
+                index: 5
+-
+    Name: INA230-resume
+    Instructions: >
+       Current/Power Monitor - resume
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Cmd: 'modprobe ina2xx'
+#------------------------------------------------------------
+-
+    Name: ChkMBTMP108
+    Instructions: >
+       Temperature Sensor
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'modprobe -r tmp108'
+        -
+            Cmd: "i2cdetect -y 9 | grep 40:"
+            Regex: '^(40:) (\D+) (\w+) (\w+) (\w+) (\w+)'
+            Results:
+            -
+                name: ChkMBTMP108_1
+                type: str
+                item: 0
+                index: 2
+            -
+                name: ChkMBTMP108_2
+                type: str
+                item: 0
+                index: 3
+            -
+                name: ChkMBTMP108_3
+                type: str
+                item: 0
+                index: 4
+            -
+                name: ChkMBTMP108_4
+                type: str
+                item: 0
+                index: 5
+-
+    Name: TMP108-resume
+    Instructions: >
+       Temperature Sensor resume
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Cmd: 'modprobe tmp108'
+#------------------------------------------------------------
+-
+    Name: ChkISM303DAC
+    Instructions: >
+       ECOMPASS/ACCELEROMETER Sensor
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'modprobe -r bmc150_magn_i2c'
+        - Cmd: 'modprobe -r bmc150_accel_i2c'
+        -
+            Cmd: "i2cdetect -y 9 | grep 10:"
+            Regex: '^(10:) (\w+) (\D+) (\w+)'
+            Results:
+            -
+                name: ACCELEROMETER
+                type: str
+                item: 0
+                index: 1
+            -
+                name: ECOMPASS
+                type: str
+                item: 0
+                index: 3
+-
+    Name: ISM303DAC-resume
+    Instructions: >
+       ECOMPASS/ACCELEROMETER Sensor resume
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'modprobe bmc150_magn_i2c'
+        - 
+            Cmd: 'modprobe bmc150_accel_i2c'
+#------------------------------------------------------------
+-
+    Name: ChkSN65DP159
+    Instructions: >
+       AC-Coupled TMDS™ to HDMI™ Level Shifter Retimer(SN65DP159)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "i2cdetect -y 9 | grep 20:"
+            Regex: '^(20:) (\D+) (\w+) (\D+) (\w+) (\D+) (\w+)'
+            Results:
+            -
+                name: ChkSN65DP159_1
+                type: str
+                item: 0
+                index: 4
+            -
+                name: ChkSN65DP159_2
+                type: str
+                item: 0
+                index: 6
+#------------------------------------------------------------
+-
+    Name: ChkEEPROM
+    Instructions: >
+       EEPROM
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: "i2cdetect -y 7 | grep 50:"
+        -
+            Cmd: "i2cdetect -y 7"
+            Regex: '^(50:) (\D+) (\w+) (\D+)'
+            Results:
+            -
+                name: ChkEEPROM
+                type: str
+                item: 0
+                index: 2
+#------------------------------------------------------------
+-
     Name: WriteMacI219
     Instructions: >
         The MAC is set by module, just copy to eeprom
     Proc: Commander
     Args:
         Cmds:
-        # - Cmd: "ml_mac_write.sh OVERWRITE_MAC i219 copy"
-        # - Cmd: "ml_mac_write.sh OVERWRITE_MAC i219 copy"
-        # - Cmd: "ml_mac_write.sh OVERWRITE_MAC i219 copy"
         -
             Cmd: "ml_mac_write.sh OVERWRITE_MAC i219 copy"
             Regex: '(47)'
@@ -340,169 +512,6 @@
                 index: 0
 #------------------------------------------------------------
 -
-    Name: ChkINA230
-    Instructions: >
-       Current/Power Monitor
-    Proc: Commander
-    Args:
-        Cmds:
-        - Cmd: 'modprobe -r ina2xx'
-        -
-            Cmd: "i2cdetect -y 10 | grep 40:"
-            Regex: '^(40:) (\w+) (\w+) (\w+) (\w+) (\w+)'
-            Results:
-            -
-                name: ChkINA230_1
-                type: str
-                item: 0
-                index: 1
-            -
-                name: ChkINA230_2
-                type: str
-                item: 0
-                index: 2
-            -
-                name: ChkINA230_3
-                type: str
-                item: 0
-                index: 3
-            -
-                name: ChkINA230_4
-                type: str
-                item: 0
-                index: 4
-            -
-                name: ChkINA230_5
-                type: str
-                item: 0
-                index: 5
--
-    Name: INA230-resume
-    Instructions: >
-       Current/Power Monitor - resume
-    Proc: Commander
-    Args:
-        Cmds:
-        - 
-            Cmd: 'modprobe ina2xx'
-#------------------------------------------------------------
--
-    Name: ChkMBTMP108
-    Instructions: >
-       Temperature Sensor
-    Proc: Commander
-    Args:
-        Cmds:
-        - Cmd: 'modprobe -r tmp108'
-        -
-            Cmd: "i2cdetect -y 9 | grep 40:"
-            Regex: '^(40:) (\D+) (\w+) (\w+) (\w+) (\w+)'
-            Results:
-            -
-                name: ChkMBTMP108_1
-                type: str
-                item: 0
-                index: 2
-            -
-                name: ChkMBTMP108_2
-                type: str
-                item: 0
-                index: 3
-            -
-                name: ChkMBTMP108_3
-                type: str
-                item: 0
-                index: 4
-            -
-                name: ChkMBTMP108_4
-                type: str
-                item: 0
-                index: 5
--
-    Name: TMP108-resume
-    Instructions: >
-       Temperature Sensor resume
-    Proc: Commander
-    Args:
-        Cmds:
-        - 
-            Cmd: 'modprobe tmp108'
-#------------------------------------------------------------
--
-    Name: ChkISM303DAC
-    Instructions: >
-       ECOMPASS/ACCELEROMETER Sensor
-    Proc: Commander
-    Args:
-        Cmds:
-        - Cmd: 'modprobe -r bmc150_magn_i2c'
-        - Cmd: 'modprobe -r bmc150_accel_i2c'
-        -
-            Cmd: "i2cdetect -y 9 | grep 10:"
-            Regex: '^(10:) (\w+) (\D+) (\w+)'
-            Results:
-            -
-                name: ACCELEROMETER
-                type: str
-                item: 0
-                index: 1
-            -
-                name: ECOMPASS
-                type: str
-                item: 0
-                index: 3
--
-    Name: ISM303DAC-resume
-    Instructions: >
-       ECOMPASS/ACCELEROMETER Sensor resume
-    Proc: Commander
-    Args:
-        Cmds:
-        - Cmd: 'modprobe bmc150_magn_i2c'
-        - 
-            Cmd: 'modprobe bmc150_accel_i2c'
-#------------------------------------------------------------
--
-    Name: ChkSN65DP159
-    Instructions: >
-       AC-Coupled TMDS™ to HDMI™ Level Shifter Retimer(SN65DP159)
-    Proc: Commander
-    Args:
-        Cmds:
-        -
-            Cmd: "i2cdetect -y 9 | grep 20:"
-            Regex: '^(20:) (\D+) (\w+) (\D+) (\w+) (\D+) (\w+)'
-            Results:
-            -
-                name: ChkSN65DP159_1
-                type: str
-                item: 0
-                index: 4
-            -
-                name: ChkSN65DP159_2
-                type: str
-                item: 0
-                index: 6
-#------------------------------------------------------------
--
-    Name: ChkEEPROM
-    Instructions: >
-       EEPROM
-    Proc: Commander
-    Args:
-        Cmds:
-        - Cmd: "i2cdetect -y 7 | grep 50:"
-        -
-            Cmd: "i2cdetect -y 7"
-            Regex: '^(50:) (\D+) (\w+) (\D+)'
-            Results:
-            -
-                name: ChkEEPROM
-                type: str
-                item: 0
-                index: 2
-#------------------------------------------------------------
--
     Name: ChkSN74CB3Q3306APWR
     Instructions: >
        Bus Switch IC(SN74CB3Q3306APWR)
@@ -622,13 +631,179 @@
     Args:
         Cmds:
         -
-            Cmd: "lsusb -t | grep 'Port 3:'"
-            Regex: '(\d+)(M)'
+            Cmd: "./ml_test/discover_usb.sh boot_drive"
+            Regex: '(PASS)'
             Results:
             -
                 name: ChkUSB_TypeA_1
                 type: str
                 item: 0
                 index: 0
-                subtype: int
-                unit: M
+#------------------------------------------------------------
+-
+    Name: LED_Red
+    Instructions: >
+       Test LED Red
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailLED
+            Args: 
+                item: red
+#------------------------------------------------------------
+-
+    Name: LED_Green
+    Instructions: >
+       Test LED Green
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailLED
+            Args: 
+                item: green
+#------------------------------------------------------------
+-
+    Name: LED_Both
+    Instructions: >
+       Test LED Both
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailLED
+            Args: 
+                item: both
+#------------------------------------------------------------
+-
+    Name: ChkGizmoPort 
+    Instructions: >
+       MTP tool checks whether POE is working or not
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_poe.sh"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkGizmoPort
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: DP1_Reboot
+    Instructions: >
+       Check DP1
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/../ml_fpga/video_select.sh DP1"
+            Regex: '(\w+)(!)'
+            Results:
+            -
+                name: DP1_Reboot
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: BootToKernel-DP1
+    Instructions: >
+        wait device boot
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReady
+            Args: 
+                Display: True
+                Timeout: 120
+            Regex: '(\w+)'
+            Results:
+            -
+                name: BootToKernel-DP1
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: DP1_result
+    Instructions: >
+       Check DP1 result
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailGui
+            Args: 
+                item: DP1
+#------------------------------------------------------------
+-
+    Name: ChkUSBwithRJ45 
+    Instructions: >
+       Test ethernet links with USB
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_eth.sh usb"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkUSBwithRJ45
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: DP2_Reboot
+    Instructions: >
+       Check DP2
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/../ml_fpga/video_select.sh DP2"
+            Regex: '(\w+)(!)'
+            Results:
+            -
+                name: DP2_Reboot
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: BootToKernel-DP2
+    Instructions: >
+        wait device boot
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReady
+            Args: 
+                Display: True
+                Timeout: 120
+            Regex: '(\w+)'
+            Results:
+            -
+                name: BootToKernel-DP2
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: DP2_result
+    Instructions: >
+       Check DP2 result
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailGui
+            Args: 
+                item: DP2

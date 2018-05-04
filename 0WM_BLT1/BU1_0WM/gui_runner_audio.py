@@ -20,20 +20,21 @@ def GetSerialNumber():
     
     return settings['SN']
     
-def SetDUTinfo(sn=None, I210MacAddress=None, FPGAMacAddress=None):
+# def SetDUTinfo(sn=None, I210MacAddress=None, FPGAMacAddress=None):
+def SetDUTinfo(sn=None):
     settings = {}
     with open('settings.yml', 'r') as infile:
         settings = yaml.load(infile)
         infile.close()
 
     env.print_debug('>> SetSerialNumber: {} <<'.format(sn))
-    env.print_debug('>> SetI210MacAddress: {} <<'.format(I210MacAddress))
-    env.print_debug('>> SetFPGAMacAddress: {} <<'.format(FPGAMacAddress))
+    # env.print_debug('>> SetI210MacAddress: {} <<'.format(I210MacAddress))
+    # env.print_debug('>> SetFPGAMacAddress: {} <<'.format(FPGAMacAddress))
     
-    if sn != None and I210MacAddress != None and FPGAMacAddress != None:
+    if sn != None:
         settings['SN'] = sn
-        settings['i210'] = I210MacAddress
-        settings['fpga'] = FPGAMacAddress
+        # settings['i210'] = I210MacAddress
+        # settings['fpga'] = FPGAMacAddress
         with open('settings.yml', 'w') as outfile:
             yaml.dump(settings, outfile, default_flow_style=False)
             outfile.close()
@@ -91,8 +92,8 @@ def main():
     # --------- setting Host environment: end ---------
     
     if len(sys.argv) > 1:
-        SN = str( SetDUTinfo(sys.argv[1], sys.argv[2], sys.argv[3]))
-        test_file = sys.argv[4]
+        # SN = str( SetDUTinfo(sys.argv[1], sys.argv[2], sys.argv[3]))
+        SN = str( SetDUTinfo(sys.argv[1]))
     elif do_Genconfig:
         proc_command = 'python gui_genconfig.py'
         result = env.subprocess_execute(proc_command, 120).split('\n')
@@ -176,7 +177,7 @@ def main():
         env.system_execute(proc_command)
         
     if do_Full:
-        test_item = test_file#'0WM_test_lists\\2.Main Board.yml'
+        test_item = '0WM_test_lists\\4.AudioBoard.yml'
         proc_command = 'python simple_tester.py {} False'.format(test_item)
         
         '''

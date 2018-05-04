@@ -2,11 +2,11 @@ CMD_TIMEOUT: 60
 CONNECT: UART
 Logging:
   Path: log_files
-SN: '7788'
+SN: MB
 UART:
   BAUD: 115200
   COM: COM5
   RETRIES: 2
   TIMEOUT: 1
-fpga: 00:aa:aa:dd:ee:ff
-i210: '11:11:11:33:44:22'
+fpga: ab:ab:ab:ab:ab:aa
+i210: 99:88:99:88:99:99

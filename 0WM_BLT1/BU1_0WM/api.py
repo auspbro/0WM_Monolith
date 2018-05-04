@@ -138,7 +138,7 @@ def send_cmd(cmd, flag_space=False):
     
     while wait_until_read and (retry is None or retry > 0):
         result += ser_read()
-        print result
+        #print result
         if (DefaultShellPrompt in result) or (ShellPrompt in result):
             break
         
@@ -188,7 +188,7 @@ def send_cmd(cmd, flag_space=False):
     result = result.replace(cmd, "")
     result = result.replace(DefaultShellPromptNewLine, "")
     result = result.strip()
-        
+    print 'Result-->', result    
     return result
     
 def wait_for_boot():
@@ -520,9 +520,15 @@ def DisplayTest(item):
 
     env.print_warn("\n>> Waiting display show <<")
 
-    ser.write('./ml_stress/stress_full.sh DVT {} 1khz'.format(item) + '\n')
+    # ser.write('./ml_stress/stress_full.sh DVT {} 1khz'.format(item) + '\n')
+    if item != 'SDI':
+        ser.write('./ml_test/VideoCaptureTest RGB' + '\n')
+    else:
+        ser.write('./ml_test/VideoCaptureTest YUV' + '\n')
 
-    proc_command = 'python gui_pass_fail.py {} Signal Test'.format(item)
+    time.sleep(10)
+
+    proc_command = 'python gui_pass_fail.py "{} Signal Test"'.format(item)
     result = env.subprocess_execute(proc_command, 60)
 
     # current_folder -->> Results
@@ -533,11 +539,42 @@ def DisplayTest(item):
     env.touch(result_filename)
     with open(result_filename, 'w') as f_output_file:
 #       f_output_file.write('HDMI_STAT={}'.format(hdmiStatus))
-        f_output_file.write('{}={}'.format(item, result.strip()))
+        f_output_file.write('SET {}={}'.format(item, result.strip()))
         f_output_file.close()
 
     ser.write('\x03' + '\n')
     ser.write('killall gst-launch-1.0' + '\n')
+    ser.write('cd ~' + '\n')
+
+    ln = ''
+    found = False
+    while True:
+        ln += ser_read()
+        if not found and (DefaultBootPrompt in ln):
+            found = True
+        if found and (DefaultShellPrompt in ln):
+            print(">> boot success... <<")
+            break
+
+def LEDTest(item):
+
+    env.print_warn("\n>> LED show {}<<".format(item))
+
+    ser.write('ml_led.sh cpld all {} 3'.format(item) + '\n')
+
+    proc_command = 'python gui_pass_fail.py "{} LED Test"'.format(item)
+    result = env.subprocess_execute(proc_command, 60)
+
+    # current_folder -->> Results
+    if not os.path.exists(env.tester_results_folder):
+        os.makedirs(env.tester_results_folder)
+
+    result_filename = os.path.join(env.tester_results_folder, 'LED_' + item + '.cmd')
+    env.touch(result_filename)
+    with open(result_filename, 'w') as f_output_file:
+#       f_output_file.write('HDMI_STAT={}'.format(hdmiStatus))
+        f_output_file.write('SET LED_{}={}'.format(item, result.strip()))
+        f_output_file.close()
 
 def WriteMacAddress(item):
     mac = settings[item]
