@@ -1,0 +1,552 @@
+- Name: BootToKernel-2
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:01:57.535000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:01:01.932000'
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-05 12:01:01.932000'
+  Time: '2018-05-05 12:01:01.932000'
+- Name: InitTest
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:13.336000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:01:57.635000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:01:57.635000'
+  Time: '2018-05-05 12:01:57.635000'
+- Name: ChkBoardPresent
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:13.536000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:13.436000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkBoardPresent: PASS
+    Time: '2018-05-05 12:02:13.436000'
+  Time: '2018-05-05 12:02:13.436000'
+- Name: ChkAudioBoard
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:13.736000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:13.636000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkAudioBoard: PASS
+    Time: '2018-05-05 12:02:13.636000'
+  Time: '2018-05-05 12:02:13.636000'
+- Name: ChkMainBoard
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:13.936000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:13.836000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkMainBoard: PASS
+    Time: '2018-05-05 12:02:13.836000'
+  Time: '2018-05-05 12:02:13.836000'
+- Name: ChkVideoBoard
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.136000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.036000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkVideoBoard: PASS
+    Time: '2018-05-05 12:02:14.036000'
+  Time: '2018-05-05 12:02:14.036000'
+- Name: ChkCPUInfo
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.336000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.236000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkCPUInfo: PASS
+    Time: '2018-05-05 12:02:14.236000'
+  Time: '2018-05-05 12:02:14.236000'
+- Name: ChkDDRSpeed
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.536000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.436000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkDDRSpeed: PASS
+    Time: '2018-05-05 12:02:14.436000'
+  Time: '2018-05-05 12:02:14.436000'
+- Name: ChkDDRSize
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.736000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.636000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkDDRSize: PASS
+    Time: '2018-05-05 12:02:14.636000'
+  Time: '2018-05-05 12:02:14.636000'
+- Name: ChkEMMCName
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.936000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:14.836000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkEMMCName: PASS
+    Time: '2018-05-05 12:02:14.836000'
+  Time: '2018-05-05 12:02:14.836000'
+- Name: ChkEMMCSize
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.136000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.036000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkEMMCSize: PASS
+    Time: '2018-05-05 12:02:15.036000'
+  Time: '2018-05-05 12:02:15.036000'
+- Name: ChkSSDName
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.338000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.236000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkSSDName: PASS
+    Time: '2018-05-05 12:02:15.236000'
+  Time: '2018-05-05 12:02:15.236000'
+- Name: ChkSSDSize
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.538000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.438000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkSSDSize: PASS
+    Time: '2018-05-05 12:02:15.438000'
+  Time: '2018-05-05 12:02:15.438000'
+- Name: ChkINA230
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.738000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.638000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkINA230_1: '40'
+      ChkINA230_2: '41'
+      ChkINA230_3: '42'
+      ChkINA230_4: '43'
+      ChkINA230_5: '44'
+    Time: '2018-05-05 12:02:15.638000'
+  Time: '2018-05-05 12:02:15.638000'
+- Name: INA230-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.038000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:15.838000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:02:15.838000'
+  Time: '2018-05-05 12:02:15.838000'
+- Name: ChkMBTMP108
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.338000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.138000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkMBTMP108_1: '48'
+      ChkMBTMP108_2: '49'
+      ChkMBTMP108_3: 4a
+      ChkMBTMP108_4: 4b
+    Time: '2018-05-05 12:02:16.138000'
+  Time: '2018-05-05 12:02:16.138000'
+- Name: TMP108-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.538000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.438000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:02:16.438000'
+  Time: '2018-05-05 12:02:16.438000'
+- Name: ChkISM303DAC
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.838000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.638000'
+  Results:
+  - Proc: Commander
+    Result:
+      ACCELEROMETER: 1d
+      ECOMPASS: 1e
+    Time: '2018-05-05 12:02:16.638000'
+  Time: '2018-05-05 12:02:16.638000'
+- Name: ISM303DAC-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:17.038000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:16.938000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:02:16.938000'
+  Time: '2018-05-05 12:02:16.938000'
+- Name: ChkSN65DP159
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:17.238000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:17.138000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkSN65DP159_1: 2c
+      ChkSN65DP159_2: 2e
+    Time: '2018-05-05 12:02:17.138000'
+  Time: '2018-05-05 12:02:17.138000'
+- Name: ChkEEPROM
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:17.538000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:17.338000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkEEPROM: '51'
+    Time: '2018-05-05 12:02:17.338000'
+  Time: '2018-05-05 12:02:17.338000'
+- Name: WriteMacWGI210
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:20.539000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:17.638000'
+  Results:
+  - Proc: Commander
+    Result:
+      WriteMacWGI210: PASS
+    Time: '2018-05-05 12:02:17.638000'
+    Values:
+      chip: i210
+  Time: '2018-05-05 12:02:17.638000'
+- Name: Readi210-Mac
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:20.739000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:20.639000'
+  Results:
+  - Proc: Commander
+    Result:
+      Readi210-Mac: 00:a0:c9:00:00:00
+    Time: '2018-05-05 12:02:20.639000'
+  Time: '2018-05-05 12:02:20.639000'
+- Name: WriteMacFPGA
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.139000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:20.839000'
+  Results:
+  - Proc: Commander
+    Result:
+      WriteMacFPGA: PASS
+    Time: '2018-05-05 12:02:20.839000'
+    Values:
+      chip: fpga
+  Time: '2018-05-05 12:02:20.839000'
+- Name: ReadFPGA-Mac
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.339000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.239000'
+  Results:
+  - Proc: Commander
+    Result:
+      ReadFPGA-Mac: 11:a0:c9:00:00:00
+    Time: '2018-05-05 12:02:21.239000'
+  Time: '2018-05-05 12:02:21.239000'
+- Name: ChkSN74CB3Q3306APWR
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.539000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.439000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkSN74CB3Q3306APWR: '50'
+    Time: '2018-05-05 12:02:21.439000'
+  Time: '2018-05-05 12:02:21.439000'
+- Name: SN74CB3Q3306APWR-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.739000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.639000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:02:21.639000'
+  Time: '2018-05-05 12:02:21.639000'
+- Name: ChkRTL8367EEPROM
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.239000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:21.839000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkRTL8367EEPROM: PASS
+    Time: '2018-05-05 12:02:21.839000'
+  Time: '2018-05-05 12:02:21.839000'
+- Name: ChkBIOSVersion
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.439000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.339000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkBIOSVersion: PASS
+    Time: '2018-05-05 12:02:22.339000'
+  Time: '2018-05-05 12:02:22.339000'
+- Name: ChkUSBTypeCVersion1
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.639000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.539000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkUSBTypeCVersion1: PASS
+    Time: '2018-05-05 12:02:22.539000'
+  Time: '2018-05-05 12:02:22.539000'
+- Name: ChkUSBTypeCVersion2
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.839000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.739000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkUSBTypeCVersion2: PASS
+    Time: '2018-05-05 12:02:22.739000'
+  Time: '2018-05-05 12:02:22.739000'
+- Name: ChkOROMVersion
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:28.039000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:22.939000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkOROMVersion: PASS
+    Time: '2018-05-05 12:02:22.939000'
+  Time: '2018-05-05 12:02:22.939000'
+- Name: ChkCPLDVersion
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:28.239000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:28.139000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkCPLDVersion: PASS
+    Time: '2018-05-05 12:02:28.139000'
+  Time: '2018-05-05 12:02:28.139000'
+- Name: ChkDP1
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:30.439000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:28.339000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkDP1: PASS
+    Time: '2018-05-05 12:02:28.339000'
+  Time: '2018-05-05 12:02:28.339000'
+- Name: ChkDP2
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:32.739000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:30.539000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkDP2: PASS
+    Time: '2018-05-05 12:02:30.539000'
+  Time: '2018-05-05 12:02:30.539000'
+- Name: ChkGizmoPort
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:00.142000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:02:32.839000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkGizmoPort: PASS
+    Time: '2018-05-05 12:02:32.839000'
+  Time: '2018-05-05 12:02:32.839000'
+- Name: LED_Red
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:17.844000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:00.242000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:03:00.242000'
+    Values:
+      item: red
+  Time: '2018-05-05 12:03:00.242000'
+- Name: LED_Green
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:28.844000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:17.944000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:03:17.944000'
+    Values:
+      item: green
+  Time: '2018-05-05 12:03:17.944000'
+- Name: LED_Both
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:40.045000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:28.944000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:03:28.944000'
+    Values:
+      item: both
+  Time: '2018-05-05 12:03:28.944000'
+- Name: ChkUSB_TypeA1_boot_drive
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:40.245000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:40.145000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkUSB_TypeA1_boot_drive: PASS
+    Time: '2018-05-05 12:03:40.145000'
+  Time: '2018-05-05 12:03:40.145000'
+- Name: ChkUSB_eth_devices
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:40.445000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:40.345000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkUSB_eth_devices: PASS
+    Time: '2018-05-05 12:03:40.345000'
+  Time: '2018-05-05 12:03:40.345000'
+- Name: Chkethernet_i210
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:43.745000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:03:40.545000'
+  Results

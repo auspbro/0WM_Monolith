@@ -1,0 +1,1 @@
+SET LED_both=PASS

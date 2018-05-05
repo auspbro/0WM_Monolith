@@ -1,9 +1,9 @@
-set tmEMPNO=A5011504
-set tmComputerName=QF7-01
-set tmStationName=MLBTEST
+set tmEMPNO=A5011274
+set tmComputerName=0WM-VB-01
+set tmStationName=BLT2
 set tmLineName=J11
-set tmFixtureID=QF7-01
-set tmSN=7788
+set tmFixtureID=0WM-VB-01
+set tmSN=A1234567890
 set tmModelName=Debug
 set tmMAC=
 set tmBTMAC=

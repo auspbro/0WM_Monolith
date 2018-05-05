@@ -162,7 +162,7 @@ if __name__ == '__main__':
     app = App(root)
 
     if len(sys.argv) >= 2:
-        app.TitleLabel.config(text=sys.argv[1])
+        app.TitleLabel.config(text=sys.argv[1].decode('GBK'))
     else:
         counter_label(app.TitleLabel)     
 

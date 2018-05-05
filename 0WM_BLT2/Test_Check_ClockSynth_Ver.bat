@@ -24,15 +24,15 @@
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\ChkClock.cmd
-IF /I #%ChkClock%#==#%PASS%# goto pass
-goto fail
+IF /I not #%ChkClock%#==#PASS# goto fail
+goto pass
 
 :PASS
 color 2f
->.\log\Test_Test_Check_ClockSynth_Ver_CheckLog.bat echo set Test_Check_ClockSynth_Ver=PASS
->>.\log\Test_Test_Check_ClockSynth_Ver_CheckLog.bat echo set TestResult=PASS
+>.\log\Test_Check_ClockSynth_Ver_CheckLog.bat echo set Check_ClockSynth_Ver=PASS
+>>.\log\Test_Check_ClockSynth_Ver_CheckLog.bat echo set TestResult=PASS
 cd .\Process
-call sdtCheckLog.exe Model_MLBTEST.cfg Test_Check_ClockSynth_Ver
+call sdtCheckLog.exe Model_MLBTEST.cfg Check_ClockSynth_Ver
 cd..
 GOTO END
 

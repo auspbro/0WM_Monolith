@@ -28,9 +28,11 @@
 @rem Notebook with HDMI
 @rem ===================
 
-
-:START
+:START 
 CALL .\Process\DVSN.BAT
+CALL .\log\%tmSN%\result\HDMI2.cmd
+IF /I not #%HDMI2%#==#PASS# goto fail
+GOTO PASS
 
 :HDMI_Port2_Chk
 msg.exe "请插入治具到待测机器HDMI Port 2接口！" 3 700 200 12

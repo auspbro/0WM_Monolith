@@ -1,9 +1,9 @@
 set tmEMPNO=A5011274
-set tmComputerName=KUD-try1
+set tmComputerName=0WM-MB-01
 set tmStationName=BLT1
-set tmLineName=K21
-set tmFixtureID=KUD-001
-set tmSN=7788
+set tmLineName=J11
+set tmFixtureID=0WM-MB-01
+set tmSN=QTFMVN0084000101
 set tmModelName=
 set tmMAC=
 set tmBTMAC=

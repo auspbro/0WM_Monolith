@@ -1,0 +1,64 @@
+- Command: modprobe -r tmp108
+  Response: "modprobe -r tmp108\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:24.853000'
+- Command: 'i2cdetect -y 8 | grep 40:'
+  Response: "i2cdetect -y 8 | grep 40:\r\n40: -- -- -- -- -- -- -- -- -- 49 4a 4b\
+    \ -- -- -- -- \r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:24.901000'
+- Command: 'i2cdetect -y 8 | grep 40:'
+  Response: "i2cdetect -y 8 | grep 40:\r\n40: -- -- -- -- -- -- -- -- -- 49 4a 4b\
+    \ -- -- -- -- \r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:25.127000'
+- Command: modprobe tmp108
+  Response: "modprobe tmp108\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:25.327000'
+- Command: 'i2cdetect -y 7 | grep 70:'
+  Response: "i2cdetect -y 7 | grep 70:\r\n70: -- -- UU -- -- -- -- 77            \
+    \             \r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:25.527000'
+- Command: 'i2cdetect -y 7 | grep 10:'
+  Response: "i2cdetect -y 7 | grep 10:\r\n10: -- -- -- -- -- -- -- -- -- -- -- --\
+    \ -- 1d -- -- \r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:25.728000'
+- Command: ./ml_test/check_clock_synth.sh
+  Response: "./ml_test/check_clock_synth.sh\r\nINFO, test check_clock_synth\r\nFAIL,\
+    \ clock_synth GRADE NOT correct, expected 0x00, found 0x01\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:25.929000'
+- Command: ./ml_test/discover_fpga.sh
+  Response: "./ml_test/discover_fpga.sh\r\nINFO, test discover_fpga\r\nPASS\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:27.129000'
+- Command: ./ml_test/test_fpga_pcie.sh x1 skip_bandwidth_test
+  Response: "./ml_test/test_fpga_pcie.sh x1 skip_bandwidth_test\r\nINFO, test test_fpga_pcie\r\
+    \nFAIL, Device Multimedia controller NOT found at address 04:00.0\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:27.329000'
+- Command: ./ml_test/test_fpga_flash.sh qspi
+  Response: "./ml_test/test_fpga_flash.sh qspi\r\nINFO, test test_fpga_flash\r\nFAIL,\
+    \ incorrect qspi device, [    1.838707] m25p80 spi0.0: found n25q512a13, expected\
+    \ m25p80\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:28.629000'
+- Command: ./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI1
+  Response: "./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI1\r\nINFO, test discover_hdmi_in\r\
+    \npcieport 0000:00:1d.0: AER: Corrected error received: id=00e8\r\npcieport 0000:00:1d.0:\
+    \ PCIe Bus Error: severity=Corrected, type=Physical Layer, id=00e8(Receiver ID)\r\
+    \npcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00000001/00002000\r\
+    \npcieport 0000:00:1d.0:    [ 0] Receiver Error         (First)\r\nPASS\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:31.830000'
+- Command: ./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI2
+  Response: "./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI2\r\nINFO, test discover_hdmi_in\r\
+    \npcieport 0000:00:1d.0: AER: Corrected error received: id=00e8\r\npcieport 0000:00:1d.0:\
+    \ PCIe Bus Error: severity=Corrected, type=Physical Layer, id=00e8(Receiver ID)\r\
+    \npcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00000001/00002000\r\
+    \npcieport 0000:00:1d.0:    [ 0] Receiver Error         (First)\r\nPASS\r\nroot@monolith:~"
+  Time: '2018-05-05 15:35:35.030000'
+- Command: ./ml_test/discover_one_wire.sh REBOOT_REQUIRED
+  Response: "./ml_test/discover_one_wire.sh REBOOT_REQUIRED\r\nINFO, test discover_one_wire\r\
+    \npcieport 0000:00:1d.0: AER: Corrected error received: id=00e8\r\npcieport 0000:00:1d.0:\
+    \ PCIe Bus Error: severity=Corrected, type=Physical Layer, id=00e8(Receiver ID)\r\
+    \npcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00000001/00002000\r\
+    \npcieport 0000:00:1d.0:    [ 0] Receiver Error         (First)\r\n./ml_test/discover_one_wire.sh:\
+    \ line 18: ../ml_fpga/send_to_fpga.sh: not found\r\n./ml_test/discover_one_wire.sh:\
+    \ line 19: ../ml_fpga/run_script.sh: not found\r\n./ml_test/discover_one_wire.sh:\
+    \ line 20: ../ml_fpga/get_from_fpga.sh: not found\r\ncat: /tmp/x_omni_one_wire.log:\
+    \ No such file or directory\r\nFAIL, Could NOT find DS28E15P on Video Board\r\n\
+    root@monolith:~"
+  Time: '2018-05-05 15:35:38.230000'

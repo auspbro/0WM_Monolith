@@ -1,0 +1,37 @@
+- Name: Chkethernet_switch
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:59:01.993000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:58:57.872000'
+  Results:
+  - Proc: Commander
+    Result:
+      Chkethernet_switch: []
+    Time: '2018-05-05 12:58:57.872000'
+  Time: '2018-05-05 12:58:57.872000'
+- Name: TestEth-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:59:05.207000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:59:02.095000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 12:59:02.096000'
+  Time: '2018-05-05 12:59:02.095000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 12:59:05.421000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 12:59:05.309000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 12:59:05.310000'
+  Time: '2018-05-05 12:59:05.309000'

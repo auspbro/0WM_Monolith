@@ -1,0 +1,51 @@
+- Name: SDI_Reboot
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:04:39.040000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:04:35.840000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:04:35.840000'
+  Time: '2018-05-05 18:04:35.840000'
+- Name: BootToKernel
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:05:18.348000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:04:39.140000'
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-05 18:04:39.140000'
+  Time: '2018-05-05 18:04:39.140000'
+- Name: SDI_result
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:05:28.649000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:05:18.448000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:05:18.448000'
+    Values:
+      item: SDI
+  Time: '2018-05-05 18:05:18.448000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 18:05:28.851000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:05:28.749000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 18:05:28.749000'
+  Time: '2018-05-05 18:05:28.749000'

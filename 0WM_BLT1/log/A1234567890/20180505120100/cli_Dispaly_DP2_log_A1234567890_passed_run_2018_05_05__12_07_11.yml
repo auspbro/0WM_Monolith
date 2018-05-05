@@ -1,0 +1,4 @@
+- Command: ./ml_test/test_usb_c_pd.sh 1
+  Response: "./ml_test/test_usb_c_pd.sh 1\r\nINFO, test test_usb_c_pd\r\nFAIL, USB\
+    \ type C port  15V out of spec, voltage 5158 mV\r\nroot@monolith:~"
+  Time: '2018-05-05 12:06:21.234000'

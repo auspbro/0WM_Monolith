@@ -1,13 +1,13 @@
 #------------------------------------------------------------
 -
-    Name: DP1_Reboot
+    Name: HDMI1_Reboot
     Instructions: >
-       Check DP1
+       Check HDMI1
     Proc: Commander
     Args:
         Cmds:
         -
-            Cmd: "./ml_stress/fpga_video_select.sh DP1"
+            Cmd: "ml_video_select.sh HDMI1"
 #------------------------------------------------------------
 -
     Name: BootToKernel
@@ -30,13 +30,13 @@
                 index: 0
 #------------------------------------------------------------
 -
-    Name: DP1_result
+    Name: HDMI1_result
     Instructions: >
-       Check DP1 result
+       Check HDMI1 result
     Proc: Commander
     Args:
         Cmds:
         - 
             Fun: ShowPassFailGui
             Args: 
-                item: DP1
+                item: HDMI1

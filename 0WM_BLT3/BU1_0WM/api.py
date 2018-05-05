@@ -382,6 +382,9 @@ def machine_wait_for_boot(DISPLAY_ENABLE=False, TIMEOUT=120):
             env.print_warn("\n>> Boot Success <<")
             env.print_info( '\rElapsed elapsed time: %#.8f seconds' % duration )
             return "PASS"
+            time.sleep(5)
+            ser.write('cd /home/root/' + '\n')
+            time.sleep(5)
             break
     return found
    
@@ -522,14 +525,14 @@ def DisplayTest(item):
 
     # ser.write('./ml_stress/stress_full.sh DVT {} 1khz'.format(item) + '\n')
     if item != 'SDI':
-        ser.write('./ml_test/VideoCaptureTest RGB' + '\n')
+        ser.write('VideoCaptureTest RGB' + '\n')
     else:
-        ser.write('./ml_test/VideoCaptureTest YUV' + '\n')
+        ser.write('VideoCaptureTest YUV' + '\n')
 
-    time.sleep(10)
+    time.sleep(3)
 
     proc_command = 'python gui_pass_fail.py "{} Signal Test"'.format(item)
-    result = env.subprocess_execute(proc_command, 60)
+    result = env.subprocess_execute(proc_command, 120)
 
     # current_folder -->> Results
     if not os.path.exists(env.tester_results_folder):
@@ -544,7 +547,7 @@ def DisplayTest(item):
 
     ser.write('\x03' + '\n')
     ser.write('killall gst-launch-1.0' + '\n')
-    ser.write('cd ~' + '\n')
+    ser.write('cd /home/root/' + '\n')
 
     ln = ''
     found = False
@@ -560,10 +563,18 @@ def LEDTest(item):
 
     env.print_warn("\n>> LED show {}<<".format(item))
 
-    ser.write('ml_led.sh cpld all {} 3'.format(item) + '\n')
+    # ser.write('ml_led.sh cpld all {} 3'.format(item) + '\n')
+    if item =='red':
+        ser.write('isaset -y -f 0x2ac 0x3f' + '\n')
+    if item =='green':
+        ser.write('isaset -y -f 0x2ad 0x3f' + '\n')
+    if item =='both':
+        ser.write('isaset -y -f 0x2ac 0x3f' + '\n')
+        ser.write('isaset -y -f 0x2ad 0x3f' + '\n')
+
 
     proc_command = 'python gui_pass_fail.py "{} LED Test"'.format(item)
-    result = env.subprocess_execute(proc_command, 60)
+    result = env.subprocess_execute(proc_command, 600)
 
     # current_folder -->> Results
     if not os.path.exists(env.tester_results_folder):
@@ -575,6 +586,11 @@ def LEDTest(item):
 #       f_output_file.write('HDMI_STAT={}'.format(hdmiStatus))
         f_output_file.write('SET LED_{}={}'.format(item, result.strip()))
         f_output_file.close()
+    
+    time.sleep(1)
+    ser.write('isaset -y -f 0x2ac 0x00' + '\n')
+    ser.write('isaset -y -f 0x2ad 0x00' + '\n')
+    ser.write('cd /home/root/' + '\n')
 
 def WriteMacAddress(item):
     mac = settings[item]

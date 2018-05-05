@@ -1,0 +1,1 @@
+SET ChkEEPROM=51

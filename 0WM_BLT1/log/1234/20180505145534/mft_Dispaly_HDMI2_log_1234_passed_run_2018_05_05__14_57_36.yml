@@ -1,0 +1,51 @@
+- Name: HDMI2_Reboot
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 14:56:52.482000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 14:56:49.182000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 14:56:49.182000'
+  Time: '2018-05-05 14:56:49.182000'
+- Name: BootToKernel
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 14:57:31.190000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 14:56:52.582000'
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-05 14:56:52.582000'
+  Time: '2018-05-05 14:56:52.582000'
+- Name: HDMI2_result
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 14:57:36.190000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 14:57:31.290000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 14:57:31.290000'
+    Values:
+      item: HDMI2
+  Time: '2018-05-05 14:57:31.290000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 14:57:36.290000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 14:57:36.290000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 14:57:36.290000'
+  Time: '2018-05-05 14:57:36.290000'

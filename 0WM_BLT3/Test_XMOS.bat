@@ -29,8 +29,10 @@ goto START
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\ChkXMOS.cmd
-IF /I #%ChkXMOS%#==#PASS# goto pass
-goto fail
+CALL .\log\%tmSN%\result\ChkXMOS-test.cmd
+IF /I not #%ChkXMOS%#==#PASS# goto fail
+IF /I not #%ChkXMOS-test%#==#PASS# goto fail
+goto pass
 
 :PASS
 color 2f

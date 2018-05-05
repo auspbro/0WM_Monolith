@@ -1,22 +1,47 @@
 #------------------------------------------------------------
+# -
+#     Name: BootToKernel
+#     Instructions: >
+#         wait device boot
+#     Proc: Commander
+#     Args:
+#         Cmds:
+#         - 
+#             Fun: DeviceReady
+#             Args: 
+#                 Display: True
+#                 Timeout: 120
+#             Regex: '(\w+)'
+#             Results:
+#             -
+#                 name: BootToKernel
+#                 type: str
+#                 item: 0
+#                 index: 0
+#------------------------------------------------------------
 -
-    Name: BootToKernel
+    Name: ChkFPGA-OneWire
     Instructions: >
-        wait device boot
+       FPGA test
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: "cd ml_test"
+        -
+            Cmd: "./discover_one_wire.sh REBOOT_REQUIRED"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkFPGA-OneWire
+                type: str
+                item: 0
+                index: 0
+-
+    Name: ChkFPGA-OneWire-resume
+    Instructions: >
+       ChkFPGA-OneWire test resume
     Proc: Commander
     Args:
         Cmds:
         - 
-            Fun: DeviceReady
-            Args: 
-                Display: True
-                Timeout: 120
-            Regex: '(\w+)'
-            Results:
-            -
-                name: BootToKernel
-                type: str
-                item: 0
-                index: 0
-#------------------------------------------------------------
-
+            Cmd: 'cd /home/root/'

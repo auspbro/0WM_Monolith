@@ -27,8 +27,10 @@
 @rem ===================
 
 :START
-CALL .\Process\DVSN.BAT
-
+call .\Process\DVSN.BAT
+call .\log\%tmSN%\result\SDI.cmd
+IF /I not #%SDI%#==#PASS# GOTO fail
+goto PASS
 
 :SDI_Port_Chk
 msg.exe "请插入治具到待测机器SDI Port接口！" 3 700 200 12

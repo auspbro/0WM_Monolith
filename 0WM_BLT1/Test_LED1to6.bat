@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 
 @rem Change History:
 @rem =========================================
@@ -29,9 +29,9 @@ CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\LED_red.cmd
 CALL .\log\%tmSN%\result\LED_green.cmd
 CALL .\log\%tmSN%\result\LED_both.cmd
-IF /I #%LED_red%#==#FAIL# goto fail
-IF /I #%LED_green%#==#FAIL# goto fail
-IF /I #%LED_both%#==#FAIL# goto fail
+IF /I not #%LED_red%#==#PASS# goto fail
+IF /I not #%LED_green%#==#PASS# goto fail
+IF /I not #%LED_both%#==#PASS# goto fail
 goto pass
 
 

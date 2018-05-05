@@ -1,0 +1,1 @@
+SET ChkFPGA-OneWire=INFO

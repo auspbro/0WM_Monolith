@@ -1,0 +1,1 @@
+SET ChkBoardPresent=PASS

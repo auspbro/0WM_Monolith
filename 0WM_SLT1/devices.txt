@@ -1,3 +1,0 @@
-List of devices attached 
-Baytrail1943A820	device
-

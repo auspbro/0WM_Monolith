@@ -1,0 +1,42 @@
+#------------------------------------------------------------
+-
+    Name: HDMI2_Reboot
+    Instructions: >
+       Check HDMI2
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_video_select.sh HDMI2"
+#------------------------------------------------------------
+-
+    Name: BootToKernel
+    Instructions: >
+        wait device boot
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReady
+            Args: 
+                Display: True
+                Timeout: 120
+            Regex: '(\w+)'
+            Results:
+            -
+                name: BootToKernel
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: HDMI2_result
+    Instructions: >
+       Check HDMI2 result
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailGui
+            Args: 
+                item: HDMI2

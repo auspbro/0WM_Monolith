@@ -22,16 +22,33 @@
 -
     Name: ChkXMOS
     Instructions: >
-       XMOS test
+       Discover XMOS
     Proc: Commander
     Args:
         Cmds:
         -
             Cmd: "./ml_test/discover_usb.sh xmos"
-            Regex: '(\w+)'
+            Regex: '(PASS)'
             Results:
             -
                 name: ChkXMOS
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkXMOS-test
+    Instructions: >
+       XMOS test
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_xmos.sh"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkXMOS-test
                 type: str
                 item: 0
                 index: 0
@@ -45,7 +62,7 @@
         Cmds:
         -
             Cmd: "ml_check_fw.sh DVT xmos"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: ChkXMOSVersion
@@ -62,7 +79,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh 1"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Audio_Out_L_AIN_1
@@ -79,7 +96,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh 2"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Audio_Out_L_AIN_2
@@ -96,7 +113,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh 3"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Audio_Out_L_AIN_3
@@ -113,7 +130,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh 4"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Audio_Out_L_AIN_4
@@ -130,7 +147,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh 5"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Audio_Out_L_AIN_5
@@ -147,7 +164,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh 6"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Audio_Out_L_AIN_6
@@ -164,7 +181,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh headset_l"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Headset_Loopback_L
@@ -181,7 +198,7 @@
         Cmds:
         -
             Cmd: "./ml_test/test_audio_line.sh headset_r"
-            Regex: (\w+)
+            Regex: '(PASS)'
             Results:
             -
                 name: Headset_Loopback_R
@@ -196,9 +213,10 @@
     Proc: Commander
     Args:
         Cmds:
+        - Cmd: 'cd ml_test/'
         -
-            Cmd: "./ml_test/test_audio_spk.sh"
-            Regex: (\w+)
+            Cmd: "./test_audio_spk.sh"
+            Regex: '(PASS)'
             Results:
             -
                 name: Speaker

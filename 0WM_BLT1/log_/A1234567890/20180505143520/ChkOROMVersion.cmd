@@ -1,0 +1,1 @@
+SET ChkOROMVersion=PASS

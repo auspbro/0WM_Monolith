@@ -1,0 +1,58 @@
+- Command: modprobe -r tmp108
+  Response: "modprobe -r tmp108\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:35.735000'
+- Command: 'i2cdetect -y 8 | grep 40:'
+  Response: "i2cdetect -y 8 | grep 40:\r\n40: -- -- -- -- -- -- -- -- -- 49 4a 4b\
+    \ -- -- -- -- \r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:35.783000'
+- Command: 'i2cdetect -y 8 | grep 40:'
+  Response: "i2cdetect -y 8 | grep 40:\r\n40: -- -- -- -- -- -- -- -- -- 49 4a 4b\
+    \ -- -- -- -- \r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:36.010000'
+- Command: modprobe tmp108
+  Response: "modprobe tmp108\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:36.210000'
+- Command: 'i2cdetect -y 7 | grep 70:'
+  Response: "i2cdetect -y 7 | grep 70:\r\n70: -- -- UU -- -- -- -- 77            \
+    \             \r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:36.409000'
+- Command: 'i2cdetect -y 7 | grep 10:'
+  Response: "i2cdetect -y 7 | grep 10:\r\n10: -- -- -- -- -- -- -- -- -- -- -- --\
+    \ -- 1d -- -- \r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:36.610000'
+- Command: ./ml_test/check_clock_synth.sh
+  Response: "./ml_test/check_clock_synth.sh\r\nINFO, test check_clock_synth\r\nFAIL,\
+    \ clock_synth GRADE NOT correct, expected 0x00, found 0x01\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:36.810000'
+- Command: ./ml_test/discover_fpga.sh
+  Response: "./ml_test/discover_fpga.sh\r\nINFO, test discover_fpga\r\nPASS\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:38.010000'
+- Command: ./ml_test/test_fpga_pcie.sh x1 skip_bandwidth_test
+  Response: "./ml_test/test_fpga_pcie.sh x1 skip_bandwidth_test\r\nINFO, test test_fpga_pcie\r\
+    \nFAIL, Device Multimedia controller LnkSta ERROR, \t\tLnkSta:\tSpeed 8GT/s, Width\
+    \ x4, TrErr- Train- SlotClk+ DLActive- BWMgmt- ABWMgmt-\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:38.210000'
+- Command: ./ml_test/test_fpga_flash.sh qspi
+  Response: "./ml_test/test_fpga_flash.sh qspi\r\nINFO, test test_fpga_flash\r\nFAIL,\
+    \ incorrect qspi device, [    1.838938] m25p80 spi0.0: found n25q512a13, expected\
+    \ m25p80\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:39.509000'
+- Command: ./ml_test/test_fpga_flash.sh emmc
+  Response: "./ml_test/test_fpga_flash.sh emmc\r\nINFO, test test_fpga_flash\r\nFAIL,\
+    \ incorrect emmc device, \r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:43.209000'
+- Command: ./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI1
+  Response: "./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI1\r\nINFO, test discover_hdmi_in\r\
+    \ndo_IRQ: 3.39 No irq handler for vector\r\npcieport 0000:00:1d.0: AER: Corrected\
+    \ error received: id=00e8\r\npcieport 0000:00:1d.0: PCIe Bus Error: severity=Corrected,\
+    \ type=Physical Layer, id=00e8(Receiver ID)\r\npcieport 0000:00:1d.0:   device\
+    \ [8086:9d18] error status/mask=00000001/00002000\r\npcieport 0000:00:1d.0:  \
+    \  [ 0] Receiver Error         (First)\r\nPASS\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:46.412000'
+- Command: ./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI2
+  Response: "./ml_test/discover_hdmi_in.sh REBOOT_REQUIRED HDMI2\r\nINFO, test discover_hdmi_in\r\
+    \npcieport 0000:00:1d.0: AER: Corrected error received: id=00e8\r\npcieport 0000:00:1d.0:\
+    \ PCIe Bus Error: severity=Corrected, type=Physical Layer, id=00e8(Receiver ID)\r\
+    \npcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00000001/00002000\r\
+    \npcieport 0000:00:1d.0:    [ 0] Receiver Error         (First)\r\nPASS\r\nroot@monolith:~"
+  Time: '2018-05-05 14:55:49.612000'

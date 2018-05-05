@@ -1,0 +1,59 @@
+#------------------------------------------------------------
+-
+    Name: ChkPowerDeliveryDP1
+    Instructions: >
+       Check Power Delivery DP1
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_usb_c_pd.sh 1"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkPowerDeliveryDP1
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: DP2_Reboot
+    Instructions: >
+       Check DP2
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_video_select.sh DP2"
+#------------------------------------------------------------
+-
+    Name: BootToKernel
+    Instructions: >
+        wait device boot
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReady
+            Args: 
+                Display: True
+                Timeout: 120
+            Regex: '(\w+)'
+            Results:
+            -
+                name: BootToKernel
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: DP2_result
+    Instructions: >
+       Check DP2 result
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailGui
+            Args: 
+                item: DP2

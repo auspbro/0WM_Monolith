@@ -1,0 +1,37 @@
+- Name: ChkFPGA-OneWire
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 16:25:05.181000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 16:24:55.367000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-OneWire: []
+    Time: '2018-05-05 16:24:55.368000'
+  Time: '2018-05-05 16:24:55.367000'
+- Name: ChkFPGA-OneWire-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 16:25:05.389000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 16:25:05.283000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 16:25:05.283000'
+  Time: '2018-05-05 16:25:05.283000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 16:25:05.595000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 16:25:05.491000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 16:25:05.491000'
+  Time: '2018-05-05 16:25:05.490000'

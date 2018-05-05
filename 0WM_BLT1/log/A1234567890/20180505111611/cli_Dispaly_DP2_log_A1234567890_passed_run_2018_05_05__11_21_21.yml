@@ -1,0 +1,7 @@
+- Command: ./ml_test/test_usb_c_pd.sh 1
+  Response: "./ml_test/test_usb_c_pd.sh 1\r\nINFO, test test_usb_c_pd\r\nusb 2-1:\
+    \ USB disconnect, device number 5\r\nusb 2-1: new SuperSpeed USB device number\
+    \ 6 using xhci_hcd\r\nusb 2-1: reset SuperSpeed USB device number 6 using xhci_hcd\r\
+    \nr8152 2-1:1.0 eth2: v1.09.9\r\nFAIL, USB type C port  20V out of spec, voltage\
+    \ 5156 mV\r\nroot@monolith:~"
+  Time: '2018-05-05 11:20:31.845000'

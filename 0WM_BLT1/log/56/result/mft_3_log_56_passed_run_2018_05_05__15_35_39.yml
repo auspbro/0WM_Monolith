@@ -1,0 +1,168 @@
+- Name: ChkVBTMP108
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.026000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:24.826000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkVBTMP108_1: '49'
+      ChkVBTMP108_2: 4a
+    Time: '2018-05-05 15:35:24.826000'
+  Time: '2018-05-05 15:35:24.826000'
+- Name: TMP108-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.226000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.126000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 15:35:25.126000'
+  Time: '2018-05-05 15:35:25.126000'
+- Name: ChkSi5340
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.426000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.326000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkSi5340: '77'
+    Time: '2018-05-05 15:35:25.326000'
+  Time: '2018-05-05 15:35:25.326000'
+- Name: ChkLMH1219
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.627000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.526000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkLMH1219: 1d
+    Time: '2018-05-05 15:35:25.527000'
+  Time: '2018-05-05 15:35:25.526000'
+- Name: ChkClock
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.827000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.727000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkClock: INFO
+    Time: '2018-05-05 15:35:25.727000'
+  Time: '2018-05-05 15:35:25.727000'
+- Name: ChkFPGA-discover
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:27.028000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:25.928000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-discover: PASS
+    Time: '2018-05-05 15:35:25.928000'
+  Time: '2018-05-05 15:35:25.928000'
+- Name: ChkFPGA-pcie
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:27.228000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:27.128000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-pcie: []
+    Time: '2018-05-05 15:35:27.128000'
+  Time: '2018-05-05 15:35:27.128000'
+- Name: ChkFPGA-qspi
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:28.528000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:27.328000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-qspi: []
+    Time: '2018-05-05 15:35:27.328000'
+  Time: '2018-05-05 15:35:27.328000'
+- Name: ChkFPGA-HDMI1
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:31.729000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:28.628000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-HDMI1: PASS
+    Time: '2018-05-05 15:35:28.628000'
+  Time: '2018-05-05 15:35:28.628000'
+- Name: ChkFPGA-HDMI2
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:34.929000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:31.829000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-HDMI2: PASS
+    Time: '2018-05-05 15:35:31.829000'
+  Time: '2018-05-05 15:35:31.829000'
+- Name: ChkFPGA-OneWire
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:38.129000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:35.029000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-OneWire: []
+    Time: '2018-05-05 15:35:35.029000'
+  Time: '2018-05-05 15:35:35.029000'
+- Name: ChkFPGA-emmc
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:39.429000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:38.229000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-emmc: PASS
+    Time: '2018-05-05 15:35:38.229000'
+  Time: '2018-05-05 15:35:38.229000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 15:35:39.629000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:35:39.529000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 15:35:39.529000'
+  Time: '2018-05-05 15:35:39.529000'

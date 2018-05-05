@@ -1,0 +1,1 @@
+SET ChkUSBTypeCVersion2=FAIL

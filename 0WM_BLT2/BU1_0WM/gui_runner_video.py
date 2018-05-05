@@ -73,6 +73,9 @@ def main():
     do_Temp = 0
     do_Result = 0
     do_RunStatus = 0
+    do_HDMI1=1
+    do_HDMI2=1
+    do_SDI=1
 
     
     SN = ''
@@ -200,7 +203,7 @@ def main():
         # --------- update serialnum in file: end ---------
         '''
 
-        loop_time = 3
+        loop_time = 1
         cnt = 1
         while cnt <= loop_time:
             loop_start_time = time.time()
@@ -214,6 +217,101 @@ def main():
 #            loop_mins = int((total_loop_time/60)%60)
 #            loop_secs = int(total_loop_time%60)
 #            print(">>>> Elapsed Time for loop test : {} hours {} minutes {} seconds <<<<\n".format(loop_hours, loop_mins, loop_secs))
+            env.print_info( 'loop elapsed time: %#.8f seconds\n' %(time.time()-loop_start_time) )
+ 
+            if result == 0:
+                # system_execute return pass
+                break
+            else:
+                cnt += 1
+                '''
+                if cnt < loop_time:
+                    user_continue = 'y'
+                    user_continue = raw_input('\nPress enter y to continue, n for stop...')
+                    if user_continue == 'n' or user_continue == 'N':
+                        break
+                '''
+        env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
+    
+    message = u"DP1插入显示器，DP2插充电治具小板"
+    proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
+    env.process_execute(proc_command)
+
+    if do_HDMI1:
+        test_item = '0WM_test_lists\\Dispaly_HDMI1.yml'
+        proc_command = 'python simple_tester.py {} False'.format(test_item)
+
+        loop_time = 1
+        cnt = 1
+        while cnt <= loop_time:
+            loop_start_time = time.time()
+            env.print_info('\n>>>>>>>>>>>>>>>> loop: %d begin <<<<<<<<<<<<<<<<\n' % cnt )
+            print proc_command
+            result = env.system_execute(proc_command, 500)
+            env.print_info('\n>>>>>>>>>>>>>>>> loop: %d end <<<<<<<<<<<<<<<<\n' % cnt )
+            
+            env.print_info( 'loop elapsed time: %#.8f seconds\n' %(time.time()-loop_start_time) )
+ 
+            if result == 0:
+                # system_execute return pass
+                break
+            else:
+                cnt += 1
+                '''
+                if cnt < loop_time:
+                    user_continue = 'y'
+                    user_continue = raw_input('\nPress enter y to continue, n for stop...')
+                    if user_continue == 'n' or user_continue == 'N':
+                        break
+                '''
+        env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
+
+    message = u"DP2插入显示器，DP1插充电治具小板"
+    proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
+    env.process_execute(proc_command)
+
+    if do_HDMI2:
+        test_item = '0WM_test_lists\\Dispaly_HDMI2.yml'
+        proc_command = 'python simple_tester.py {} False'.format(test_item)
+
+        loop_time = 1
+        cnt = 1
+        while cnt <= loop_time:
+            loop_start_time = time.time()
+            env.print_info('\n>>>>>>>>>>>>>>>> loop: %d begin <<<<<<<<<<<<<<<<\n' % cnt )
+            print proc_command
+            result = env.system_execute(proc_command, 500)
+            env.print_info('\n>>>>>>>>>>>>>>>> loop: %d end <<<<<<<<<<<<<<<<\n' % cnt )
+            
+            env.print_info( 'loop elapsed time: %#.8f seconds\n' %(time.time()-loop_start_time) )
+ 
+            if result == 0:
+                # system_execute return pass
+                break
+            else:
+                cnt += 1
+                '''
+                if cnt < loop_time:
+                    user_continue = 'y'
+                    user_continue = raw_input('\nPress enter y to continue, n for stop...')
+                    if user_continue == 'n' or user_continue == 'N':
+                        break
+                '''
+        env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
+
+    if do_SDI:
+        test_item = '0WM_test_lists\\Dispaly_SDI.yml'
+        proc_command = 'python simple_tester.py {} False'.format(test_item)
+
+        loop_time = 1
+        cnt = 1
+        while cnt <= loop_time:
+            loop_start_time = time.time()
+            env.print_info('\n>>>>>>>>>>>>>>>> loop: %d begin <<<<<<<<<<<<<<<<\n' % cnt )
+            print proc_command
+            result = env.system_execute(proc_command, 500)
+            env.print_info('\n>>>>>>>>>>>>>>>> loop: %d end <<<<<<<<<<<<<<<<\n' % cnt )
+            
             env.print_info( 'loop elapsed time: %#.8f seconds\n' %(time.time()-loop_start_time) )
  
             if result == 0:

@@ -1,0 +1,25 @@
+- Name: ChkFPGA-discover
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:08:42.446000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:08:41.236000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-discover: PASS
+    Time: '2018-05-05 15:08:41.237000'
+  Time: '2018-05-05 15:08:41.236000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 15:08:42.655000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 15:08:42.548000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 15:08:42.548000'
+  Time: '2018-05-05 15:08:42.547000'

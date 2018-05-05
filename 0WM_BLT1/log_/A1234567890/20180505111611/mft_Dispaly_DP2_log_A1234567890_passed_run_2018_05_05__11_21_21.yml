@@ -1,0 +1,64 @@
+- Name: ChkPowerDeliveryDP1
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:20:31.744000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:20:25.345000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkPowerDeliveryDP1: []
+    Time: '2018-05-05 11:20:25.345000'
+  Time: '2018-05-05 11:20:25.344000'
+- Name: DP2_Reboot
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:20:35.045000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:20:31.844000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 11:20:31.844000'
+  Time: '2018-05-05 11:20:31.844000'
+- Name: BootToKernel
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:21:15.347000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:20:35.145000'
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-05 11:20:35.145000'
+  Time: '2018-05-05 11:20:35.145000'
+- Name: DP2_result
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:21:20.949000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:21:15.447000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 11:21:15.447000'
+    Values:
+      item: DP2
+  Time: '2018-05-05 11:21:15.447000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 11:21:21.149000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 11:21:21.049000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 11:21:21.049000'
+  Time: '2018-05-05 11:21:21.049000'

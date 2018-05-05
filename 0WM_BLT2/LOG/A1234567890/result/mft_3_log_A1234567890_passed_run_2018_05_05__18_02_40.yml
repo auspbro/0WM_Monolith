@@ -1,0 +1,277 @@
+- Name: BootToKernel-1
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.015000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:00:50.912000'
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-05 18:00:50.912000'
+  Time: '2018-05-05 18:00:50.912000'
+- Name: ChkVBTMP108
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.315000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.115000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkVBTMP108_1: '49'
+      ChkVBTMP108_2: 4a
+    Time: '2018-05-05 18:01:47.115000'
+  Time: '2018-05-05 18:01:47.115000'
+- Name: TMP108-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.515000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.415000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:01:47.415000'
+  Time: '2018-05-05 18:01:47.415000'
+- Name: ChkSi5340
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.715000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.615000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkSi5340: '77'
+    Time: '2018-05-05 18:01:47.615000'
+  Time: '2018-05-05 18:01:47.615000'
+- Name: ChkLMH1219
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.917000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:47.815000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkLMH1219: 1d
+    Time: '2018-05-05 18:01:47.815000'
+  Time: '2018-05-05 18:01:47.815000'
+- Name: ChkClock
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:48.117000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:48.017000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkClock: PASS
+    Time: '2018-05-05 18:01:48.017000'
+  Time: '2018-05-05 18:01:48.017000'
+- Name: Sleep
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:51.318000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:48.217000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:01:48.217000'
+  Time: '2018-05-05 18:01:48.217000'
+- Name: ChkFPGA-discover
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:55.018000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:51.418000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-discover: []
+    Time: '2018-05-05 18:01:51.418000'
+  Time: '2018-05-05 18:01:51.418000'
+- Name: Sleep
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:58.218000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:55.118000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:01:55.118000'
+  Time: '2018-05-05 18:01:55.118000'
+- Name: ChkFPGA-HDMI1
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:01.418000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:01:58.318000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-HDMI1: PASS
+    Time: '2018-05-05 18:01:58.318000'
+  Time: '2018-05-05 18:01:58.318000'
+- Name: Sleep
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:04.620000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:01.518000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:02:01.518000'
+  Time: '2018-05-05 18:02:01.518000'
+- Name: ChkFPGA-HDMI2
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:07.820000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:04.719000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-HDMI2: []
+    Time: '2018-05-05 18:02:04.719000'
+  Time: '2018-05-05 18:02:04.719000'
+- Name: Sleep
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:11.020000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:07.920000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:02:07.920000'
+  Time: '2018-05-05 18:02:07.920000'
+- Name: ChkFPGA-OneWire
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:20.620000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:11.120000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-OneWire: []
+    Time: '2018-05-05 18:02:11.120000'
+  Time: '2018-05-05 18:02:11.120000'
+- Name: ChkFPGA-OneWire-resume
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:23.820000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:20.720000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:02:20.720000'
+  Time: '2018-05-05 18:02:20.720000'
+- Name: ChkFPGA-qspi
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:27.021000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:23.920000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-qspi: []
+    Time: '2018-05-05 18:02:23.920000'
+  Time: '2018-05-05 18:02:23.920000'
+- Name: Sleep
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:30.221000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:27.121000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:02:27.121000'
+  Time: '2018-05-05 18:02:27.121000'
+- Name: ChkFPGA-pcie
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:30.421000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:30.321000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-pcie: PASS
+    Time: '2018-05-05 18:02:30.321000'
+  Time: '2018-05-05 18:02:30.321000'
+- Name: Sleep
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:33.621000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:30.521000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:02:30.521000'
+  Time: '2018-05-05 18:02:30.521000'
+- Name: ChkFPGA-emmc
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:37.321000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:33.721000'
+  Results:
+  - Proc: Commander
+    Result:
+      ChkFPGA-emmc: []
+    Time: '2018-05-05 18:02:33.721000'
+  Time: '2018-05-05 18:02:33.721000'
+- Name: Sleep
+  PostTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:40.523000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:37.421000'
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-05 18:02:37.421000'
+  Time: '2018-05-05 18:02:37.421000'
+- Name: TestDutCompleted
+  PostTest:
+    Proc: TestDutCompleted
+    Time: '2018-05-05 18:02:40.723000'
+  PreTest:
+    Proc: DefaultProc
+    Time: '2018-05-05 18:02:40.623000'
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-05 18:02:40.623000'
+  Time: '2018-05-05 18:02:40.623000'

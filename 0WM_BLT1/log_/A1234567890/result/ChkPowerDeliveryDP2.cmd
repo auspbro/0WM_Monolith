@@ -1,0 +1,1 @@
+SET ChkPowerDeliveryDP2=PASS
