@@ -140,6 +140,23 @@
                 index: 0
 #------------------------------------------------------------
 -
+    Name: ChkPCIE
+    Instructions: >
+       PCIE test
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/discover_pcie.sh"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkPCIE
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
     Name: ChkCPUInfo
     Instructions: >
         Check CPU Info
@@ -389,8 +406,8 @@
     Args:
         Cmds:
         -
-            Cmd: "i2cdetect -y 9 | grep 20:"
-            Regex: '^(20:) (\D+) (\w+) (\D+) (\w+) (\D+) (\w+)'
+            Cmd: "i2cdetect -y 7 | grep 50:"
+            Regex: '^(50:) (\D+) (\w+) (\D+) (\w+) (\w+)'
             Results:
             -
                 name: ChkSN65DP159_1
@@ -399,6 +416,28 @@
                 index: 4
             -
                 name: ChkSN65DP159_2
+                type: str
+                item: 0
+                index: 5
+#------------------------------------------------------------
+-
+    Name: ChkSN75DP130
+    Instructions: >
+        SN75DP130 Display port Redriver test
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "i2cdetect -y 9 | grep 20:"
+            Regex: '^(20:) (\D+) (\w+) (\D+) (\w+) (\D+) (\w+)'
+            Results:
+            -
+                name: ChkSN75DP130_1
+                type: str
+                item: 0
+                index: 4
+            -
+                name: ChkSN75DP130_2
                 type: str
                 item: 0
                 index: 6
@@ -420,6 +459,23 @@
                 type: str
                 item: 0
                 index: 2
+#------------------------------------------------------------
+-
+    Name: ChkDiscoverI2C
+    Instructions: >
+       Discover I2C
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/discover_i2c.sh DVT"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkDiscoverI2C
+                type: str
+                item: 0
+                index: 0
 # #------------------------------------------------------------
 # -
 #     Name: WriteMacI219
@@ -542,24 +598,6 @@
                 item: 0
                 index: 0
 #------------------------------------------------------------
-# need reboot
--
-    Name: Readi210-Mac
-    Instructions: >
-       Read MAC Address of BT
-    Proc: Commander
-    Args:
-        Cmds:
-        -
-            Cmd: "ml_mac_read.sh i210"
-            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
-            Results:
-            -
-                name: Readi210-Mac
-                type: str
-                item: 0
-                index: 0
-#------------------------------------------------------------
 -
     Name: WriteMacFPGA
     Instructions: >
@@ -575,23 +613,6 @@
             Results:
             -
                 name: WriteMacFPGA
-                type: str
-                item: 0
-                index: 0
-#------------------------------------------------------------
--
-    Name: ReadFPGA-Mac
-    Instructions: >
-       Read MAC Address of FPGA
-    Proc: Commander
-    Args:
-        Cmds:
-        -
-            Cmd: "ml_mac_read.sh fpga"
-            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
-            Results:
-            -
-                name: ReadFPGA-Mac
                 type: str
                 item: 0
                 index: 0
@@ -1161,6 +1182,41 @@
             Results:
             -
                 name: PCIE_test_Result
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+# need reboot
+-
+    Name: Readi210-Mac
+    Instructions: >
+       Read MAC Address of BT
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_read.sh i210"
+            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
+            Results:
+            -
+                name: Readi210-Mac
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ReadFPGA-Mac
+    Instructions: >
+       Read MAC Address of FPGA
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_read.sh fpga"
+            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
+            Results:
+            -
+                name: ReadFPGA-Mac
                 type: str
                 item: 0
                 index: 0

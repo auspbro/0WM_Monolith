@@ -1,1 +1,0 @@
-SET WritePVersion=79

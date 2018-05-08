@@ -1,17 +1,17 @@
 #------------------------------------------------------------
 -
-    Name: ChkPowerDeliveryDP2
+    Name: ChkPowerDeliveryDP1
     Instructions: >
-       Check Power Delivery DP2
+       Check Power Delivery DP1
     Proc: Commander
     Args:
         Cmds:
         -
-            Cmd: "./ml_test/test_usb_c_pd.sh 2"
+            Cmd: "./ml_test/test_usb_c_pd.sh 1"
             Regex: '(PASS)'
             Results:
             -
-                name: ChkPowerDeliveryDP2
+                name: ChkPowerDeliveryDP1
                 type: str
                 item: 0
                 index: 0

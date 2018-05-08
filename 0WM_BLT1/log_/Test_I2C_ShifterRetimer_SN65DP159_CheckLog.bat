@@ -1,2 +1,0 @@
-set I2C_ShifterRetimer_SN65DP159=2c_2e
-set TestResult=PASS

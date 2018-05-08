@@ -24,7 +24,8 @@ storage_folder = parent_folder # current_folder
 ws_storage_folder = os.path.join(storage_folder, workstation_folder_name)
 
 # for criteria, ex: criteria_BFT.csv, criteria_FFT.csv
-criteria_file_name = '{}_{}.csv'.format('criteria', workstation_folder_name)
+# criteria_file_name = '{}_{}.csv'.format('criteria', workstation_folder_name)
+criteria_file_name = '{}_{}.csv'.format('criteria', 'mb')
 criteria_file_full_path = os.path.join(current_folder, criteria_file_name)
 
 csv_file_name = 'result.csv'
@@ -377,12 +378,18 @@ def judge_cvs_result(result_path,item,value='',result='',comment=''):
 #            or value.lower().find('fail')!=-1 
         comment = COMMENT_NO_VALUE
         result = "FAIL"
-    # ---------- Special case�G begin ----------
-    elif item == 'WIFI' or item =='BT':
+    # ---------- Special case begin ----------
+    elif item == 'ReadFPGA-Mac' or item =='Readi210-Mac':
         if value.count(':') == 5: # address format = 80:D2:1D:81:2C:3B
             result = 'PASS'
         else:
             comment = '{} and format=XX:XX:XX:XX:XX:XX'.format(COMMENT_NOT_MATCH)
+            result = "FAIL"
+    elif item == 'ReadUUID':
+        if len(value)== 32: # address format = 80:D2:1D:81:2C:3B
+            result = 'PASS'
+        else:
+            comment = '{}, must be 32 Characters'.format(COMMENT_NOT_MATCH)
             result = "FAIL"
 
     if item == 'USB_STICK':

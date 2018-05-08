@@ -1,0 +1,8 @@
+- Command: ./ml_test/discover_usb.sh eth
+  Response: "./ml_test/discover_usb.sh eth\r\nINFO, test discover_usb\r\nPASS\r\n\
+    root@monolith:~"
+  Time: '2018-05-07 17:52:12.562000'
+- Command: ./ml_test/test_usb_c_pd.sh 2
+  Response: "./ml_test/test_usb_c_pd.sh 2\r\nINFO, test test_usb_c_pd\r\nusb usb2-port2:\
+    \ config error\r\nPASS\r\nroot@monolith:~"
+  Time: '2018-05-07 17:52:22.961000'

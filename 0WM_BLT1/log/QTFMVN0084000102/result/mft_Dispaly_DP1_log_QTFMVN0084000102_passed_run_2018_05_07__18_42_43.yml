@@ -1,0 +1,38 @@
+- Name: ChkPowerDeliveryDP1
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_usb_c_pd\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkPowerDeliveryDP1: PASS
+    Time: '2018-05-07 18:41:38.993000'
+  Time: '2018-05-07 18:41:38.993000'
+- Name: DP1_Reboot
+  Results:
+  - Proc: Commander
+    Process: "INFO, Initialising...\r\n\a\r\r\nBroadcast message from root@monolith\
+      \ (ttyS0) (Wed Apr 25 20:20:43 2018):\r\r\n\r\r\n\rThe system is going down\
+      \ for system halt NOW!\r\r\nroot@monolith:"
+    Result: true
+    Time: '2018-05-07 18:41:51.394000'
+  Time: '2018-05-07 18:41:51.394000'
+- Name: BootToKernel
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-07 18:41:54.694000'
+  Time: '2018-05-07 18:41:54.694000'
+- Name: DP1_result
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-07 18:42:34.996000'
+    Values:
+      item: DP1
+  Time: '2018-05-07 18:42:34.996000'
+- Name: TestDutCompleted
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-07 18:42:43.698000'
+  Time: '2018-05-07 18:42:43.698000'

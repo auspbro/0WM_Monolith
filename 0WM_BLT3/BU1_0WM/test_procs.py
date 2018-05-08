@@ -117,6 +117,7 @@ def Commander(test,args):
             if c.has_key("Cmd"):
                 debug_print( '>>> RunCommand: %s  <<<' %c['Cmd'] )
                 resp = api.send_cmd(c['Cmd'])
+                Logger.process(resp)
             elif c.has_key("Fun"):
                 debug_print( '>>> RunFunction: %s  <<<' %c['Fun'] )
                 if c['Args']:

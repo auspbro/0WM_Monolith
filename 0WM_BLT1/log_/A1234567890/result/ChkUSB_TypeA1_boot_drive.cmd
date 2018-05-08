@@ -1,1 +1,0 @@
-SET ChkUSB_TypeA1_boot_drive=PASS

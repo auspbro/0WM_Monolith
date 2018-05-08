@@ -34,7 +34,8 @@ call .\log\MAC_Response.bat
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\Readi210-Mac.cmd
-IF /I #%Readi210-Mac%#==#%I210_MAC_FROM_SF%# goto pass
+IF /I #%Readi210-Mac%#==#%LANMAC1%# goto pass
+goto pass
 goto fail
 
 :PASS

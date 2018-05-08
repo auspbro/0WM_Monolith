@@ -32,8 +32,8 @@ def SetDUTinfo(sn=None, I210MacAddress=None, FPGAMacAddress=None):
     
     if sn != None and I210MacAddress != None and FPGAMacAddress != None:
         settings['SN'] = sn
-        settings['i210'] = I210MacAddress
-        settings['fpga'] = FPGAMacAddress
+        settings['i210'] = I210MacAddress[0:2] + ':' + I210MacAddress[2:4] + ':' + I210MacAddress[4:6] + ':' + I210MacAddress[6:8] + ':' + I210MacAddress[8:10] + ':' + I210MacAddress[10:12]
+        settings['fpga'] = FPGAMacAddress[0:2] + ':' + FPGAMacAddress[2:4] + ':' + FPGAMacAddress[4:6] + ':' + FPGAMacAddress[6:8] + ':' + FPGAMacAddress[8:10] + ':' + FPGAMacAddress[10:12]
         with open('settings.yml', 'w') as outfile:
             yaml.dump(settings, outfile, default_flow_style=False)
             outfile.close()
@@ -92,7 +92,7 @@ def main():
     
     if len(sys.argv) > 1:
         SN = str( SetDUTinfo(sys.argv[1], sys.argv[2], sys.argv[3]))
-        test_file = sys.argv[4]
+        #test_file = sys.argv[4]
     elif do_Genconfig:
         proc_command = 'python gui_genconfig.py'
         result = env.subprocess_execute(proc_command, 120).split('\n')

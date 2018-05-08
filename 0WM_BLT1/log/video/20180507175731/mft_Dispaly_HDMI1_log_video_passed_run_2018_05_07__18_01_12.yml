@@ -1,0 +1,34 @@
+- Name: HDMI1_Reboot
+  Results:
+  - Proc: Commander
+    Process: "INFO, Initialising...\r\n\a\r\r\nBroadcast message from root@monolith\
+      \ (ttyS0) (Wed Apr 25 20:06:46 2018):\r\r\n\r\r\n\rThe system is going down\
+      \ for system halt NOW!\r\r\npcieport 0000:00:1d.0: AER: Corrected error received:\
+      \ id=00e8\r\npcieport 0000:00:1d.0: PCIe Bus Error: severity=Corrected, type=Physical\
+      \ Layer, id=00e8(Receiver ID)\r\npcieport 0000:00:1d.0:   device [8086:9d18]\
+      \ error status/mask=00000001/00002000\r\npcieport 0000:00:1d.0:    [ 0] Receiver\
+      \ Error         (First)\r\nroot@monolith:"
+    Result: true
+    Time: '2018-05-07 18:00:00.748000'
+  Time: '2018-05-07 18:00:00.748000'
+- Name: BootToKernel
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-07 18:00:04.149000'
+  Time: '2018-05-07 18:00:04.149000'
+- Name: HDMI1_result
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-07 18:00:43.452000'
+    Values:
+      item: HDMI1
+  Time: '2018-05-07 18:00:43.452000'
+- Name: TestDutCompleted
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-07 18:01:12.753000'
+  Time: '2018-05-07 18:01:12.753000'

@@ -71,7 +71,7 @@ def main():
     do_Full = 1
     do_RSSI = 0
     do_Temp = 0
-    do_Result = 0
+    do_Result = 1
     do_RunStatus = 0
 
     

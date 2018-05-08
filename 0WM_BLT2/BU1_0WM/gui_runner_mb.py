@@ -32,8 +32,8 @@ def SetDUTinfo(sn=None, I210MacAddress=None, FPGAMacAddress=None):
     
     if sn != None and I210MacAddress != None and FPGAMacAddress != None:
         settings['SN'] = sn
-        settings['i210'] = I210MacAddress
-        settings['fpga'] = FPGAMacAddress
+        settings['i210'] = I210MacAddress[0:2] + ':' + I210MacAddress[2:4] + ':' + I210MacAddress[4:6] + ':' + I210MacAddress[6:8] + ':' + I210MacAddress[8:10] + ':' + I210MacAddress[10:12]
+        settings['fpga'] = FPGAMacAddress[0:2] + ':' + FPGAMacAddress[2:4] + ':' + FPGAMacAddress[4:6] + ':' + FPGAMacAddress[6:8] + ':' + FPGAMacAddress[8:10] + ':' + FPGAMacAddress[10:12]
         with open('settings.yml', 'w') as outfile:
             yaml.dump(settings, outfile, default_flow_style=False)
             outfile.close()
@@ -70,7 +70,7 @@ def main():
     do_Full = 1
     do_RSSI = 0
     do_Temp = 0
-    do_Result = 0
+    do_Result = 1
     do_RunStatus = 0
     do_DP1=1
     do_DP2=1
@@ -176,7 +176,7 @@ def main():
         # --------- update serialnum in file: end ---------
         env.system_execute(proc_command)
     
-    message = u"TypeC_DP1插入显示器，TypeC_DP2插网线"
+    message = u"右TypeC_1连接笔电，左TypeC_2连接网线"
     proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
     env.process_execute(proc_command)
         
@@ -234,9 +234,9 @@ def main():
                 '''
         env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
     
-    message = u"TypeC_DP1插入显示器，TypeC_DP2插充电治具小板"
-    proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
-    env.process_execute(proc_command)
+    # message = u"TypeC_DP1插入显示器，TypeC_DP2插充电治具小板"
+    # proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
+    # env.process_execute(proc_command)
 
     if do_DP1:
         test_item = '0WM_test_lists\\Dispaly_DP1.yml'
@@ -267,7 +267,7 @@ def main():
                 '''
         env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
 
-    message = u"TypeC_DP1插充电治具小板,TypeC_DP2插入显示器"
+    message = u"请交换TypeC_1和TypeC_2接口"
     proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
     env.process_execute(proc_command)
 
