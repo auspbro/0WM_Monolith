@@ -1,0 +1,1020 @@
+# #------------------------------------------------------------
+# -
+#     Name: BootToKernel-1
+#     Instructions: >
+#         wait device boot
+#     Proc: Commander
+#     Args:
+#         Cmds:
+#         - 
+#             Fun: DeviceReady
+#             Args: 
+#                 Display: True
+#                 Timeout: 120
+#             Regex: '(\w+)'
+#             Results:
+#             -
+#                 name: BootToKernel
+#                 type: str
+#                 item: 0
+#                 index: 0
+# #------------------------------------------------------------
+# -
+#     Name: CpyMLFolder
+#     Instructions: >
+#         Copy ML folder for MTP test
+#     Proc: Commander
+#     Args:
+#         Cmds:
+#         - Cmd: "device=$(ls /dev/sd* | tail -n 1)"
+#         - Cmd: "mount $device /boot"
+#         - Cmd: "cd /boot/ml_install"
+#         -
+#             Cmd: "./install.sh"
+#             Regex: '(\w+)(!)'
+#             Results:
+#             -
+#                 name: CpyMLFolder
+#                 type: str
+#                 item: 0
+#                 index: 0
+#------------------------------------------------------------
+-
+    Name: BootToKernel
+    Instructions: >
+        wait device boot
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: DeviceReady
+            Args: 
+                Display: True
+                Timeout: 120
+            Regex: '(\w+)'
+            Results:
+            -
+                name: BootToKernel
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: InitTest
+    Instructions: >
+        device test initial
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'cd ml_test'
+        - Cmd: "./init.sh"
+        -
+            Cmd: "cd /home/root/"
+#------------------------------------------------------------
+-
+    Name: ChkBoardPresent
+    Instructions: >
+        Check Board Present
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_pcb_rev.sh DVT present"
+            Regex: '(\w+)'
+            Results:
+            -
+                name: ChkBoardPresent
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkAudioBoard
+    Instructions: >
+        Check Audio Board status
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_pcb_rev.sh DVT ab"
+            Regex: '(\w+)'
+            Results:
+            -
+                name: ChkAudioBoard
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkMainBoard
+    Instructions: >
+        Check Main Board status
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_pcb_rev.sh DVT mb"
+            Regex: '(\w+)'
+            Results:
+            -
+                name: ChkMainBoard
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkVideoBoard
+    Instructions: >
+        Check Video Board status
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_pcb_rev.sh DVT vb"
+            Regex: '(\w+)'
+            Results:
+            -
+                name: ChkVideoBoard
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkCPUInfo
+    Instructions: >
+        Check CPU Info
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_sys_info.sh cpu"
+            Regex: '(\n)(\w{4})(\r)'
+            Results:
+            -
+                name: ChkCPUInfo
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ChkDDRSpeed
+    Instructions: >
+        Check CPU Info
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_sys_info.sh ddr_speed"
+            Regex: '(\n)(\w{4})(\r)'
+            Results:
+            -
+                name: ChkDDRSpeed
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ChkDDRSize
+    Instructions: >
+        Check DDR Size
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_sys_info.sh ddr_size"
+            Regex: '(\n)(\w{4})(\r)'
+            Results:
+            -
+                name: ChkDDRSize
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ChkEMMCName
+    Instructions: >
+        Check EMMC Name
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_sys_info.sh emmc_name"
+            Regex: '(\n)(\w{4})(\r)'
+            Results:
+            -
+                name: ChkEMMCName
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ChkEMMCSize
+    Instructions: >
+        Check EMMC Size
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_sys_info.sh emmc_size"
+            Regex: '(\n)(\w{4})(\r)'
+            Results:
+            -
+                name: ChkEMMCSize
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ChkSSDName
+    Instructions: >
+        Check SSD Name
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_sys_info.sh ssd_name"
+            Regex: '(\n)(\w{4})(\r)'
+            Results:
+            -
+                name: ChkSSDName
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ChkSSDSize
+    Instructions: >
+        Check SSD Size
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_sys_info.sh ssd_size"
+            Regex: '(\n)(\w{4})(\r)'
+            Results:
+            -
+                name: ChkSSDSize
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: WritePN
+    Instructions: >
+       Write Product Name
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_write.sh OVERWRITE_SMBIOS DVT product"
+            Regex: '(0x01) (39)'
+            Results:
+            -
+                name: WritePN
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ReadPN
+    Instructions: >
+       Read Product Name
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_read.sh product"
+            Regex: (\w+)
+            Results:
+            -
+                name: ReadPN
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: WritePVersion
+    Instructions: >
+       Write Product Version
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_write.sh OVERWRITE_SMBIOS DVT version"
+            Regex: '(0x01) (79)'
+            Results:
+            -
+                name: WritePVersion
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ReadPVersion
+    Instructions: >
+       Read Product Version
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_read.sh version"
+            Regex: (\w+.\w+)
+            Results:
+            -
+                name: ReadPVersion
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: WriteUUID
+    Instructions: >
+       Write Product UUID
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_write.sh OVERWRITE_SMBIOS DVT uuid"
+            Regex: '(0x01) (159)'
+            Results:
+            -
+                name: WriteUUID
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ReadUUID
+    Instructions: >
+       Read Product UUID 
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_read.sh uuid"
+            Regex: (\w{32})
+            Results:
+            -
+                name: ReadUUID
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: WriteModuleSerial
+    Instructions: >
+       Write Module Serial
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_write.sh OVERWRITE_SMBIOS DVT module_serial"
+            Regex: '(0x01) (199)'
+            Results:
+            -
+                name: WriteModuleSerial
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ReadModuleSerial
+    Instructions: >
+       Read Module Serial 
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_smbios_read.sh module_serial"
+            Regex: (\w+)
+            Results:
+            -
+                name: ReadModuleSerial
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+# -
+#     Name: WriteDeviceSN
+#     Instructions: >
+#        Write Module Serial
+#     Proc: Commander
+#     Args:
+#         Cmds:
+#         -
+#             Cmd: "ml_smbios_write.sh OVERWRITE_SMBIOS DVT module_serial"
+#             Regex: '(0x01) (199)'
+#             Results:
+#             -
+#                 name: WriteModuleSerial
+#                 type: str
+#                 item: 0
+#                 index: 1
+# #------------------------------------------------------------
+# -
+#     Name: ReadDeviceSN
+#     Instructions: >
+#        Read Module Serial 
+#     Proc: Commander
+#     Args:
+#         Cmds:
+#         -
+#             Cmd: "ml_smbios_read.sh module_serial"
+#             Regex: (\w+)
+#             Results:
+#             -
+#                 name: ReadModuleSerial
+#                 type: str
+#                 item: 0
+#                 index: 0
+#------------------------------------------------------------
+-
+    Name: WriteMacI219
+    Instructions: >
+        The MAC is set by module, just copy to eeprom
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_write.sh OVERWRITE_MAC i219 copy"
+            Regex: '(47)'
+            Results:
+            -
+                name: WriteMacI219
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ReadI219LM-Mac
+    Instructions: >
+       Read MAC Address of I219-LM
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_read.sh i219"
+            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
+            Results:
+            -
+                name: ReadI219LM-Mac
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: WriteMacWIFI
+    Instructions: >
+        The MAC is set by module, just copy to eeprom
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_write.sh OVERWRITE_MAC wlan copy"
+            Regex: '(63)'
+            Results:
+            -
+                name: WriteMacWIFI
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ReadWIFI-Mac
+    Instructions: >
+       Read MAC Address of WIFI
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_read.sh wlan"
+            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
+            Results:
+            -
+                name: ReadWIFI-Mac
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: WriteMacBT
+    Instructions: >
+        The MAC is set by module, just copy to eeprom
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_write.sh OVERWRITE_MAC bluetooth copy"
+            Regex: '(79)'
+            Results:
+            -
+                name: WriteMacBT
+                type: str
+                item: 0
+                index: 1
+#------------------------------------------------------------
+-
+    Name: ReadBT-Mac
+    Instructions: >
+       Read MAC Address of BT
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_read.sh bluetooth"
+            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
+            Results:
+            -
+                name: ReadBT-Mac
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Readi210-Mac
+    Instructions: >
+       Read MAC Address of BT
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_read.sh i210"
+            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
+            Results:
+            -
+                name: Readi210-Mac
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ReadFPGA-Mac
+    Instructions: >
+       Read MAC Address of FPGA
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "ml_mac_read.sh fpga"
+            Regex: ((([0-9a-fA-F]{2})[:]){5}([0-9a-fA-F]{2}))
+            Results:
+            -
+                name: ReadFPGA-Mac
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkISM303DAC
+    Instructions: >
+       ECOMPASS/ACCELEROMETER Sensor
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'modprobe -r ISM303DAC_magn_i2c'
+        - Cmd: 'modprobe -r ISM303DAC_accel_i2c'
+        -
+            Cmd: "i2cdetect -y 9 | grep 10:"
+            Regex: '^(10:) (\D+) (\w+) (\w+)'
+            Results:
+            -
+                name: ACCELEROMETER
+                type: str
+                item: 0
+                index: 2
+            -
+                name: ECOMPASS
+                type: str
+                item: 0
+                index: 3
+-
+    Name: ISM303DAC-resume
+    Instructions: >
+       ECOMPASS/ACCELEROMETER Sensor resume
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'modprobe ISM303DAC_magn_i2c'
+        - 
+            Cmd: 'modprobe ISM303DAC_accel_i2c'
+#------------------------------------------------------------
+-
+    Name: Chkheatsink
+    Instructions: >
+       Check heatsink
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_heatsink.sh"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Chkheatsink
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkDP1
+    Instructions: >
+       Check DP port1
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_display.sh DP1"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkDP1
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkDP2
+    Instructions: >
+       Check DP port2
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_display.sh DP2"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkDP2
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkUSB_TypeA1_boot_drive
+    Instructions: >
+       Check USB_TypeA_1
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/discover_usb.sh boot_drive"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkUSB_TypeA1_boot_drive
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: ChkUSB_eth_devices
+    Instructions: >
+       Verify USB link to ethernet devices at 5000M
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/discover_usb.sh eth"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkUSB_eth_devices
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Chkethernet_i210 
+    Instructions: >
+       Test ethernet links with i210
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: "./ml_test/init_eth.sh link_test"
+        -
+            Cmd: "./ml_test/test_eth.sh i210"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Chkethernet_i210
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Chkethernet_i219 
+    Instructions: >
+       Test ethernet links with i219 
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_eth.sh i219"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Chkethernet_i219
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Chkethernet_wlan 
+    Instructions: >
+       Test ethernet links with wlan
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_eth.sh wlan"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Chkethernet_wlan
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Chkethernet_usb 
+    Instructions: >
+       Test ethernet links with USB
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_eth.sh usb"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Chkethernet_usb
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Chkethernet_switch
+    Instructions: >
+       Test ethernet links with Switch
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_eth_switch.sh"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Chkethernet_switch
+                type: str
+                item: 0
+                index: 0
+-
+    Name: TestEth-resume
+    Instructions: >
+       test ethernet links - resume
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Cmd: './ml_test/init_eth.sh normal'
+#------------------------------------------------------------
+-
+    Name: ChkGizmoPort 
+    Instructions: >
+       MTP tool checks whether POE is working or not
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_poe.sh"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: ChkGizmoPort
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Audio_Out_L_AIN_1
+    Instructions: >
+       Audio_out_l(Playback)>>MIC_Line_1(Recording)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh 1"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Audio_Out_L_AIN_1
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Audio_Out_L_AIN_2
+    Instructions: >
+       Audio_out_l(Playback)>>MIC_Line_2(Recording)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh 2"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Audio_Out_L_AIN_2
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Audio_Out_L_AIN_3
+    Instructions: >
+       Audio_out_l(Playback)>>MIC_Line_3(Recording)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh 3"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Audio_Out_L_AIN_3
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Audio_Out_L_AIN_4
+    Instructions: >
+       Audio_out_l(Playback)>>MIC_Line_4(Recording)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh 4"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Audio_Out_L_AIN_4
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Audio_Out_L_AIN_5
+    Instructions: >
+       Audio_out_l(Playback)>>MIC_Line_5(Recording)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh 5"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Audio_Out_L_AIN_5
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Audio_Out_L_AIN_6
+    Instructions: >
+       Audio_out_l(Playback)>>MIC_Line_6(Recording)
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh 6"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Audio_Out_L_AIN_6
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Headset_Loopback_L
+    Instructions: >
+       MTP checks whether sound is audible or not
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh headset_l"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Headset_Loopback_L
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Headset_Loopback_R
+    Instructions: >
+       MTP checks whether sound is audible or not
+    Proc: Commander
+    Args:
+        Cmds:
+        -
+            Cmd: "./ml_test/test_audio_line.sh headset_r"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Headset_Loopback_R
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+-
+    Name: Speaker
+    Instructions: >
+       MTP checks whether the dissipation meets the spec or not
+    Proc: Commander
+    Args:
+        Cmds:
+        - Cmd: 'cd ml_test/'
+        -
+            Cmd: "./test_audio_spk.sh"
+            Regex: '(PASS)'
+            Results:
+            -
+                name: Speaker
+                type: str
+                item: 0
+                index: 0
+#------------------------------------------------------------
+# -
+#     Name: ChkWIFISignal
+#     Instructions: >
+#        Check WIFI Signal
+#     Proc: Commander
+#     Args:
+#         Cmds:
+#         -
+#             Cmd: "./ml_test/test_wlan.sh SSID 0 100"
+#             Regex: '(PASS)'
+#             Results:
+#             -
+#                 name: ChkWIFISignal
+#                 type: str
+#                 item: 0
+#                 index: 0
+# #------------------------------------------------------------
+# -
+#     Name: ChkBTSignal
+#     Instructions: >
+#        Check BT Signal
+#     Proc: Commander
+#     Args:
+#         Cmds:
+#         -
+#             Cmd: "./ml_test/test_bt.sh 57:AA:7C:B6:C9:FF 0 100"
+#             Regex: '(PASS)'
+#             Results:
+#             -
+#                 name: ChkBTSignal
+#                 type: str
+#                 item: 0
+#                 index: 0
+#------------------------------------------------------------
+-
+    Name: LED_Red
+    Instructions: >
+       Test LED Red
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailLED
+            Args: 
+                item: red
+#------------------------------------------------------------
+-
+    Name: LED_Green
+    Instructions: >
+       Test LED Green
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailLED
+            Args: 
+                item: green
+#------------------------------------------------------------
+-
+    Name: LED_Both
+    Instructions: >
+       Test LED Both
+    Proc: Commander
+    Args:
+        Cmds:
+        - 
+            Fun: ShowPassFailLED
+            Args: 
+                item: both

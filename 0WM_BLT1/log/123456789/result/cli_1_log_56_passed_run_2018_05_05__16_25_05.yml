@@ -1,8 +1,0 @@
-- Command: cd ml_test
-  Response: "cd ml_test\r\nroot@monolith:~"
-  Time: '2018-05-05 16:24:55.380000'
-- Command: ./discover_one_wire.sh REBOOT_REQUIRED
-  Response: "./discover_one_wire.sh REBOOT_REQUIRED\r\nINFO, test discover_one_wire\r\
-    \ncat: /tmp/x_omni_one_wire.log: No such file or directory\r\nFAIL, Could NOT\
-    \ find DS28E15P on Video Board\r\nroot@monolith:~"
-  Time: '2018-05-05 16:25:05.284000'

@@ -1,1 +1,0 @@
-SET ChkGizmoPort=PASS

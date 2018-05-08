@@ -110,7 +110,7 @@ class Test:
     def pre(self, on_complete=None):
         def job():
             proc, args = self.pre_test
-            Logger.append_pre(proc.__name__, args)
+            # Logger.append_pre(proc.__name__, args)
             return proc(self, args)
         self.do_job(job, on_complete)
 
@@ -118,7 +118,7 @@ class Test:
         print "do-post"
         def job():
             proc, args = self.post_test
-            Logger.append_post(proc.__name__, args)
+            # Logger.append_post(proc.__name__, args)
             return proc(self, args)
         self.do_job(job, on_complete)
 

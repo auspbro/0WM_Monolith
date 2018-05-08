@@ -1,0 +1,314 @@
+- Name: BootToKernel-2
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-07 18:38:25.588000'
+  Time: '2018-05-07 18:38:25.588000'
+- Name: InitTest
+  Results:
+  - Proc: Commander
+    Process: "Stopping watchdog: \e[1;34m[\e[1;32m  OK  \e[1;34m]\e[0;39m\r\nIPv6:\
+      \ ADDRCONF(NETDEV_UP): eth1: link is not ready\r\nIPv6: ADDRCONF(NETDEV_UP):\
+      \ wlan0: link is not ready\r\nINFO, test init_fpga\r\nINFO, Initialising...\r\
+      \ne1000e: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: Rx/Tx\r\n\
+      IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready\r\nINFO, test init_scp\r\
+      \n\r\r\nEntering character mode\r\r\nEscape character is '^]'.\r\r\n\r\r\n\r\
+      \r\r\nPetaLinux 2017.1 plnx_aarch64\r\r\n\r\r\r\n\rroot\r\r\n\r\r\nplnx_aarch64\
+      \ login: Password: \r\r\nroot@plnx_aarch64:~# scp root@10.0.0.2://tmp/dummy\
+      \ /tmp\r\r\n\r\r\nHost '10.0.0.2' is not in the trusted hosts file.\r\r\n(ecdsa-sha2-nistp256\
+      \ fingerprint md5 21:54:ec:f0:15:8d:a7:60:e2:4d:da:e2:6a:82:d5:7d)\r\r\nDo you\
+      \ want to continue connecting? (y/n) y\r\r\nscp: //tmp/dummy: No such file or\
+      \ directory\r\r\nroot@plnx_aarch64:~# root@monolith:"
+    Result: true
+    Time: '2018-05-07 18:39:19.291000'
+  Time: '2018-05-07 18:39:19.291000'
+- Name: ChkBoardPresent
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkBoardPresent: PASS
+    Time: '2018-05-07 18:39:33.292000'
+  Time: '2018-05-07 18:39:33.292000'
+- Name: ChkAudioBoard
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkAudioBoard: PASS
+    Time: '2018-05-07 18:39:33.492000'
+  Time: '2018-05-07 18:39:33.492000'
+- Name: ChkMainBoard
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkMainBoard: PASS
+    Time: '2018-05-07 18:39:33.692000'
+  Time: '2018-05-07 18:39:33.692000'
+- Name: ChkVideoBoard
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkVideoBoard: PASS
+    Time: '2018-05-07 18:39:33.892000'
+  Time: '2018-05-07 18:39:33.892000'
+- Name: ChkPCIE
+  Results:
+  - Proc: Commander
+    Process: "INFO, test discover_pcie\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkPCIE: PASS
+    Time: '2018-05-07 18:39:34.092000'
+  Time: '2018-05-07 18:39:34.092000'
+- Name: ChkCPUInfo
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_sys_info cpu\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkCPUInfo: PASS
+    Time: '2018-05-07 18:39:34.392000'
+  Time: '2018-05-07 18:39:34.392000'
+- Name: ChkDDRSpeed
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_sys_info ddr_speed\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkDDRSpeed: PASS
+    Time: '2018-05-07 18:39:34.592000'
+  Time: '2018-05-07 18:39:34.592000'
+- Name: ChkDDRSize
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_sys_info ddr_size\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkDDRSize: PASS
+    Time: '2018-05-07 18:39:34.792000'
+  Time: '2018-05-07 18:39:34.792000'
+- Name: ChkEMMCName
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_sys_info emmc_name\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkEMMCName: PASS
+    Time: '2018-05-07 18:39:34.992000'
+  Time: '2018-05-07 18:39:34.992000'
+- Name: ChkEMMCSize
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_sys_info emmc_size\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkEMMCSize: PASS
+    Time: '2018-05-07 18:39:35.192000'
+  Time: '2018-05-07 18:39:35.192000'
+- Name: ChkSSDName
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_sys_info ssd_name\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkSSDName: PASS
+    Time: '2018-05-07 18:39:35.392000'
+  Time: '2018-05-07 18:39:35.392000'
+- Name: ChkSSDSize
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_sys_info ssd_size\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkSSDSize: PASS
+    Time: '2018-05-07 18:39:35.592000'
+  Time: '2018-05-07 18:39:35.592000'
+- Name: ChkINA230
+  Results:
+  - Proc: Commander
+    Process: "40: 40 41 42 43 44 -- -- -- -- -- -- -- -- -- -- -- \r\nroot@monolith:"
+    Result:
+      ChkINA230_1: '40'
+      ChkINA230_2: '41'
+      ChkINA230_3: '42'
+      ChkINA230_4: '43'
+      ChkINA230_5: '44'
+    Time: '2018-05-07 18:39:35.792000'
+  Time: '2018-05-07 18:39:35.792000'
+- Name: INA230-resume
+  Results:
+  - Proc: Commander
+    Process: "ina2xx 10-0040: power monitor ina230 (Rshunt = 2000 uOhm)\r\nina2xx\
+      \ 10-0041: power monitor ina230 (Rshunt = 2000 uOhm)\r\nina2xx 10-0042: power\
+      \ monitor ina230 (Rshunt = 2000 uOhm)\r\nina2xx 10-0043: power monitor ina230\
+      \ (Rshunt = 2000 uOhm)\r\nina2xx 10-0044: power monitor ina230 (Rshunt = 2000\
+      \ uOhm)\r\nroot@monolith:"
+    Result: true
+    Time: '2018-05-07 18:39:35.992000'
+  Time: '2018-05-07 18:39:35.992000'
+- Name: ChkMBTMP108
+  Results:
+  - Proc: Commander
+    Process: "40: -- -- -- -- -- -- -- -- 48 49 4a 4b -- -- -- -- \r\nroot@monolith:"
+    Result:
+      ChkMBTMP108_1: '48'
+      ChkMBTMP108_2: '49'
+      ChkMBTMP108_3: 4a
+      ChkMBTMP108_4: 4b
+    Time: '2018-05-07 18:39:36.192000'
+  Time: '2018-05-07 18:39:36.192000'
+- Name: TMP108-resume
+  Results:
+  - Proc: Commander
+    Process: 'root@monolith:'
+    Result: true
+    Time: '2018-05-07 18:39:36.492000'
+  Time: '2018-05-07 18:39:36.492000'
+- Name: ChkISM303DAC
+  Results:
+  - Proc: Commander
+    Process: "10: -- -- -- -- -- -- -- -- -- -- -- -- -- 1d 1e -- \r\nroot@monolith:"
+    Result:
+      ACCELEROMETER: 1d
+      ECOMPASS: 1e
+    Time: '2018-05-07 18:39:36.692000'
+  Time: '2018-05-07 18:39:36.692000'
+- Name: ISM303DAC-resume
+  Results:
+  - Proc: Commander
+    Process: "modprobe: module ISM303DAC_accel_i2c not found in modules.dep\r\nroot@monolith:"
+    Result: true
+    Time: '2018-05-07 18:39:36.992000'
+  Time: '2018-05-07 18:39:36.992000'
+- Name: ChkSN65DP159
+  Results:
+  - Proc: Commander
+    Process: "50: -- 51 -- -- -- -- -- -- -- -- -- 5b 5c 5d -- -- \r\nroot@monolith:"
+    Result:
+      ChkSN65DP159_1: 5b
+      ChkSN65DP159_2: 5c
+    Time: '2018-05-07 18:39:37.192000'
+  Time: '2018-05-07 18:39:37.192000'
+- Name: ChkSN75DP130
+  Results:
+  - Proc: Commander
+    Process: "20: -- -- -- -- -- -- -- 27 -- -- -- -- 2c -- 2e -- \r\nroot@monolith:"
+    Result:
+      ChkSN75DP130_1: 2c
+      ChkSN75DP130_2: 2e
+    Time: '2018-05-07 18:39:37.392000'
+  Time: '2018-05-07 18:39:37.392000'
+- Name: ChkEEPROM
+  Results:
+  - Proc: Commander
+    Process: "0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f\r\n00:          -- --\
+      \ -- -- -- -- -- -- -- -- -- -- -- \r\n10: -- -- -- -- -- -- -- -- -- -- --\
+      \ -- -- 1d -- -- \r\n20: -- -- -- -- -- -- -- 27 -- -- -- -- -- -- -- -- \r\n\
+      30: -- -- -- -- -- -- -- 37 -- -- -- -- -- -- -- -- \r\n40: -- -- -- -- -- --\
+      \ -- -- -- -- -- -- -- -- -- -- \r\n50: -- 51 -- -- -- -- -- -- -- -- -- 5b\
+      \ 5c 5d -- -- \r\n60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- \r\n70:\
+      \ -- -- UU -- -- -- -- 77                         \r\nroot@monolith:"
+    Result:
+      ChkEEPROM: '51'
+    Time: '2018-05-07 18:39:37.592000'
+  Time: '2018-05-07 18:39:37.592000'
+- Name: ChkDiscoverI2C
+  Results:
+  - Proc: Commander
+    Process: "INFO, test discover_i2c\r\nina2xx 10-0040: power monitor ina230 (Rshunt\
+      \ = 2000 uOhm)\r\nina2xx 10-0041: power monitor ina230 (Rshunt = 2000 uOhm)\r\
+      \nina2xx 10-0042: power monitor ina230 (Rshunt = 2000 uOhm)\r\nina2xx 10-0043:\
+      \ power monitor ina230 (Rshunt = 2000 uOhm)\r\nina2xx 10-0044: power monitor\
+      \ ina230 (Rshunt = 2000 uOhm)\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkDiscoverI2C: PASS
+    Time: '2018-05-07 18:39:37.892000'
+  Time: '2018-05-07 18:39:37.892000'
+- Name: WriteMacWGI210
+  Results:
+  - Proc: Commander
+    Result:
+      WriteMacWGI210: PASS
+    Time: '2018-05-07 18:39:38.492000'
+    Values:
+      chip: i210
+  Time: '2018-05-07 18:39:38.492000'
+- Name: WriteMacFPGA
+  Results:
+  - Proc: Commander
+    Result:
+      WriteMacFPGA: PASS
+    Time: '2018-05-07 18:39:41.493000'
+    Values:
+      chip: fpga
+  Time: '2018-05-07 18:39:41.493000'
+- Name: ChkSN74CB3Q3306APWR
+  Results:
+  - Proc: Commander
+    Process: "50: 50 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- \r\nroot@monolith:"
+    Result:
+      ChkSN74CB3Q3306APWR: '50'
+    Time: '2018-05-07 18:39:41.893000'
+  Time: '2018-05-07 18:39:41.893000'
+- Name: SN74CB3Q3306APWR-resume
+  Results:
+  - Proc: Commander
+    Process: 'root@monolith:'
+    Result: true
+    Time: '2018-05-07 18:39:42.193000'
+  Time: '2018-05-07 18:39:42.193000'
+- Name: ChkRTL8367EEPROM
+  Results:
+  - Proc: Commander
+    Process: "INFO, test check_eeprom_eth\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkRTL8367EEPROM: PASS
+    Time: '2018-05-07 18:39:42.393000'
+  Time: '2018-05-07 18:39:42.393000'
+- Name: ChkBIOSVersion
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkBIOSVersion: PASS
+    Time: '2018-05-07 18:39:42.993000'
+  Time: '2018-05-07 18:39:42.993000'
+- Name: ChkUSBTypeCVersion1
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkUSBTypeCVersion1: PASS
+    Time: '2018-05-07 18:39:43.193000'
+  Time: '2018-05-07 18:39:43.193000'
+- Name: ChkUSBTypeCVersion2
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkUSBTypeCVersion2: PASS
+    Time: '2018-05-07 18:39:43.393000'
+  Time: '2018-05-07 18:39:43.393000'
+- Name: ChkOROMVersion
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkOROMVersion: PASS
+    Time: '2018-05-07 18:39:43.593000'
+  Time: '2018-05-07 18:39:43.593000'
+- Name: ChkCPLDVersion
+  Results:
+  - Proc: Commander
+    Process: "PASS\r\nroot@monolith:"
+    Result:
+      ChkCPLDVersion: PASS
+    Time: '2018-05-07 18:39:48.793000'
+  Time: '2018-05-07 18:39:48.793000'
+- Name: ChkDP1
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_display\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkDP1: PASS
+    Time: '2018-05-07 18:39:48.993000'
+  Time: '2018-05-07 18:39:48.993000'
+- Name: ChkDP2
+  Results:
+  -

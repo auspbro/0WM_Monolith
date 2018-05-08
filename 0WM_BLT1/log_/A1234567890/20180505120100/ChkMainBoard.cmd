@@ -1,1 +1,0 @@
-SET ChkMainBoard=PASS

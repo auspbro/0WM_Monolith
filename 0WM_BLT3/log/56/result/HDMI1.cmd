@@ -1,1 +1,0 @@
-SET HDMI1=PASS

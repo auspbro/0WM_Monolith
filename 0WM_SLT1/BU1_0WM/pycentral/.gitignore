@@ -1,7 +1,0 @@
-build
-dist
-imgA.bin
-imgB.bin
-*.spec
-*~
-*.pyc

@@ -1,0 +1,47 @@
+- Name: ChkUSB_eth_devices2
+  Results:
+  - Proc: Commander
+    Process: "INFO, test discover_usb\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkUSB_eth_devices2: PASS
+    Time: '2018-05-07 17:02:38.247000'
+  Time: '2018-05-07 17:02:38.247000'
+- Name: ChkPowerDeliveryDP2
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_usb_c_pd\r\nusb usb2-port2: config error\r\nPASS\r\n\
+      root@monolith:"
+    Result:
+      ChkPowerDeliveryDP2: PASS
+    Time: '2018-05-07 17:02:38.447000'
+  Time: '2018-05-07 17:02:38.447000'
+- Name: DP2_Reboot
+  Results:
+  - Proc: Commander
+    Process: "INFO, Initialising...\r\n\a\r\r\nBroadcast message from root@monolith\
+      \ (ttyS0) (Wed Apr 25 20:09:03 2018):\r\r\n\r\r\n\rThe system is going down\
+      \ for system halt NOW!\r\r\nroot@monolith:"
+    Result: true
+    Time: '2018-05-07 17:02:48.848000'
+  Time: '2018-05-07 17:02:48.848000'
+- Name: BootToKernel
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-07 17:02:52.148000'
+  Time: '2018-05-07 17:02:52.148000'
+- Name: DP2_result
+  Results:
+  - Proc: Commander
+    Result: true
+    Time: '2018-05-07 17:03:30.751000'
+    Values:
+      item: DP2
+  Time: '2018-05-07 17:03:30.751000'
+- Name: TestDutCompleted
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-07 17:03:35.456000'
+  Time: '2018-05-07 17:03:35.455000'

@@ -1,1 +1,0 @@
-SET ChkCPUInfo=PASS

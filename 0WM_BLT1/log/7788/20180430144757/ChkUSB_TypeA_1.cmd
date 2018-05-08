@@ -1,1 +1,0 @@
-SET ChkUSB_TypeA_1=480M

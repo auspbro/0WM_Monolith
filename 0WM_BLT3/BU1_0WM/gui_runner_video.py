@@ -71,7 +71,7 @@ def main():
     do_Full = 1
     do_RSSI = 0
     do_Temp = 0
-    do_Result = 0
+    do_Result = 1
     do_RunStatus = 0
     do_HDMI1=1
     do_HDMI2=1
@@ -233,7 +233,7 @@ def main():
                 '''
         env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
     
-    message = u"DP1插入显示器，DP2插充电治具小板"
+    message = u"HDMI_1插入显示器"
     proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
     env.process_execute(proc_command)
 
@@ -266,7 +266,7 @@ def main():
                 '''
         env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
 
-    message = u"DP2插入显示器，DP1插充电治具小板"
+    message = u"HDMI_2插入显示器"
     proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
     env.process_execute(proc_command)
 
@@ -298,6 +298,10 @@ def main():
                         break
                 '''
         env.print_info('>>>>>> loop count: %d <<<<<<\n' % cnt )
+
+    message = u"SDI插入显示器"
+    proc_command = 'python gui_pass_fail.py {}'.format(message.encode('GBK'))
+    env.process_execute(proc_command)
 
     if do_SDI:
         test_item = '0WM_test_lists\\Dispaly_SDI.yml'

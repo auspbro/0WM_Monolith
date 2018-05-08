@@ -82,6 +82,9 @@ class TestLog:
         self.cur_proc.update({'Result' : state})
         if debug_logger:    print "logger.mark(state = {})".format(state)
 
+    def process(self, process):
+        self.cur_proc.update({'Process' : process})
+        if debug_logger:    print "logger.process(process = {})".format(process)
 
     def save(self, cli_log=None):
         result = 'failed'

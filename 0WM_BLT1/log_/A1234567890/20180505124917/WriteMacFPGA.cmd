@@ -1,1 +1,0 @@
-SET WriteMacFPGA=PASS

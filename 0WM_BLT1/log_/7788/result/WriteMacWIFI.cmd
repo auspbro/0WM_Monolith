@@ -1,1 +1,0 @@
-SET WriteMacWIFI=[['63']]

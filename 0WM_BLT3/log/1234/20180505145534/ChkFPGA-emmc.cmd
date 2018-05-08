@@ -1,1 +1,0 @@
-SET ChkFPGA-emmc=INFO

@@ -23,8 +23,8 @@
 :START
 call .\Process\DVSN.BAT
 call .\log\%tmSN%\result\ChkSN65DP159.cmd
-IF /I not #%ChkSN65DP159_1%#==#2c# GOTO FAIL
-IF /I not #%ChkSN65DP159_2%#==#2e# GOTO FAIL
+IF /I not #%ChkSN65DP159_1%#==#5b# GOTO FAIL
+IF /I not #%ChkSN65DP159_2%#==#5c# GOTO FAIL
 goto pass
 
 :PASS

@@ -1,2 +1,0 @@
-- Command: device=$(ls /dev/sd* | tail -n 1)
-  Response:

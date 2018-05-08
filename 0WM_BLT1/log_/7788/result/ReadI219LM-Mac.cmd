@@ -1,1 +1,0 @@
-SET ReadI219LM-Mac=00:90:fb:60:fe:27

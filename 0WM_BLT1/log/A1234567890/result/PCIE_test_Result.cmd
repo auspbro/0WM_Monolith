@@ -1,1 +1,1 @@
-SET PCIE_test_Result=[]
+SET PCIE_test_Result=PASS

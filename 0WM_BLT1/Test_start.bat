@@ -22,8 +22,8 @@
 :DebugMode
 CALL .\Process\DVSN.BAT
 if not %tmSN%==A1234567890 goto Get_MAC_From_SF
-set MAC_WGI210=00:a0:c9:00:00:00
-set MAC_FPGA=11:a0:c9:00:00:00
+set LANMAC1=00:a0:c9:00:00:00
+set LANMAC2=11:a0:c9:00:00:00
 GOTO StartPythonGUI
 
 
@@ -35,7 +35,7 @@ call .\log\MAC_Response.bat
 :StartPythonGUI
 CALL .\Process\DVSN.BAT
 cd .\BU1_0WM
-python gui_runner_MB.py %tmSN% %MAC_WGI210% %MAC_FPGA%
+python gui_runner_MB.py %tmSN% %LANMAC1% %LANMAC2%
 goto pass
 
 :pass

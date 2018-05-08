@@ -1,1 +1,0 @@
-SET ChkUSBTypeCVersion1=FAIL

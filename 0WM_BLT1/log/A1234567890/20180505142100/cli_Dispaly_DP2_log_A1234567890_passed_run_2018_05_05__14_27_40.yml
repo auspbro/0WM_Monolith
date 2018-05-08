@@ -1,4 +1,0 @@
-- Command: ./ml_test/test_usb_c_pd.sh 1
-  Response: "./ml_test/test_usb_c_pd.sh 1\r\nINFO, test test_usb_c_pd\r\nPASS\r\n\
-    root@monolith:~"
-  Time: '2018-05-05 14:26:53.444000'

@@ -1,4 +1,0 @@
-- Command: ./ml_test/test_eth_switch.sh
-  Response: "./ml_test/test_eth_switch.sh\r\nINFO, test test_eth_switch\r\nFAIL, port\
-    \ PHYS-2 link DOWN\r\nroot@monolith:~"
-  Time: '2018-05-05 12:58:24.957000'

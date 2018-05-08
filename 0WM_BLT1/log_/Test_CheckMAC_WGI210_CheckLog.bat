@@ -1,2 +1,0 @@
-set CheckMAC_WGI210=ABCDEFGHIJKL
-set TestResult=PASS

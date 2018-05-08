@@ -1,0 +1,210 @@
+- Name: BootToKernel-1
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel: PASS
+    Time: '2018-05-07 17:57:32.874000'
+  Time: '2018-05-07 17:57:32.874000'
+- Name: InitTest
+  Results:
+  - Proc: Commander
+    Process: 'root@monolith:'
+    Result: true
+    Time: '2018-05-07 17:58:33.677000'
+  Time: '2018-05-07 17:58:33.677000'
+- Name: ChkVBTMP108
+  Results:
+  - Proc: Commander
+    Process: "40: -- -- -- -- -- -- -- -- -- 49 4a 4b -- -- -- -- \r\nroot@monolith:"
+    Result:
+      ChkVBTMP108_0: '49'
+      ChkVBTMP108_1: 4a
+      ChkVBTMP108_2: 4b
+    Time: '2018-05-07 17:58:47.678000'
+  Time: '2018-05-07 17:58:47.678000'
+- Name: TMP108-resume
+  Results:
+  - Proc: Commander
+    Process: 'root@monolith:'
+    Result: true
+    Time: '2018-05-07 17:58:47.978000'
+  Time: '2018-05-07 17:58:47.978000'
+- Name: ChkSi5340
+  Results:
+  - Proc: Commander
+    Process: "70: -- -- UU -- -- -- -- 77                         \r\nroot@monolith:"
+    Result:
+      ChkSi5340: '77'
+    Time: '2018-05-07 17:58:48.178000'
+  Time: '2018-05-07 17:58:48.178000'
+- Name: ChkLMH1219
+  Results:
+  - Proc: Commander
+    Process: "10: -- -- -- -- -- -- -- -- -- -- -- -- -- 1d -- -- \r\nroot@monolith:"
+    Result:
+      ChkLMH1219: 1d
+    Time: '2018-05-07 17:58:48.378000'
+  Time: '2018-05-07 17:58:48.378000'
+- Name: ChkClock
+  Results:
+  - Proc: Commander
+    Process: "INFO, test check_clock_synth\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkClock: PASS
+    Time: '2018-05-07 17:58:48.578000'
+  Time: '2018-05-07 17:58:48.578000'
+- Name: ChkFPGA-pcie
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_fpga_pcie\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkFPGA-pcie: PASS
+    Time: '2018-05-07 17:58:48.778000'
+  Time: '2018-05-07 17:58:48.778000'
+- Name: ChkFPGA-discover
+  Results:
+  - Proc: Commander
+    Process: "INFO, test discover_fpga\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkFPGA-discover: PASS
+    Time: '2018-05-07 17:58:49.078000'
+  Time: '2018-05-07 17:58:49.078000'
+- Name: ChkFPGA-HDMI1
+  Results:
+  - Proc: Commander
+    Process: "INFO, test discover_hdmi_in\r\npcieport 0000:00:1d.0: AER: Corrected\
+      \ error received: id=00e8\r\npcieport 0000:00:1d.0: PCIe Bus Error: severity=Corrected,\
+      \ type=Physical Layer, id=00e8(Receiver ID)\r\npcieport 0000:00:1d.0:   device\
+      \ [8086:9d18] error status/mask=00000001/00002000\r\npcieport 0000:00:1d.0:\
+      \    [ 0] Receiver Error         (First)\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkFPGA-HDMI1: PASS
+    Time: '2018-05-07 17:58:50.278000'
+  Time: '2018-05-07 17:58:50.278000'
+- Name: ChkFPGA-HDMI2
+  Results:
+  - Proc: Commander
+    Process: "INFO, test discover_hdmi_in\r\npcieport 0000:00:1d.0: AER: Corrected\
+      \ error received: id=00e8\r\npcieport 0000:00:1d.0: PCIe Bus Error: severity=Corrected,\
+      \ type=Physical Layer, id=00e8(Receiver ID)\r\npcieport 0000:00:1d.0:   device\
+      \ [8086:9d18] error status/mask=00000001/00002000\r\npcieport 0000:00:1d.0:\
+      \    [ 0] Receiver Error         (First)\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkFPGA-HDMI2: PASS
+    Time: '2018-05-07 17:58:53.479000'
+  Time: '2018-05-07 17:58:53.479000'
+- Name: ChkFPGA-OneWire
+  Results:
+  - Proc: Commander
+    Process: "INFO, test discover_one_wire\r\npcieport 0000:00:1d.0: AER: Corrected\
+      \ error received: id=00e8\r\npcieport 0000:00:1d.0: PCIe Bus Error: severity=Corrected,\
+      \ type=Physical Layer, id=00e8(Receiver ID)\r\npcieport 0000:00:1d.0:   device\
+      \ [8086:9d18] error status/mask=00000001/00002000\r\npcieport 0000:00:1d.0:\
+      \    [ 0] Receiver Error         (First)\r\nPASS\r\nroot@monolith:"
+    Result:
+      ChkFPGA-OneWire: PASS
+    Time: '2018-05-07 17:58:56.679000'
+  Time: '2018-05-07 17:58:56.679000'
+- Name: ChkFPGA-OneWire-resume
+  Results:
+  - Proc: Commander
+    Process: 'root@monolith:'
+    Result: true
+    Time: '2018-05-07 17:59:06.279000'
+  Time: '2018-05-07 17:59:06.279000'
+- Name: PCIE_test_Reboot
+  Results:
+  - Proc: Commander
+    Process: "INFO, Initialising...\r\nPCIe selected\r\n\a\r\r\nBroadcast message\
+      \ from root@monolith (ttyS0) (Wed Apr 25 20:05:56 2018):\r\r\n\r\r\n\rThe system\
+      \ is going down for system halt NOW!\r\r\nroot@monolith:"
+    Result:
+      PCIE_test_Reboot: NOW
+    Time: '2018-05-07 17:59:09.479000'
+  Time: '2018-05-07 17:59:09.479000'
+- Name: BootToKernel-PCIE
+  Results:
+  - Proc: Commander
+    Result:
+      BootToKernel-PCIE: PASS
+    Time: '2018-05-07 17:59:12.780000'
+  Time: '2018-05-07 17:59:12.780000'
+- Name: PCIE_test_Result
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_fpga_pcie\r\nTRACE_LEVEL_VERBOSE - OmniTekBus: fops.c\
+      \ - omnitekbus_fops_unlocked_ioctl @ 123: Request NumSlots: 0, expected: 1\r\
+      \nTRACE_LEVEL_WARNING - OmniTekBus: fops.c - omnitekbus_fops_unlocked_ioctl\
+      \ @ 157: CMD:-1073217535. In buffer too small\r\nTRACE_LEVEL_VERBOSE - OmniTekBus:\
+      \ fops.c - omnitekbus_fops_unlocked_ioctl @ 123: Request NumSlots: 1, expected:\
+      \ 1\r\nTRACE_LEVEL_VERBOSE - OmniTekBus: fops.c - omnitekbus_fops_unlocked_ioctl\
+      \ @ 220: Request SlotId: 0\r\nTRACE_LEVEL_VERBOSE - OmniTekBus: fops.c - omnitekbus_fops_unlocked_ioctl\
+      \ @ 234: Request cap devs: 0, actual: 5\r\nTRACE_LEVEL_WARNING - OmniTekBus:\
+      \ fops.c - omnitekbus_fops_unlocked_ioctl @ 277: CMD:-1073217533. In buffer\
+      \ too small\r\nTRACE_LEVEL_VERBOSE - OmniTekBus: fops.c - omnitekbus_fops_unlocked_ioctl\
+      \ @ 220: Request SlotId: 0\r\nTRACE_LEVEL_VERBOSE - OmniTekBus: fops.c - omnitekbus_fops_unlocked_ioctl\
+      \ @ 234: Request cap devs: 5, actual: 5\r\nigb 0000:02:00.0 eth0: igb: eth0\
+      \ NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX/TX\r\nIPv6: ADDRCONF(NETDEV_CHANGE):\
+      \ eth0: link becomes ready\r\nTRACE_LEVEL_WARNING - Cap_VideoFDMA: cap_videofdma.c\
+      \ - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_1: Failed to cancel event 0x0000000000000066\r\
+      \nTRACE_LEVEL_WARNING - Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl\
+      \ @ 899: FDMA_1: Failed to cancel event 0x0000000000000067\r\nTRACE_LEVEL_WARNING\
+      \ - Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899:\
+      \ FDMA_1: Failed to cancel event 0x0000000000000068\r\nTRACE_LEVEL_WARNING -\
+      \ Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_1:\
+      \ Failed to cancel event 0x0000000000000069\r\nTRACE_LEVEL_WARNING - Cap_VideoFDMA:\
+      \ cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_1: Failed to\
+      \ cancel event 0x000000000000006a\r\nTRACE_LEVEL_WARNING - Cap_VideoFDMA: cap_videofdma.c\
+      \ - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_1: Failed to cancel event 0x000000000000006b\r\
+      \nTRACE_LEVEL_WARNING - Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl\
+      \ @ 899: FDMA_1: Failed to cancel event 0x000000000000006c\r\nTRACE_LEVEL_WARNING\
+      \ - Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899:\
+      \ FDMA_2: Failed to cancel event 0x0000000000000066\r\nTRACE_LEVEL_WARNING -\
+      \ Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_2:\
+      \ Failed to cancel event 0x0000000000000067\r\nTRACE_LEVEL_WARNING - Cap_VideoFDMA:\
+      \ cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_2: Failed to\
+      \ cancel event 0x0000000000000068\r\nTRACE_LEVEL_WARNING - Cap_VideoFDMA: cap_videofdma.c\
+      \ - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_2: Failed to cancel event 0x0000000000000069\r\
+      \nTRACE_LEVEL_WARNING - Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl\
+      \ @ 899: FDMA_2: Failed to cancel event 0x000000000000006a\r\nTRACE_LEVEL_WARNING\
+      \ - Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899:\
+      \ FDMA_2: Failed to cancel event 0x000000000000006b\r\nTRACE_LEVEL_WARNING -\
+      \ Cap_VideoFDMA: cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_2:\
+      \ Failed to cancel event 0x000000000000006c\r\nTRACE_LEVEL_WARNING - Cap_VideoFDMA:\
+      \ cap_videofdma.c - OT_Cap_VideoFDMA_unlocked_ioctl @ 899: FDMA_2: Failed to\
+      \ cancel event 0x0000000000000064\r\nPASS\r\nroot@monolith:"
+    Result:
+      PCIE_test_Result: PASS
+    Time: '2018-05-07 17:59:51.583000'
+  Time: '2018-05-07 17:59:51.583000'
+- Name: Sleep
+  Results:
+  - Proc: Commander
+    Process: 'root@monolith:'
+    Result: true
+    Time: '2018-05-07 17:59:54.783000'
+  Time: '2018-05-07 17:59:54.783000'
+- Name: ChkFPGA-qspi
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_fpga_flash\r\ntelnet: can't connect to remote host (10.0.0.3):\
+      \ Network is unreachable\r\nFAIL, incorrect qspi device, \r\nroot@monolith:"
+    Result:
+      ChkFPGA-qspi: []
+    Time: '2018-05-07 17:59:55.983000'
+  Time: '2018-05-07 17:59:55.983000'
+- Name: ChkFPGA-emmc
+  Results:
+  - Proc: Commander
+    Process: "INFO, test test_fpga_flash\r\ntelnet: can't connect to remote host (10.0.0.3):\
+      \ Network is unreachable\r\nFAIL, incorrect emmc device, \r\nroot@monolith:"
+    Result:
+      ChkFPGA-emmc: []
+    Time: '2018-05-07 17:59:56.283000'
+  Time: '2018-05-07 17:59:56.283000'
+- Name: TestDutCompleted
+  Results:
+  - Proc: Dummy
+    Result: true
+    Time: '2018-05-07 17:59:56.583000'
+  Time: '2018-05-07 17:59:56.583000'

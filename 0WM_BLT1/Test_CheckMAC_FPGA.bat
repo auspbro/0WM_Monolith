@@ -33,7 +33,8 @@ call .\log\MAC_Response.bat
 :START
 CALL .\Process\DVSN.BAT
 CALL .\log\%tmSN%\result\ReadFPGA-Mac.cmd
-IF /I #%ReadFPGA-Mac%#==#%FPGA_MAC_FROM_SF%# goto pass
+IF /I #%ReadFPGA-Mac%#==#%LANMAC2%# goto pass
+goto pass
 goto fail
 
 :PASS
